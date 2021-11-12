@@ -1,0 +1,45 @@
+.navColor{
+  background: #B00000;
+  height: 3.5em;
+  /* display: flex;
+  justify-content: center; */
+}
+.midlogo {
+  display: flex;
+  justify-content: center;
+}
+.paddingPic {
+  /* height: 1em; */
+  /* padding-bottom: 1em; */
+  transform: translate(0px, -13px );
+}
+.SIGEIN{
+  font-size: 5em;  margin: 0px;
+}
+.forteacher{
+  font-size: 3em;  margin: 0px;
+}
+.USERNAME{
+  font-size: 3em;  margin: 0px;
+}
+.PASSWORD{
+  font-size: 3em;  margin: 0px;
+}
+.container_outline{
+  padding: 5em;
+}
+.borderShadow{
+  border-radius: 5em;  box-shadow: 10px 10px 5px #EAE9E9
+}
+.ForgotPassword{
+font-size: 1.5em;
+}
+.buttonPosition{
+    display: flex;
+    justify-content: space-evenly;
+}
+.buttonStyle{
+  width: 5em;
+  height: 1.5em;
+  font-size: 2em;
+}

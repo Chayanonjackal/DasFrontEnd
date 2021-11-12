@@ -1,0 +1,9 @@
+/* You can add global styles to this file, and also import other style files */
+@font-face {
+  font-family: "FC Iconic";
+  src:  url('./assets/font/FC-Iconic/FC Iconic Regular.ttf') format("truetype");
+}
+*{
+  font-family:'FC Iconic' ;
+  font-weight: 100;
+}

@@ -1,0 +1,29 @@
+<div class="grid navColor">
+  <div class="col-12 md:col-12 lg:col-12 sm:col-12 midlogo"><img class="paddingPic" src="../../assets/img/logo.png"
+      alt="logo" width="100px" height="100px"></div>
+  <div class="col-12 md:col-12 lg:col-12 sm:col-12" class="container_outline">
+    <div class="col-12 md:col-12 lg:col-12 sm:col-12 grid borderShadow">
+      <!-- เขียนให้เอารูปออกเมื่อเป็น ทรศ. แล้วก็ให้ช่องใส่ข้อความเป็น col-12 เมื่อเป็นทรศ. -->
+      <img class="col-6 md:col-6 lg:col-6 sm:col-6" src="../../assets/img/loginPicturex2.png" alt="" width="auto"
+        height="auto">
+      <div class="col-6 md:col-6 lg:col-6 sm:col-6" [formGroup]="userForm">
+        <h1 class="SIGEIN">SIGE IN</h1>
+        <h1 class="forteacher">*สำหรับอาจารย์ และผู้ดูแลระบบ</h1>
+        <br><br><br><br>
+        <h1 class="USERNAME col-6">USERNAME</h1>
+        <input formControlName="user_name" class="col-6" type="text" pInputText />
+        <h1 class="PASSWORD col-6">PASSWORD</h1>
+        <input formControlName="password" class="col-6" type="password" [feedback]="false"  pPassword />
+        <p class="ForgotPassword">Forgot password?</p>
+        <div class="buttonPosition">
+          <button pButton pRipple type="button" label="SIGE IN" (click)="submit()"
+            class="p-button-rounded p-button-success buttonStyle"></button>
+          <button pButton pRipple type="button" label="CANCLE"
+            class="p-button-rounded p-button-danger buttonStyle"></button>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+<p-toast></p-toast>
