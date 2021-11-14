@@ -6,6 +6,7 @@ import { AdminComponent } from './admin.component';
 import {TableModule} from 'primeng/table';
 import {ButtonModule} from 'primeng/button';
 import {ToastModule} from 'primeng/toast';
+import {ConfirmDialogModule} from 'primeng/confirmdialog';
 @NgModule({
   declarations: [
     AdminComponent
@@ -15,7 +16,8 @@ import {ToastModule} from 'primeng/toast';
     AdminRoutingModule,
     TableModule,
     ButtonModule,
-    ToastModule
+    ToastModule,
+    ConfirmDialogModule
   ]
 })
 export class AdminModule { }

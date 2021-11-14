@@ -3,6 +3,7 @@ import { ChangeDetectorRef, Component, OnInit } from '@angular/core';
 import { MessageService } from 'primeng/api';
 import { User } from 'src/app/shared/interfaces/user';
 import { AuthService } from 'src/app/shared/services/auth.service';
+import {ConfirmationService} from 'primeng/api';
 
 @Component({
   selector: 'app-admin',
@@ -16,6 +17,7 @@ export class AdminComponent implements OnInit {
   constructor(private http: HttpClient,
     private auth: AuthService,
     private messageService: MessageService,
+    private confirmationService:ConfirmationService
     // private changeDetectorRefs: ChangeDetectorRef
     ) { }
 
@@ -44,12 +46,34 @@ export class AdminComponent implements OnInit {
     }
     this.http.delete('/user/delete-user',headerToken).subscribe(res =>{
       this.messageService.add({severity:'success', summary: "res.message", detail: 'Message Content'});
-      // this.changeDetectorRefs.detectChanges();
       window.location.reload();
     },err=>{
       this.messageService.add({severity:'error', summary: err, detail: 'Message Content'});
     })
 
+  }
+
+  confirmDelete(userId:any) {
+    this.confirmationService.confirm({
+        message: 'Do you want to delete this record?',
+        header: 'Delete Confirmation',
+        icon: 'pi pi-info-circle',
+        accept: () => {
+          this.deleteUser(userId)
+        },
+
+    });
+
+  }
+  confirmEdit(userId:any){
+    this.confirmationService.confirm({
+      message: 'Do you want to edit?',
+      header: 'Edit confirmation',
+      icon: 'pi pi-info-circle',
+      accept: ()=> {
+        //method Edit
+      }
+    })
   }
 
 }
