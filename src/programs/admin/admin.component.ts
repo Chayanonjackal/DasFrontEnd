@@ -4,6 +4,9 @@ import { MessageService } from 'primeng/api';
 import { User } from 'src/app/shared/interfaces/user';
 import { AuthService } from 'src/app/shared/services/auth.service';
 import {ConfirmationService} from 'primeng/api';
+import { DialogService, DynamicDialogRef } from 'primeng/dynamicdialog';
+import { EditFormComponent } from './components/edit-form/edit-form.component';
+import { AddFormComponent } from './components/add-form/add-form.component';
 
 @Component({
   selector: 'app-admin',
@@ -13,11 +16,13 @@ import {ConfirmationService} from 'primeng/api';
 export class AdminComponent implements OnInit {
 
   users: any
+  ref: DynamicDialogRef | undefined
 
   constructor(private http: HttpClient,
     private auth: AuthService,
     private messageService: MessageService,
-    private confirmationService:ConfirmationService
+    private confirmationService:ConfirmationService,
+    private  dialogService: DialogService
     // private changeDetectorRefs: ChangeDetectorRef
     ) { }
 
@@ -71,9 +76,38 @@ export class AdminComponent implements OnInit {
       header: 'Edit confirmation',
       icon: 'pi pi-info-circle',
       accept: ()=> {
-        //method Edit
+        //method Edit    EditFormComponent
+        this.ref = this.dialogService.open(EditFormComponent, {
+          header: 'Edit profile',
+          width: '70%',
+          contentStyle: {"max-height": "500px", "overflow": "auto"},
+          baseZIndex: 10000,
+          data:{
+            user_id: userId
+          }
+      });
+
       }
     })
+  }
+
+  confirmAdd(){
+    this.confirmationService.confirm({
+      message: 'Do you want to add user?',
+      header: 'Add user confirmation',
+      icon: 'pi pi-info-circle',
+      accept: ()=> {
+        //method add    AddFormComponent
+        this.ref = this.dialogService.open(AddFormComponent, {
+          header: 'Add user profile',
+          width: '70%',
+          contentStyle: {"max-height": "500px", "overflow": "auto"},
+          baseZIndex: 10000
+      });
+
+      }
+    })
+
   }
 
 }

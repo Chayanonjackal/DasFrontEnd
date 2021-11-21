@@ -8,7 +8,9 @@
   <div class="col-12 md:col-12 lg:col-12 sm:col-12 grid borderShadow">
     <h1>User Mangement</h1>
   </div>
- <br>
+ <br><br>
+ <p-button label="Add User" icon="pi pi-user" styleClass="p-button-danger" (onClick)="confirmAdd()" ></p-button>
+ <br><br>
  <p-table [value]="users">
   <ng-template pTemplate="header">
       <tr>
@@ -24,9 +26,6 @@
   </ng-template>
   <ng-template pTemplate="body" let-user>
       <tr>
-        <!-- <td *ngFor="let col of user">
-          {{user[col.user_id]}}
-         </td> -->
          <td>{{user.user_id}}</td>
          <td>{{user.user_name}}</td>
         <td>{{user.first_name}}</td>
@@ -34,7 +33,6 @@
         <td>{{user.role}}</td>
         <td><button pButton pRipple (click)="confirmEdit(user.user_id)" type="button" icon="pi pi-pencil" class="p-button-rounded p-button-warning p-button-outlined"></button></td>
         <td><button pButton pRipple (click)="confirmDelete(user.user_id)" type="button" icon="pi pi-times" class="p-button-rounded p-button-danger p-button-outlined"></button></td>
-
       </tr>
   </ng-template>
 </p-table>

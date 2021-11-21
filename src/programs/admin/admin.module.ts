@@ -7,9 +7,18 @@ import {TableModule} from 'primeng/table';
 import {ButtonModule} from 'primeng/button';
 import {ToastModule} from 'primeng/toast';
 import {ConfirmDialogModule} from 'primeng/confirmdialog';
+import { EditFormComponent } from './components/edit-form/edit-form.component';
+import {DynamicDialogModule} from 'primeng/dynamicdialog';
+import { ReactiveFormsModule } from '@angular/forms';
+import {InputTextModule} from 'primeng/inputtext';
+import {RadioButtonModule} from 'primeng/radiobutton';
+import { AddFormComponent } from './components/add-form/add-form.component';
+
 @NgModule({
   declarations: [
-    AdminComponent
+    AdminComponent,
+    EditFormComponent,
+    AddFormComponent
   ],
   imports: [
     CommonModule,
@@ -17,7 +26,11 @@ import {ConfirmDialogModule} from 'primeng/confirmdialog';
     TableModule,
     ButtonModule,
     ToastModule,
-    ConfirmDialogModule
+    ConfirmDialogModule,
+    DynamicDialogModule,
+    ReactiveFormsModule,
+    InputTextModule,
+    RadioButtonModule
   ]
 })
 export class AdminModule { }
