@@ -1,7 +1,5 @@
 import { AuthGuard } from './auth.guard';
 
-import { TemplateComponent } from './../programs/template/template.component';
-import { TemplateModule } from './../programs/template/template.module';
 import { HomeModule } from './../programs/home/home.module';
 import { NgModule, Component } from '@angular/core';
 import { RouterModule, Routes ,CanActivate} from '@angular/router';

@@ -9,12 +9,15 @@ import {RippleModule} from 'primeng/ripple';
 import {CardModule} from 'primeng/card';
 import { DashbordComponent } from './components/dashbord/dashbord.component';
 import {ChartModule} from 'primeng/chart';
+import {TableModule} from 'primeng/table';
+import { AboutComponent } from './components/about/about.component';
 
 @NgModule({
   declarations: [
     HomeComponent,
     NavbarComponent,
-    DashbordComponent
+    DashbordComponent,
+    AboutComponent
   ],
   imports: [
     CommonModule,
@@ -22,7 +25,8 @@ import {ChartModule} from 'primeng/chart';
     ButtonModule,
     RippleModule,
     CardModule,
-    ChartModule
+    ChartModule,
+    TableModule
   ]
 })
 export class HomeModule { }

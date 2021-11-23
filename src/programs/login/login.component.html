@@ -16,14 +16,14 @@
         <h1 class="PASSWORD md:col-6 lg:col-6 sm:col-12 animate__animated animate__fadeInRight">PASSWORD</h1>
         <input formControlName="password" class="md:col-6 lg:col-6 sm:col-12 animate__animated animate__fadeInRight"
           type="password" [feedback]="false" pPassword />
-        <p class="ForgotPassword animate__animated animate__fadeInRight">Forgot password?</p>
+        <!-- <p class="ForgotPassword animate__animated animate__fadeInRight">Forgot password?</p> -->
         <div class="buttonPosition animate__animated animate__fadeInUp">
           <div class="buttonColGap">
             <button pButton pRipple type="button" label="SIGE IN" (click)="submit()"
               class="p-button-rounded p-button-success buttonStyle"></button>
           </div>
           <div class="buttonColGap">
-            <button pButton pRipple type="button" label="CANCLE"
+            <button pButton pRipple type="button" label="CANCLE" (click)="cancle()"
               class="p-button-rounded p-button-danger buttonStyle"></button>
           </div>
 

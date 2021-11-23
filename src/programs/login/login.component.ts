@@ -52,6 +52,10 @@ export class LoginComponent implements OnInit {
    })
   }
 
+  cancle(){
+        this.userForm.reset()
+  }
+
 }
 
 

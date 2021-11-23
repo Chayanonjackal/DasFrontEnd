@@ -35,4 +35,12 @@ export class NavbarComponent implements OnInit {
     }
   }
 
+  GotoHelp(){
+
+  }
+
+  GoAboutPage(){
+    this.router.navigate(['home/about'])
+  }
+
 }

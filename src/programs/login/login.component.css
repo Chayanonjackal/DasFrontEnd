@@ -37,6 +37,7 @@ font-size: 1.5em;
 .buttonPosition{
     display: flex;
     justify-content: flex-start;
+    margin-top: 24px;
 }
 .buttonStyle{
   width: 5em;

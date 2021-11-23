@@ -1,9 +1,10 @@
 
 <br>
 <br>
-<div class=" md:col-12 lg:col-12 sm:col-12 outlineDiv animate__animated  animate__fadeIn">
+<!-- animate__animated  animate__fadeIn -->
+<div class=" md:col-12 lg:col-12 sm:col-12 outlineDiv ">
   <div>
-    <p-card style="">
+    <p-card >
       <ng-template pTemplate="header">
         <img class=" md:col-6 lg:col-6 sm:col-6  img" src="../../assets/img/formMan.png" alt="" width="auto"
           height="auto">
@@ -48,13 +49,59 @@
   <div>
     <p-card>
       <ng-template pTemplate="header">
-        <img class=" md:col-6 lg:col-6 sm:col-6  img" src="../../../../assets/img/tcas3.png" alt="" width="auto"
+        <img class=" md:col-6 lg:col-6 sm:col-6  img" src="../../../../assets/img/tcaspic4.png" alt="" width="auto"
           height="auto">
       </ng-template>
       <!-- <h1 class="">กรอกแบบฟอร์มเพื่อทำการเก็บข้อมูลนักเรียนลงระบบ และทำการประเมินสำหรับอาจารย์</h1> -->
     </p-card>
   </div>
+  <div >
+    <p-card >
+      <ng-template pTemplate="header" >
+        <h1>จำนวนนักเรียนในแต่ละภูมิภาคที่ยื่นเข้ามาในสาขาวิทยาการคอมพิวเตอร์</h1>
+      </ng-template>
+      <div style="display: flex; justify-content: center;">
+        <p-chart type="pie" class="chartStyle" [data]="data" [options]="chartOptions"  [style]="{'width': '50%'}" ></p-chart>
+      </div>
+      <div class="md:col-12 lg:col-12 sm:col-12  ">
+        <p-table [value]="zones" responsiveLayout="scroll">
+          <ng-template pTemplate="header">
+              <tr>
+                  <th>ภาค</th>
+                  <th>จำนวน</th>
+              </tr>
+          </ng-template>
+          <ng-template pTemplate="body" let-zone>
+              <tr>
+                  <td>{{zone.name}}</td>
+                  <td>{{zone.count}}</td>
+              </tr>
+          </ng-template>
+      </p-table>
+      </div>
+    </p-card>
+  </div>
   <div>
-    <p-chart type="line" [data]="data"></p-chart>
+    <p-card>
+      <ng-template pTemplate="header">
+        <h1>จำนวนนักเรียนในแต่ละโรงเรียนที่ยื่นเข้ามาในสาขาวิทยาการคอมพิวเตอร์</h1>
+      </ng-template>
+      <div class="md:col-12 lg:col-12 sm:col-12  ">
+        <p-table [value]="schools" responsiveLayout="scroll">
+          <ng-template pTemplate="header">
+              <tr>
+                  <th>โรงเรียน</th>
+                  <th>จำนวน</th>
+              </tr>
+          </ng-template>
+          <ng-template pTemplate="body" let-school>
+              <tr>
+                  <td>{{school.name}}</td>
+                  <td>{{school.count}}</td>
+              </tr>
+          </ng-template>
+      </p-table>
+      </div>
+    </p-card>
   </div>
 </div>

@@ -1,5 +1,5 @@
 .outlineDiv{
-  padding:5em
+  padding:6em
 }
 .buttonRow{
     display: flex;
@@ -38,6 +38,9 @@
   }
   .wordSize{
     font-size: 1em
+  }
+  .chartStyle{
+    display: none;
   }
 
 }

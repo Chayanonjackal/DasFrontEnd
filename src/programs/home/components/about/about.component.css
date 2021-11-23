@@ -1,0 +1,38 @@
+.outlineDiv{
+  padding:6em
+}
+.headerCard{
+  display: flex;
+  justify-content: center;
+}
+.justifyButton{
+    display: flex;
+    justify-content: space-around;
+}
+.buttonOutLine{
+    padding-left: 15em;
+    padding-right: 15em;
+}
+.imgLocation{
+    display: flex;
+    justify-content: flex-end;
+}
+.buttonLocation{
+  display: flex;
+    justify-content: center;
+    margin-top: 2em;
+}
+.buttonStyle{
+  width: 5.5em;
+  height: 2em;
+  font-size: 2em;
+}
+
+@media screen and (max-width:900px) {
+
+  .outlineDiv{
+    padding:0em
+  }
+
+
+}

@@ -8,6 +8,9 @@ import { Component, OnInit } from '@angular/core';
 export class DashbordComponent implements OnInit {
 
   data: any;
+  chartOptions: any;
+  zones: any[] =[];
+  schools: any[] =[];
 
   constructor() {
 
@@ -15,18 +18,65 @@ export class DashbordComponent implements OnInit {
 
   ngOnInit(): void {
     this.data = {
-      labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
+      labels: ['เหนือ', 'กลาง', 'ตะวันออกเฉียงเหนือ', 'ตะวันออก', 'ตะวันตก', 'ใต้'],
       datasets: [
-          {
-              label: 'First Dataset',
-              data: [65, 59, 80, 81, 56, 55, 40]
-          },
-          {
-              label: 'Second Dataset',
-              data: [28, 48, 40, 19, 86, 27, 90]
-          }
+        {
+          data: [30, 50, 10, 10, 20, 30],
+          backgroundColor: [
+            "#42A5F5",
+            "#66BB6A",
+            "#FFA726",
+            "#8c07b8",
+            "#b80780",
+            "#22b807"
+          ],
+          hoverBackgroundColor: [
+            "#64B5F6",
+            "#81C784",
+            "#FFB74D",
+            "#8c07b8",
+            "#b80780",
+            "#22b807"
+          ]
+        }
       ]
-  }
+    };
+    this.zones =[
+      {
+        name:'เหนือ',
+        count: 30
+      },
+      {
+        name:'กลาง',
+        count: 50
+      },{
+        name:'ตะวันออกเฉียงเหนือ',
+        count: 10
+      },
+      {
+        name:'ตะวันออก',
+        count: 10
+      },
+      {
+        name:'ตะวันตก',
+        count: 20
+      },{
+        name:'ใต้',
+        count: 30
+      }
+    ]
+    this.schools = [
+      {
+        name:"โรงเรียนพระหฤทัยดอนเมือง",
+        count:10
+      },
+      {
+        name:"โรงเรียนสีกัน",
+        count:20
+      }
+    ]
+
+
   }
 
 }
