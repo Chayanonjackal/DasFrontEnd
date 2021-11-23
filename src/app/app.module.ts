@@ -1,4 +1,4 @@
-import { NavbarModule } from './../programs/home/components/navbar/navbar.module';
+
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
@@ -15,9 +15,10 @@ import {MenuItem} from 'primeng/api';
 import { TabViewModule } from 'primeng/tabview';
 import { InputTextModule } from 'primeng/inputtext';
 import { ReactiveFormsModule } from '@angular/forms';
-import { NavbarComponent } from 'src/programs/home/components/navbar/navbar.component';
 import { JwtModule } from '@auth0/angular-jwt';
 import { AuthGuard } from './auth.guard';
+
+
 
 
 
@@ -26,6 +27,7 @@ import { AuthGuard } from './auth.guard';
 @NgModule({
   declarations: [
     AppComponent,
+
   ],
   imports: [
     BrowserModule,

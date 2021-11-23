@@ -1,6 +1,7 @@
-import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { HttpClient, HttpClientModule, HttpHeaders } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { AuthService } from 'src/app/shared/services/auth.service';
 
 @Component({
   selector: 'app-home',
@@ -9,18 +10,14 @@ import { Router } from '@angular/router';
 })
 export class HomeComponent implements OnInit {
 
-  constructor(private http:HttpClient, private router: Router, ) { }
+
+
+  constructor(private http:HttpClient, private router: Router,private auth: AuthService ) { }
 
   ngOnInit(): void {
 
-
-    // this.http.get('/user/get-user').subscribe(res=>{
-    //   console.log(res);
-    // });
   }
 
-  GoAdminPage(){
-    this.router.navigate(['admin'])
-  }
+
 
 }

@@ -1,0 +1,48 @@
+.outlineDiv{
+  padding:5em
+}
+.buttonRow{
+    display: flex;
+    justify-content: space-around;
+}
+.buttonWord{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.buttonSize{
+  min-width: 5rem;
+  min-height: 5rem;
+}
+.wordSize{
+  font-size: 2em
+}
+
+
+
+@media screen and (max-width:900px) {
+
+  .outlineDiv{
+    padding:0em
+  }
+
+
+}
+
+@media screen and (max-width:450px) {
+
+
+  .buttonSize{
+    min-width: 2rem;
+    min-height: 2rem;
+  }
+  .wordSize{
+    font-size: 1em
+  }
+
+}
+
+.img{
+  /* height: auto; */
+  /* width: auto; */
+}

@@ -20,7 +20,7 @@ export class AuthGuard implements CanActivate {
     this.authService.getProfile().subscribe((res:any)=>{
       if(res.status === 200){
         if(res.data.role !== 'A' && this.router.url === '/admin'){
-          this.router.navigate(['home'])
+          this.router.navigate(['home/dashbord'])
           return false
         }
         return true

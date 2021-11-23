@@ -13,37 +13,37 @@ export class AuthService {
 
   constructor(private http:HttpClient , private router:Router) { }
 
-  //ตัวถามว่า loggedin อยู่รึป่าว
-  loggedIn(){
-    return !!localStorage.getItem('token');
-  }
+  // //ตัวถามว่า loggedin อยู่รึป่าว
+  // loggedIn(){
+  //   return !!localStorage.getItem('token');
+  // }
 
-  //Keep token in localStorage
-  setToken(token: string){
-    localStorage.setItem('token',token) ;
-  }
+  // //Keep token in localStorage
+  // setToken(token: string){
+  //   localStorage.setItem('token',token) ;
+  // }
 
-  //get token from local storage
-  getToken(){
-    return localStorage.getItem('token');
-  }
+  // //get token from local storage
+  // getToken(){
+  //   return localStorage.getItem('token');
+  // }
 
   //get user data from Data base
-  getUserData(playload : object){
-    let token
-   this.http.post('/user/user-login', playload).subscribe((res) => {
-     if(res == 'Invalid user'){
-        console.log('Invalid user');
-     }else{
-      this.setToken(res.toString());
-      this.router.navigate(['home']);
-     }
+//   getUserData(playload : object){
+//     let token
+//    this.http.post('/user/user-login', playload).subscribe((res) => {
+//      if(res == 'Invalid user'){
+//         console.log('Invalid user');
+//      }else{
+//       this.setToken(res.toString());
+//       this.router.navigate(['home']);
+//      }
 
-    },err =>{
-      console.log(err);
-      return err
-    })
- }
+//     },err =>{
+//       console.log(err);
+//       return err
+//     })
+//  }
 
  setLocalStorage(request:Request){
    return request.hasOwnProperty('token')&&localStorage.setItem('Token',request.token) ;
@@ -52,11 +52,10 @@ export class AuthService {
  //login api
  login(playload : any){
    return this.http.post<Request>('/user/login',playload).pipe(
-
      tap((res)=>{
       //  console.log(res);
       this.setLocalStorage(res)
-      this.router.navigate(['home'])
+      this.router.navigate(['home/dashbord'])
      }),
      catchError(err =>{
        const {error} = err

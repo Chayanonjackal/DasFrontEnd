@@ -14,11 +14,14 @@ import {InputTextModule} from 'primeng/inputtext';
 import {RadioButtonModule} from 'primeng/radiobutton';
 import { AddFormComponent } from './components/add-form/add-form.component';
 
+
+
 @NgModule({
   declarations: [
     AdminComponent,
     EditFormComponent,
-    AddFormComponent
+    AddFormComponent,
+
   ],
   imports: [
     CommonModule,

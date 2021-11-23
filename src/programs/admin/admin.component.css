@@ -20,4 +20,33 @@
   background-color: #FFE8E8;
   box-shadow: 10px 10px 5px #EAE9E9
 }
+.textSize{
+  font-size: 1em;
+}
+.textDataSize{
+  font-size: 1em;
+}
+@media screen and (max-width:900px){
+  .container_outline{
+    padding-left: 0em;
+    padding-right: 0em;
+    padding-top: 1em;
+  }
+  .buttonstyle{
+    /* width: 1em; */
+    /* height: 0.5em; */
+  }
+  .textSize{
+    font-size: 0.7em;
+  }
+  .textDataSize{
+    font-size: 0.8em;
+  }
 
+
+}
+
+.spaceTwoButton {
+    display: flex;
+    justify-content: space-between;
+}

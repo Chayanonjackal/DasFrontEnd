@@ -1,3 +1,5 @@
+import { DashbordComponent } from './components/dashbord/dashbord.component';
+import { NavbarComponent } from 'src/programs/home/components/navbar/navbar.component';
 import { HomeComponent } from './home.component';
 import { NgModule, Component } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
@@ -5,8 +7,21 @@ import { RouterModule, Routes } from '@angular/router';
 const routes: Routes = [
  {
    path: '',
-   component: HomeComponent
- }
+   component: HomeComponent ,
+   children: [
+     {
+      path:'dashbord',
+      component:DashbordComponent
+     },
+     {
+       path:'**',
+       component:DashbordComponent
+     }
+   ]
+ },
+//  {
+//   path: '' , redirectTo: 'login' , pathMatch: 'full'
+// },
 
 ];
 

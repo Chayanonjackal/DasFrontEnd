@@ -1,0 +1,60 @@
+
+<br>
+<br>
+<div class=" md:col-12 lg:col-12 sm:col-12 outlineDiv animate__animated  animate__fadeIn">
+  <div>
+    <p-card style="">
+      <ng-template pTemplate="header">
+        <img class=" md:col-6 lg:col-6 sm:col-6  img" src="../../assets/img/formMan.png" alt="" width="auto"
+          height="auto">
+      </ng-template>
+      <h1 class="">กรอกแบบฟอร์มเพื่อทำการเก็บข้อมูลนักเรียนลงระบบ และทำการประเมินสำหรับอาจารย์</h1>
+    </p-card>
+  </div>
+
+  <div>
+    <p-card >
+      <div class="buttonRow">
+        <div class="buttonWord">
+          <button pButton pRipple type="button" icon="pi pi-file" class="p-button-rounded p-button-danger buttonSize animate__animated animate__slideInDown"></button>
+          <p class="wordSize">กรอกแบบประเมิน</p>
+        </div>
+        <div class="buttonWord">
+          <button pButton pRipple type="button" icon="pi pi-chart-bar"
+            class="p-button-rounded p-button-danger buttonSize animate__animated animate__slideInDown"></button>
+          <p class="wordSize">นำข้อมูลวิเคราะห์</p>
+        </div>
+        <div class="buttonWord">
+          <button pButton pRipple type="button" icon="pi pi-cog" class="p-button-rounded  p-button-danger buttonSize animate__animated animate__slideInDown"></button>
+          <P class="wordSize">ตั้งค่าจำนวนการรับ</P>
+        </div>
+        <div class="buttonWord">
+          <button pButton pRipple type="button" icon="pi pi-question-circle"
+            class="p-button-rounded p-button-danger buttonSize animate__animated animate__slideInDown"></button>
+          <p class="wordSize">ช่วยเหลือ</p>
+        </div>
+      </div>
+    </p-card>
+  </div>
+  <div>
+    <p-card>
+      <ng-template pTemplate="header">
+        <img class=" md:col-6 lg:col-6 sm:col-6  img" src="../../../../assets/img/search1.png" alt="" width="auto"
+          height="auto">
+      </ng-template>
+      <!-- <h1 class="">กรอกแบบฟอร์มเพื่อทำการเก็บข้อมูลนักเรียนลงระบบ และทำการประเมินสำหรับอาจารย์</h1> -->
+    </p-card>
+  </div>
+  <div>
+    <p-card>
+      <ng-template pTemplate="header">
+        <img class=" md:col-6 lg:col-6 sm:col-6  img" src="../../../../assets/img/tcas3.png" alt="" width="auto"
+          height="auto">
+      </ng-template>
+      <!-- <h1 class="">กรอกแบบฟอร์มเพื่อทำการเก็บข้อมูลนักเรียนลงระบบ และทำการประเมินสำหรับอาจารย์</h1> -->
+    </p-card>
+  </div>
+  <div>
+    <p-chart type="line" [data]="data"></p-chart>
+  </div>
+</div>

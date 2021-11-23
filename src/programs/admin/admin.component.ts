@@ -7,6 +7,7 @@ import {ConfirmationService} from 'primeng/api';
 import { DialogService, DynamicDialogRef } from 'primeng/dynamicdialog';
 import { EditFormComponent } from './components/edit-form/edit-form.component';
 import { AddFormComponent } from './components/add-form/add-form.component';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-admin',
@@ -17,14 +18,19 @@ export class AdminComponent implements OnInit {
 
   users: any
   ref: DynamicDialogRef | undefined
+  recordCount : number = 0;
+
+
 
   constructor(private http: HttpClient,
     private auth: AuthService,
     private messageService: MessageService,
     private confirmationService:ConfirmationService,
-    private  dialogService: DialogService
-    // private changeDetectorRefs: ChangeDetectorRef
-    ) { }
+    private  dialogService: DialogService,
+    private router:Router
+    ) {
+
+  }
 
   ngOnInit(): void {
     const token = localStorage.getItem('Token');
@@ -35,8 +41,8 @@ export class AdminComponent implements OnInit {
       })
     }
     this.http.get('/user/get-all-user',headerToken).subscribe(res=>{
-      console.log(res);
       this.users = res
+      this.recordCount = this.users.length
     })
   }
 
@@ -108,6 +114,10 @@ export class AdminComponent implements OnInit {
       }
     })
 
+  }
+
+  GoHomePage(){
+    this.router.navigate(['home/dashbord'])
   }
 
 }
