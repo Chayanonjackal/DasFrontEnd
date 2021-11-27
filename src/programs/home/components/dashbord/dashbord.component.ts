@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-dashbord',
@@ -12,7 +13,7 @@ export class DashbordComponent implements OnInit {
   zones: any[] =[];
   schools: any[] =[];
 
-  constructor() {
+  constructor(private router: Router) {
 
   }
 
@@ -77,6 +78,20 @@ export class DashbordComponent implements OnInit {
     ]
 
 
+  }
+
+  GoHelpPage(){
+    this.router.navigate(['home/help'])
+  }
+  GoFormPage(){
+    this.router.navigate(['home/form'])
+  }
+  logout(){
+    localStorage.clear();
+    this.router.navigate(['login'])
+  }
+  GoToPp(){
+    this.router.navigate(['home/privateprediction'])
   }
 
 }

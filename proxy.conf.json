@@ -3,6 +3,20 @@
     "target": "http://localhost:5000",
     "secure": false,
     "logLevel": "debug" ,
-    "changOrigin": true
+    "changeOrigin": true
+  },
+  "/workspaces/*": {
+    "target": "https://ussouthcentral.services.azureml.net",
+    "secure": false,
+    "logLevel": "debug" ,
+    "changeOrigin": true
+  },
+  "/privateprediction/*": {
+    "target": "http://localhost:5000",
+    "secure": false,
+    "logLevel": "debug" ,
+    "changeOrigin": true
   }
+
+
 }

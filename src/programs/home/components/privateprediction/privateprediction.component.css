@@ -1,0 +1,25 @@
+.outlineDiv{
+  padding:6em
+}
+.borderShadow{
+  border-bottom-left-radius: 1em;
+  border-bottom-right-radius: 1em;
+  background-color: #FFE8E8;
+  box-shadow: 10px 10px 5px #EAE9E9
+}
+
+@media screen and (max-width:900px) {
+
+  .outlineDiv{
+    padding:0em
+  }
+  .borderShadow{
+    border-bottom-left-radius: 1em;
+    border-bottom-right-radius: 1em;
+    background-color: #FFE8E8;
+    box-shadow: 10px 10px 5px #EAE9E9;
+    padding-top: 3em;
+  }
+
+
+}

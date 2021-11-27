@@ -36,18 +36,7 @@ export class AddFormComponent implements OnInit {
         Authorization: `Bearer ${token}`
       })
     }
-    // this.http.put('/user/edit-user', playload,headerToken).subscribe((res:any) =>{
-    //   if(res.status == 200){
 
-    //     this.messageService.add({severity:'success', summary: res.message , detail: res.status});
-    //   } else{
-    //     this.messageService.add({severity:'error', summary: res.message, detail: res.status});
-    //   }
-    //   window.location.reload();
-    // },err=>{
-    //   console.log(err);
-    //   this.messageService.add({severity:'error', summary: err.error.message, detail: err.error.status});
-    // })
     this.http.post('/user/register',playload,headerToken).subscribe((res:any)=>{
       if(res.status == 200 || res.status == 201){
             this.messageService.add({severity:'success', summary: res.message , detail: res.status});

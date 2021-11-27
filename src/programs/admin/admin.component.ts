@@ -55,11 +55,11 @@ export class AdminComponent implements OnInit {
       }),
       body: {user_id:userId}
     }
-    this.http.delete('/user/delete-user',headerToken).subscribe(res =>{
-      this.messageService.add({severity:'success', summary: "res.message", detail: 'Message Content'});
+    this.http.delete('/user/delete-ppdata-userdata',headerToken).subscribe((res:any) =>{
+      this.messageService.add({severity:'success', summary: res.message, detail: 'Delete success!'});
       window.location.reload();
     },err=>{
-      this.messageService.add({severity:'error', summary: err, detail: 'Message Content'});
+      this.messageService.add({severity:'error', summary: err, detail: 'Can not Delete'});
     })
 
   }

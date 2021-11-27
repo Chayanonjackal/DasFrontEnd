@@ -18,7 +18,13 @@ export class NavbarComponent implements OnInit {
   ngOnInit(): void {
     this.primeNGConfig.ripple = true;
     this.auth.getProfile().subscribe((res :any)=>{
-      this.role = res.data.role
+      if(res){
+        this.role = res.data.role
+      }else{
+        console.log("user no role");
+
+      }
+
     })
   }
 
@@ -36,11 +42,14 @@ export class NavbarComponent implements OnInit {
   }
 
   GotoHelp(){
-
+    this.router.navigate(['home/help'])
   }
 
   GoAboutPage(){
     this.router.navigate(['home/about'])
+  }
+  GotoForm(){
+    this.router.navigate(['home/form'])
   }
 
 }

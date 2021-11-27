@@ -1,0 +1,41 @@
+<br>
+<div class=" md:col-12 lg:col-12 sm:col-12 outlineDiv animate__animated  animate__fadeIn">
+  <div>
+    <div class="col-12 md:col-12 lg:col-12 sm:col-12 grid borderShadow">
+      <h1>ผลลัพธ์การพยากรณ์</h1>
+    </div>
+    <br><br>
+    <p-card>
+      <p-table responsiveLayout="scroll"  [scrollable]="true" [responsive]="false"  [value]="pps" [paginator]="true" [rows]="5" [rowsPerPageOptions]="[5,10,15,20,50,100]"
+      [totalRecords]="recordCount"
+      [pageLinks]="8" >
+       <ng-template pTemplate="header" let-columns>
+           <tr>
+               <th pSortableColumn="first_name_th" class="textSize">ชื่อ <p-sortIcon field="first_name_th"></p-sortIcon></th>
+               <th pSortableColumn="last_name_th" class="textSize">นามสกุล <p-sortIcon field="last_name_th"></p-sortIcon></th>
+               <th pSortableColumn="predic" class="textSize">ผลลัพธ์การพยากรณ์ <p-sortIcon field="predic"></p-sortIcon></th>
+               <th class="textSize">ข้อมูลเพิ่มเติม</th>
+               <th class="textSize">ลบข้อมูล</th>
+
+           </tr>
+       </ng-template>
+       <ng-template pTemplate="body" let-pp let-columns="columns">
+           <tr>
+            <!-- {{pp.user_id}} -->
+              <td class="textDataSize">{{pp.first_name_th}}</td>
+              <td class="textDataSize">{{pp.last_name_th}}</td>
+             <td class="textDataSize">{{pp.predic}}</td>
+
+             <!-- (click)="confirmEdit(user.user_id)" -->
+             <td><button pButton pRipple (click)="infoDetail(pp)" type="button" icon="pi pi-info" class="p-button-rounded p-button-info p-button-outlined buttonstyle"></button></td>
+             <td><button pButton pRipple (click)="deleteDataPp(pp.pp_id)" type="button" icon="pi pi-times" class="p-button-rounded p-button-danger p-button-outlined buttonstyle"></button></td>
+           </tr>
+       </ng-template>
+     </p-table>
+
+
+  </p-card>
+
+  <p-confirmDialog header="Confirmation" icon="pi pi-exclamation-triangle"></p-confirmDialog>
+  </div>
+</div>

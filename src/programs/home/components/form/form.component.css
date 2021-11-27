@@ -1,0 +1,33 @@
+.outlineDiv{
+  padding:6em
+}
+.headerCard{
+  display: flex;
+  justify-content: flex-start;
+  padding-left: 1em;
+}
+.inputTextStyle{
+  padding: 1em;
+  display:flex ;
+  flex-direction: column;
+}
+.labelStyle{
+  font-size: 1.5em;
+  padding-bottom: 0.5em;
+}
+.smallStyle{
+  padding-top: 2em;
+}
+
+/* input.p-inputmask.p-inputtext.p-component {
+  width: 100%;
+} */
+
+@media screen and (max-width:900px) {
+
+  .outlineDiv{
+    padding:0em
+  }
+
+
+}

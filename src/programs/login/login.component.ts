@@ -33,15 +33,7 @@ export class LoginComponent implements OnInit {
   })
 
   ngOnInit(): void {
-    // const playload = {
-    //   "user_id" : "1"
-    // }
-    // const httpHeaders = new HttpHeaders({
-    //   'token' : 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxLCJ1c2VyX25hbWUiOiJhb20iLCJwYXNzd29yZCI6ImFvbSIsImZpcnN0X25hbWUiOiJDaGEiLCJsYXN0X25hbWUiOiJQciIsInJvbGUiOiJBIiwiaWF0IjoxNjM1NTAwMDE4fQ._o4nwQSEZwFq0430rBmzodza3kKFYq5dyDsXXZXQsLI'
-    // })
-    // this.http.post('/user/get-user-data' , playload , { headers: httpHeaders}).subscribe(res=>{
-    //   console.log(res);
-    // })
+
   }
 
   submit() {

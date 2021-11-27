@@ -1,0 +1,25 @@
+.buttonLocation{
+  display: flex;
+    justify-content: center;
+    margin-top: 2em;
+}
+.headerCard{
+  display: flex;
+  justify-content: flex-start;
+}
+.outlineDiv{
+  padding:6em
+}
+.buttonStyle{
+  width: 5.5em;
+  height: 2em;
+  font-size: 2em;
+}
+@media screen and (max-width:900px) {
+
+  .outlineDiv{
+    padding:0em
+  }
+
+
+}

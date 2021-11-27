@@ -17,20 +17,20 @@
     <p-card >
       <div class="buttonRow">
         <div class="buttonWord">
-          <button pButton pRipple type="button" icon="pi pi-file" class="p-button-rounded p-button-danger buttonSize animate__animated animate__slideInDown"></button>
+          <button (click)="GoFormPage()" pButton pRipple type="button" icon="pi pi-file" class="p-button-rounded p-button-danger buttonSize animate__animated animate__slideInDown"></button>
           <p class="wordSize">กรอกแบบประเมิน</p>
         </div>
         <div class="buttonWord">
-          <button pButton pRipple type="button" icon="pi pi-chart-bar"
+          <button pButton pRipple type="button" icon="pi pi-chart-bar" (click)="GoToPp()"
             class="p-button-rounded p-button-danger buttonSize animate__animated animate__slideInDown"></button>
-          <p class="wordSize">นำข้อมูลวิเคราะห์</p>
+          <p class="wordSize">ผลลัพธ์การพยากรณ์</p>
         </div>
         <div class="buttonWord">
-          <button pButton pRipple type="button" icon="pi pi-cog" class="p-button-rounded  p-button-danger buttonSize animate__animated animate__slideInDown"></button>
-          <P class="wordSize">ตั้งค่าจำนวนการรับ</P>
+          <button pButton pRipple type="button" (click)="logout()" icon="pi pi-power-off" class="p-button-rounded  p-button-danger buttonSize animate__animated animate__slideInDown"></button>
+          <P class="wordSize">ออกจากระบบ</P>
         </div>
         <div class="buttonWord">
-          <button pButton pRipple type="button" icon="pi pi-question-circle"
+          <button (click)="GoHelpPage()" pButton pRipple type="button" icon="pi pi-question-circle"
             class="p-button-rounded p-button-danger buttonSize animate__animated animate__slideInDown"></button>
           <p class="wordSize">ช่วยเหลือ</p>
         </div>
