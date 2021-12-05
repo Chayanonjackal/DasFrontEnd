@@ -4,7 +4,7 @@ import { Component, OnInit } from '@angular/core';
 import { ConfirmationService, MessageService } from 'primeng/api';
 import { DialogService, DynamicDialogRef } from 'primeng/dynamicdialog';
 import { AuthService } from 'src/app/shared/services/auth.service';
-import * as FileSaver from 'file-saver';
+// import * as FileSaver from 'file-saver';
 
 @Component({
   selector: 'app-privateprediction',
@@ -104,14 +104,14 @@ export class PrivatepredictionComponent implements OnInit {
 //     FileSaver.saveAs(data, fileName + '_export_' + new Date().getTime() + EXCEL_EXTENSION);
 // }
 
-//   exportExcel(){
-//     import("xlsx").then(xlsx => {
-//       const worksheet = xlsx.utils.json_to_sheet(this.pps);
-//       const workbook = { Sheets: { 'data': worksheet }, SheetNames: ['data'] };
-//       const excelBuffer: any = xlsx.write(workbook, { bookType: 'xlsx', type: 'array' });
-//       this.saveAsExcelFile(excelBuffer, "products");
-//   });
+  exportExcel(){
+  //   import("xlsx").then(xlsx => {
+  //     const worksheet = xlsx.utils.json_to_sheet(this.pps);
+  //     const workbook = { Sheets: { 'data': worksheet }, SheetNames: ['data'] };
+  //     const excelBuffer: any = xlsx.write(workbook, { bookType: 'xlsx', type: 'array' });
+  //     this.saveAsExcelFile(excelBuffer, "products");
+  // });
 
-//   }
+  }
 
 }
