@@ -6,6 +6,11 @@
     </div>
     <br><br>
     <p-card>
+      <div >
+        <button type="button" pButton pRipple icon="pi pi-file-excel" (click)="exportExcel()" class="p-button-success p-mr-2 "  pTooltip="XLS" tooltipPosition="bottom"></button>
+
+      </div>
+      <br>
       <p-table responsiveLayout="scroll"  [scrollable]="true" [responsive]="false"  [value]="pps" [paginator]="true" [rows]="5" [rowsPerPageOptions]="[5,10,15,20,50,100]"
       [totalRecords]="recordCount"
       [pageLinks]="8" >

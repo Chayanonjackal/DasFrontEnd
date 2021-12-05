@@ -16,20 +16,20 @@ export class FormComponent implements OnInit {
     citizen_id: new FormControl(null, Validators.required),
     first_name_th: new FormControl(null, Validators.required),
     last_name_th: new FormControl(null, Validators.required),
-    priority: new FormControl(1, [Validators.required]),   //maining  ,Validators.minLength(1)
-    gpax: new FormControl(3.35, Validators.required),      //maining
-    pat1: new FormControl(123, Validators.required),      //maining
-    pat2: new FormControl(110, Validators.required),      //maining
+    priority: new FormControl(null, [Validators.required]),   //maining  ,Validators.minLength(1)
+    gpax: new FormControl(null, Validators.required),      //maining
+    pat1: new FormControl(null, Validators.required),      //maining
+    pat2: new FormControl(null, Validators.required),      //maining
     school_name: new FormControl(null, Validators.required),
     school_province_name: new FormControl(null, Validators.required),
-    credit_sum: new FormControl(95, Validators.required),  //maining
-    onet01: new FormControl(74.5, Validators.required), //maining
-    onet02: new FormControl(45, Validators.required), //maining
-    onet03: new FormControl(37.5, Validators.required), //maining
-    onet04: new FormControl(53.13, Validators.required), //maining
-    onet05: new FormControl(43.55, Validators.required), //maining
-    gat1_current: new FormControl(78.13, Validators.required), //maining
-    gat2_current: new FormControl(60, Validators.required), //maining
+    credit_sum: new FormControl(null, Validators.required),  //maining
+    onet01: new FormControl(null, Validators.required), //maining
+    onet02: new FormControl(null, Validators.required), //maining
+    onet03: new FormControl(null, Validators.required), //maining
+    onet04: new FormControl(null, Validators.required), //maining
+    onet05: new FormControl(null, Validators.required), //maining
+    gat1_current: new FormControl(null, Validators.required), //maining
+    gat2_current: new FormControl(null, Validators.required), //maining
     predic: new FormControl(null),
     scoredProbabilities: new FormControl(null),
     user_id: new FormControl(null)
