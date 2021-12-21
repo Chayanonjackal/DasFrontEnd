@@ -33,7 +33,22 @@ export const routes: Routes = [
         (m) => m.AdminModule
       ),
       canActivate:[AuthGuard]
+  },
+  {
+    path: 'publicform' ,
+    loadChildren:() =>
+      import('../programs/public-form/public-form.module').then(
+        (m) => m.PublicFormModule
+      )
+  },
+  {
+    path: 'finish' ,
+    loadChildren:() =>
+      import('../programs/finish/finish.module').then(
+        (m) => m.FinishModule
+      )
   }
+
   // {path: '' , component: LoginComponent}
   // { path: 'admin', component: AdminComponent },
   // {

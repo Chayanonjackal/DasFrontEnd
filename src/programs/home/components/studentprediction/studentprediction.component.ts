@@ -1,6 +1,5 @@
-import { PpinfoComponent } from './../ppinfo/ppinfo.component';
-import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { ConfirmationService, MessageService } from 'primeng/api';
 import { DialogService, DynamicDialogRef } from 'primeng/dynamicdialog';
 import { AuthService } from 'src/app/shared/services/auth.service';
@@ -8,21 +7,21 @@ import * as FileSaver from 'file-saver';
 import { ngxCsv } from 'ngx-csv';
 import { Table } from 'primeng/table'
 import { ViewChild } from '@angular/core';
+import { PpinfoComponent } from '../ppinfo/ppinfo.component';
 
 @Component({
-  selector: 'app-privateprediction',
-  templateUrl: './privateprediction.component.html',
-  styleUrls: ['./privateprediction.component.css']
+  selector: 'app-studentprediction',
+  templateUrl: './studentprediction.component.html',
+  styleUrls: ['./studentprediction.component.css']
 })
-export class PrivatepredictionComponent implements OnInit {
+export class StudentpredictionComponent implements OnInit {
 
   ref: DynamicDialogRef | undefined
   recordCount: number = 0;
-  pps: any
+  sps: any
   playload: any = {
     "user_id": ""
   }
-
   @ViewChild('dt') dt: Table | undefined;
 
   constructor(private http: HttpClient,
@@ -41,20 +40,17 @@ export class PrivatepredictionComponent implements OnInit {
     }
     this.auth.getProfile().subscribe((res: any) => {
       if (res) {
-        this.playload.user_id = res.data.id
-        console.log(this.playload);
-        this.http.post('/privateprediction/get-all-pp', this.playload, headerToken).subscribe((res: any) => {
+        // this.playload.user_id = res.data.id
+        // console.log(this.playload);
+        this.http.get('/studentprediction/get-all-sp', headerToken).subscribe((res: any) => {
           console.log(res);
-          this.pps = res
+          this.sps = res
         })
       } else {
         console.log("user not login");
 
       }
     })
-    // console.log(this.user_id);
-
-
   }
 
   applyFilterGlobal($event:any, stringVal:any) {
@@ -63,7 +59,7 @@ export class PrivatepredictionComponent implements OnInit {
 
 
 
-  infoDetail(pp: any) {
+  infoDetail(sp: any) {
 
         this.ref = this.dialogService.open(PpinfoComponent, {
           header: 'ข้อมูลนักเรียน',
@@ -71,34 +67,34 @@ export class PrivatepredictionComponent implements OnInit {
           contentStyle: {"max-height": "500px", "overflow": "auto"},
           baseZIndex: 10000,
           data:{
-            pp: pp
+            pp: sp
           }
       });
   }
 
-  deleteDataPp(pp_id: any) {
+  deleteDataPp(sp_id: any) {
     this.confirmationService.confirm({
       message: 'Do you want to delete this record?',
       header: 'Delete Confirmation',
       icon: 'pi pi-info-circle',
       accept: () => {
-        this.deletePP(pp_id)
+        this.deletePP(sp_id)
       },
 
   });
 
   }
 
-  deletePP(pp_id:any){
+  deletePP(sp_id:any){
     const token = localStorage.getItem('Token');
     const headerToken = {
       headers:new HttpHeaders({
         'Content-Type':'application/json',
         Authorization: `Bearer ${token}`
       }),
-      body: {pp_id:pp_id}
+      body: {sp_id:sp_id}
     }
-    this.http.delete('/privateprediction/delete-datapp',headerToken).subscribe((res:any) =>{
+    this.http.delete('/studentprediction/delete-datasp',headerToken).subscribe((res:any) =>{
       this.messageService.add({severity:'success', summary: res.message, detail: 'Delete success!'});
       window.location.reload();
     },err=>{
@@ -117,7 +113,7 @@ export class PrivatepredictionComponent implements OnInit {
 
   exportExcel(){
     import("xlsx").then(xlsx => {
-      const worksheet = xlsx.utils.json_to_sheet(this.pps);
+      const worksheet = xlsx.utils.json_to_sheet(this.sps);
       const workbook = { Sheets: { 'data': worksheet }, SheetNames: ['data'] };
       const excelBuffer: any = xlsx.write(workbook, { bookType: 'xlsx', type: 'array' });
       this.saveAsExcelFile(excelBuffer, "studentData");
@@ -137,10 +133,10 @@ export class PrivatepredictionComponent implements OnInit {
       noDownload: false,
       headers: ["pp_id", "citizen_id","first_name_th","last_name_th","priority","gpax","pat1",
     "pat2","school_name","school_province_name","credit_sum","onet01","onet02","onet03","onet04","onet05","gat1_current"
-  ,"gat2_current","predic","scoredProbabilities","user_id"]
+  ,"gat2_current","predic","scoredProbabilities"]
     };
 
-    new ngxCsv(this.pps, "StudentData",options);
+    new ngxCsv(this.sps, "StudentData",options);
 
   }
 

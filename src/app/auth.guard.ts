@@ -18,10 +18,14 @@ export class AuthGuard implements CanActivate {
 
   canActivate(): boolean  {
     this.authService.getProfile().subscribe((res:any)=>{
+      // if(this.router.url === '/publicform'){
+      //   return true
+      // }
+
       if(res.status === 200){
         if(res.data.role !== 'A' && this.router.url === '/admin'){
           this.router.navigate(['home/dashbord'])
-          return false
+          // return false
         }
         return true
       }

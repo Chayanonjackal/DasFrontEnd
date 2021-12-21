@@ -14,7 +14,7 @@ export class PpinfoComponent implements OnInit {
   constructor(public config: DynamicDialogConfig, private messageService: MessageService) { }
 
   ngOnInit(): void {
-    console.log(this.config.data.pp);
+    // console.log(this.config.data.pp);
     this.studentData = this.config.data.pp
   }
 

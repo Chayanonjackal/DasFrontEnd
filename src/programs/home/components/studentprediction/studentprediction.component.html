@@ -1,8 +1,9 @@
 <br>
+<br>
 <div class=" md:col-12 lg:col-12 sm:col-12 outlineDiv animate__animated  animate__fadeIn">
   <div>
     <div class="col-12 md:col-12 lg:col-12 sm:col-12 grid borderShadow">
-      <h1>ผลลัพธ์การพยากรณ์ที่อาจารย์กรอกข้อมูล</h1>
+      <h1>ผลลัพธ์การพยากรณ์ของนักเรียนที่กรอกข้อมูล</h1>
     </div>
     <br><br>
     <p-card>
@@ -15,7 +16,7 @@
       </div>
       <br>
       <p-table #dt responsiveLayout="scroll" [filterDelay]="0"  [globalFilterFields]="['first_name_th','predic']" [scrollable]="true"
-      [responsive]="false"  [value]="pps" [paginator]="true" [rows]="5" [rowsPerPageOptions]="[5,10,15,20,50,100]"
+      [responsive]="false"  [value]="sps" [paginator]="true" [rows]="5" [rowsPerPageOptions]="[5,10,15,20,50,100]"
       [totalRecords]="recordCount"
       [pageLinks]="8" >
 
@@ -42,16 +43,16 @@
 
            </tr>
        </ng-template>
-       <ng-template pTemplate="body" let-pp let-columns="columns">
+       <ng-template pTemplate="body" let-sp let-columns="columns">
            <tr>
             <!-- {{pp.user_id}} -->
-              <td class="textDataSize">{{pp.first_name_th}}</td>
-              <td class="textDataSize">{{pp.last_name_th}}</td>
-             <td class="textDataSize">{{pp.predic}}</td>
+              <td class="textDataSize">{{sp.first_name_th}}</td>
+              <td class="textDataSize">{{sp.last_name_th}}</td>
+             <td class="textDataSize">{{sp.predic}}</td>
 
              <!-- (click)="confirmEdit(user.user_id)" -->
-             <td><button pButton pRipple (click)="infoDetail(pp)" type="button" icon="pi pi-info" class="p-button-rounded p-button-info p-button-outlined buttonstyle"></button></td>
-             <td><button pButton pRipple (click)="deleteDataPp(pp.pp_id)" type="button" icon="pi pi-times" class="p-button-rounded p-button-danger p-button-outlined buttonstyle"></button></td>
+             <td><button pButton pRipple (click)="infoDetail(sp)" type="button" icon="pi pi-info" class="p-button-rounded p-button-info p-button-outlined buttonstyle"></button></td>
+             <td><button pButton pRipple (click)="deleteDataPp(sp.sp_id)" type="button" icon="pi pi-times" class="p-button-rounded p-button-danger p-button-outlined buttonstyle"></button></td>
            </tr>
        </ng-template>
      </p-table>

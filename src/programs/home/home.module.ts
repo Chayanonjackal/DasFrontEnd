@@ -27,6 +27,9 @@ import {DynamicDialogModule} from 'primeng/dynamicdialog';
 import {ConfirmDialogModule} from 'primeng/confirmdialog';
 import {DividerModule} from 'primeng/divider';
 
+import { StudentpredictionComponent } from './components/studentprediction/studentprediction.component';
+
+
 @NgModule({
   declarations: [
     HomeComponent,
@@ -36,7 +39,8 @@ import {DividerModule} from 'primeng/divider';
     HelpComponent,
     FormComponent,
     PrivatepredictionComponent,
-    PpinfoComponent
+    PpinfoComponent,
+    StudentpredictionComponent
   ],
   imports: [
     CommonModule,

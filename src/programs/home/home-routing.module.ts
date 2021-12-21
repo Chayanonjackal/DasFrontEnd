@@ -1,3 +1,5 @@
+import { StudentpredictionComponent } from './components/studentprediction/studentprediction.component';
+
 import { PrivatepredictionComponent } from './components/privateprediction/privateprediction.component';
 import { FormComponent } from './components/form/form.component';
 
@@ -32,6 +34,10 @@ const routes: Routes = [
      {
       path:'privateprediction',
       component: PrivatepredictionComponent
+     },
+     {
+      path:'studentprediction',
+      component: StudentpredictionComponent
      },
      {
        path:'**',

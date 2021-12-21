@@ -9,12 +9,65 @@
         <img class=" md:col-6 lg:col-6 sm:col-6  img" src="../../assets/img/formMan.png" alt="" width="auto"
           height="auto">
       </ng-template>
-      <h1 class="">กรอกแบบฟอร์มเพื่อทำการเก็บข้อมูลนักเรียนลงระบบ และทำการประเมินสำหรับอาจารย์</h1>
+      <!-- <h1 class="">กรอกแบบฟอร์มเพื่อทำการเก็บข้อมูลนักเรียนลงระบบ และทำการประเมินสำหรับอาจารย์</h1> -->
+      <!-- <h1 class="">กรอกแบบฟอร์มเพื่อทำการพยากรณ์ส่วนตัวของอาจารย์</h1> -->
+    </p-card>
+  </div>
+
+  <div>
+    <p-card  >
+      <ng-template pTemplate="header">
+        <h1 style="padding-top: 1em; padding-left: 1em;" class="">กรอกแบบฟอร์มเพื่อทำการเก็บข้อมูลนักเรียนลงระบบ และทำการประเมินสำหรับอาจารย์</h1>
+      </ng-template>
+      <div class="buttonRow">
+        <div class="buttonWord">
+          <button (click)="GoPublicForm()" pButton pRipple type="button" icon="pi pi-file" class="p-button-rounded p-button-danger buttonSize animate__animated animate__slideInDown"></button>
+          <p class="wordSize">กรอกแบบประเมิน</p>
+        </div>
+        <div class="buttonWord">
+          <button pButton pRipple type="button" icon="pi pi-chart-bar" (click)="GoToSp()"
+            class="p-button-rounded p-button-danger buttonSize animate__animated animate__slideInDown"></button>
+          <p class="wordSize">ผลลัพธ์การพยากรณ์</p>
+        </div>
+        <div class="buttonWord">
+          <button pButton pRipple type="button"  icon="pi pi-file-excel" class="p-button-rounded  p-button-danger buttonSize animate__animated animate__slideInDown"></button>
+          <P class="wordSize">นำข้อมูลเข้าผ่าน Excel</P>
+        </div>
+        <!-- <div class="buttonWord">
+          <button (click)="GoHelpPage()" pButton pRipple type="button" icon="pi pi-question-circle"
+            class="p-button-rounded p-button-danger buttonSize animate__animated animate__slideInDown"></button>
+          <p class="wordSize">ช่วยเหลือ</p>
+        </div> -->
+      </div>
+    </p-card>
+  </div>
+
+
+
+  <div>
+    <p-card>
+      <ng-template pTemplate="header">
+        <img class=" md:col-6 lg:col-6 sm:col-6  img" src="../../../../assets/img/search1.png" alt="" width="auto"
+          height="auto">
+      </ng-template>
+      <!-- <h1 class="">กรอกแบบฟอร์มเพื่อทำการเก็บข้อมูลนักเรียนลงระบบ และทำการประเมินสำหรับอาจารย์</h1> -->
+    </p-card>
+  </div>
+  <div>
+    <p-card>
+      <ng-template pTemplate="header">
+        <img class=" md:col-6 lg:col-6 sm:col-6  img" src="../../../../assets/img/tcaspic4.png" alt="" width="auto"
+          height="auto">
+      </ng-template>
+      <!-- <h1 class="">กรอกแบบฟอร์มเพื่อทำการเก็บข้อมูลนักเรียนลงระบบ และทำการประเมินสำหรับอาจารย์</h1> -->
     </p-card>
   </div>
 
   <div>
     <p-card >
+      <ng-template pTemplate="header">
+        <h1 style="padding-top: 1em; padding-left: 1em;" class="">กรอกแบบฟอร์มเพื่อทำการพยากรณ์ส่วนตัวของอาจารย์</h1>
+      </ng-template>
       <div class="buttonRow">
         <div class="buttonWord">
           <button (click)="GoFormPage()" pButton pRipple type="button" icon="pi pi-file" class="p-button-rounded p-button-danger buttonSize animate__animated animate__slideInDown"></button>
@@ -37,57 +90,17 @@
       </div>
     </p-card>
   </div>
-  <div>
-    <p-card>
-      <ng-template pTemplate="header">
-        <img class=" md:col-6 lg:col-6 sm:col-6  img" src="../../../../assets/img/search1.png" alt="" width="auto"
-          height="auto">
-      </ng-template>
-      <!-- <h1 class="">กรอกแบบฟอร์มเพื่อทำการเก็บข้อมูลนักเรียนลงระบบ และทำการประเมินสำหรับอาจารย์</h1> -->
-    </p-card>
-  </div>
-  <div>
-    <p-card>
-      <ng-template pTemplate="header">
-        <img class=" md:col-6 lg:col-6 sm:col-6  img" src="../../../../assets/img/tcaspic4.png" alt="" width="auto"
-          height="auto">
-      </ng-template>
-      <!-- <h1 class="">กรอกแบบฟอร์มเพื่อทำการเก็บข้อมูลนักเรียนลงระบบ และทำการประเมินสำหรับอาจารย์</h1> -->
-    </p-card>
-  </div>
+
   <div >
     <p-card >
       <ng-template pTemplate="header" >
-        <h1>จำนวนนักเรียนในแต่ละภูมิภาคที่ยื่นเข้ามาในสาขาวิทยาการคอมพิวเตอร์</h1>
+        <h1>จำนวนนักเรียนในแต่ละโรงเรียนที่ยื่นเข้ามาในสาขาวิทยาการคอมพิวเตอร์</h1>
       </ng-template>
       <div style="display: flex; justify-content: center;">
         <p-chart type="pie" class="chartStyle" [data]="data" [options]="chartOptions"  [style]="{'width': '50%'}" ></p-chart>
       </div>
       <div class="md:col-12 lg:col-12 sm:col-12  ">
-        <p-table [value]="zones" responsiveLayout="scroll">
-          <ng-template pTemplate="header">
-              <tr>
-                  <th>ภาค</th>
-                  <th>จำนวน</th>
-              </tr>
-          </ng-template>
-          <ng-template pTemplate="body" let-zone>
-              <tr>
-                  <td>{{zone.name}}</td>
-                  <td>{{zone.count}}</td>
-              </tr>
-          </ng-template>
-      </p-table>
-      </div>
-    </p-card>
-  </div>
-  <div>
-    <p-card>
-      <ng-template pTemplate="header">
-        <h1>จำนวนนักเรียนในแต่ละโรงเรียนที่ยื่นเข้ามาในสาขาวิทยาการคอมพิวเตอร์</h1>
-      </ng-template>
-      <div class="md:col-12 lg:col-12 sm:col-12  ">
-        <p-table [value]="schools" responsiveLayout="scroll">
+        <p-table [value]="schools" [scrollable]="true" scrollHeight="400px" responsiveLayout="scroll">
           <ng-template pTemplate="header">
               <tr>
                   <th>โรงเรียน</th>
@@ -98,6 +111,34 @@
               <tr>
                   <td>{{school.name}}</td>
                   <td>{{school.count}}</td>
+              </tr>
+          </ng-template>
+      </p-table>
+      </div>
+    </p-card>
+  </div>
+  <div>
+    <p-card>
+      <ng-template pTemplate="header">
+        <h1>จำนวนนักเรียนในแต่ละจังหวัดของโรงเรียนที่ยื่นเข้ามาในสาขาวิทยาการคอมพิวเตอร์</h1>
+      </ng-template>
+      <div style="display: flex; justify-content: center;">
+        <!-- <p-chart type="pie" class="chartStyle" [data]="data" [options]="chartOptions"  [style]="{'width': '50%'}" ></p-chart>
+         -->
+         <p-chart type="doughnut" [data]="dataProvince" [options]="chartOptions" [style]="{'width': '50%'}"></p-chart>
+      </div>
+      <div class="md:col-12 lg:col-12 sm:col-12  ">
+        <p-table [value]="schoolProvinces" [scrollable]="true" scrollHeight="400px" responsiveLayout="scroll">
+          <ng-template pTemplate="header">
+              <tr>
+                  <th>จังหวัด</th>
+                  <th>จำนวน</th>
+              </tr>
+          </ng-template>
+          <ng-template pTemplate="body" let-schoolProvince>
+              <tr>
+                  <td>{{schoolProvince.name}}</td>
+                  <td>{{schoolProvince.count}}</td>
               </tr>
           </ng-template>
       </p-table>
