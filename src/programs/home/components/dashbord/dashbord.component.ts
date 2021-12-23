@@ -56,7 +56,11 @@ export class DashbordComponent implements OnInit {
           for (let index = 0; index < this.studentData.length; index++) {
             this.schoolname[index] = this.studentData[index].school_name;
           }
+
+
           this.filterSchoolName = this.schoolname.filter((item, pos) => this.schoolname.indexOf(item) === pos) //ได้หัวคอลลัมแล้ว
+
+
 
           for (let index = 0; index < this.filterSchoolName.length; index++) {
             this.purlSchoolName = this.schoolname.filter(schoolname => schoolname == this.filterSchoolName[index])
@@ -116,7 +120,10 @@ export class DashbordComponent implements OnInit {
           for (let index = 0; index < this.studentData.length; index++) {
             this.schoolProvinceName[index] = this.studentData[index].school_province_name;
           }
-          this.filterschoolProvinceName = this.schoolProvinceName.filter((item, pos) => this.schoolname.indexOf(item) === pos) //ได้หัวคอลลัมแล้ว
+
+          this.filterschoolProvinceName = this.schoolProvinceName.filter((item, pos) => this.schoolProvinceName.indexOf(item) === pos) //ได้หัวคอลลัมแล้ว
+
+
 
           for (let index = 0; index < this.filterschoolProvinceName.length; index++) {
             this.purlSchoolProvinceName = this.schoolProvinceName.filter(schoolprovincename => schoolprovincename == this.filterschoolProvinceName[index])
