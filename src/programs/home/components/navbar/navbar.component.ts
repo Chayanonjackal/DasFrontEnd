@@ -1,8 +1,9 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { PrimeNGConfig } from 'primeng/api';
 import { AuthService } from 'src/app/shared/services/auth.service';
 
+import { MessageService, PrimeNGConfig } from 'primeng/api';
+import { ConfirmationService } from 'primeng/api';
 
 @Component({
   selector: 'app-navbar',
@@ -12,8 +13,10 @@ import { AuthService } from 'src/app/shared/services/auth.service';
 export class NavbarComponent implements OnInit {
   constructor(
     private router: Router,
+    private auth: AuthService,
     private primeNGConfig: PrimeNGConfig,
-    private auth: AuthService
+    private confirmationService: ConfirmationService,
+    private messageService: MessageService
   ) {}
 
   role: any;
@@ -56,5 +59,26 @@ export class NavbarComponent implements OnInit {
   onLogout() {
     localStorage.clear();
     this.router.navigate(['login']);
+  }
+
+  onConfirm(event: Event) {
+    // console.log(event);
+    this.confirmationService.confirm({
+      target: event.target!,
+      message: 'ยืนยันการออกจากระบบ?',
+      icon: 'pi pi-power-off',
+      acceptLabel: "ออกจากระบบ",
+      accept: () => {
+        //confirm action
+        this.messageService.add({
+          severity: 'success',
+          detail: 'ออกจากระบบสำเร็จ',
+        });
+      },
+      rejectLabel: "ยกเลิก",
+      reject: () => {
+        //reject action
+      },
+    });
   }
 }
