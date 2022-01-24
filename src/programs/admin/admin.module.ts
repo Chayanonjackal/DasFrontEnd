@@ -13,6 +13,9 @@ import { ReactiveFormsModule } from '@angular/forms';
 import {InputTextModule} from 'primeng/inputtext';
 import {RadioButtonModule} from 'primeng/radiobutton';
 import { AddFormComponent } from './components/add-form/add-form.component';
+import { EditPasswordFormComponent } from './components/edit-password-form/edit-password-form.component';
+import { PasswordModule } from 'primeng/password';
+
 
 
 
@@ -21,6 +24,7 @@ import { AddFormComponent } from './components/add-form/add-form.component';
     AdminComponent,
     EditFormComponent,
     AddFormComponent,
+    EditPasswordFormComponent,
 
   ],
   imports: [
@@ -33,7 +37,8 @@ import { AddFormComponent } from './components/add-form/add-form.component';
     DynamicDialogModule,
     ReactiveFormsModule,
     InputTextModule,
-    RadioButtonModule
+    RadioButtonModule,
+    PasswordModule
   ]
 })
 export class AdminModule { }
