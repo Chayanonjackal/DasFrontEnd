@@ -26,6 +26,7 @@ import { PpinfoComponent } from './components/ppinfo/ppinfo.component';
 import {DynamicDialogModule} from 'primeng/dynamicdialog';
 import {ConfirmDialogModule} from 'primeng/confirmdialog';
 import {DividerModule} from 'primeng/divider';
+import { AccordionModule } from 'primeng/accordion';
 
 import { StudentpredictionComponent } from './components/studentprediction/studentprediction.component';
 
@@ -40,7 +41,7 @@ import { StudentpredictionComponent } from './components/studentprediction/stude
     FormComponent,
     PrivatepredictionComponent,
     PpinfoComponent,
-    StudentpredictionComponent
+    StudentpredictionComponent,
   ],
   imports: [
     CommonModule,
@@ -60,7 +61,8 @@ import { StudentpredictionComponent } from './components/studentprediction/stude
     ToastModule,
     DynamicDialogModule,
     ConfirmDialogModule,
-    DividerModule
-  ]
+    DividerModule,
+    AccordionModule,
+  ],
 })
-export class HomeModule { }
+export class HomeModule {}
