@@ -28,6 +28,8 @@ import {ConfirmDialogModule} from 'primeng/confirmdialog';
 import {DividerModule} from 'primeng/divider';
 
 import { StudentpredictionComponent } from './components/studentprediction/studentprediction.component';
+import {DropdownModule} from 'primeng/dropdown';
+import {InputNumberModule} from 'primeng/inputnumber';
 
 
 @NgModule({
@@ -60,7 +62,9 @@ import { StudentpredictionComponent } from './components/studentprediction/stude
     ToastModule,
     DynamicDialogModule,
     ConfirmDialogModule,
-    DividerModule
+    DividerModule,
+    DropdownModule,
+    InputNumberModule
   ]
 })
 export class HomeModule { }

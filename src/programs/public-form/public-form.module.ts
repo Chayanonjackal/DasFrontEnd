@@ -19,6 +19,8 @@ import { ToastModule } from 'primeng/toast';
 import { DynamicDialogModule } from 'primeng/dynamicdialog';
 import { ConfirmDialogModule } from 'primeng/confirmdialog';
 import { DividerModule } from 'primeng/divider';
+import {InputNumberModule} from 'primeng/inputnumber';
+import {DropdownModule} from 'primeng/dropdown';
 
 
 
@@ -46,7 +48,9 @@ import { DividerModule } from 'primeng/divider';
     ToastModule,
     DynamicDialogModule,
     ConfirmDialogModule,
-    DividerModule
+    DividerModule,
+    InputNumberModule,
+    DropdownModule
   ]
 })
 export class PublicFormModule { }

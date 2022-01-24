@@ -36,12 +36,23 @@ export class FormComponent implements OnInit {
   })
 
   user_id:any = 0
+  provinces: any[] = [];
+  selectedProvince: any;
 
   constructor(private http: HttpClient, private fb: FormBuilder,
     private auth: AuthService,
     private messageService : MessageService) { }
 
   ngOnInit(): void {
+    const url = 'https://thaiaddressapi-thaikub.herokuapp.com/v1/thailand/provinces'
+    this.http.get(url).subscribe((res:any) => {
+      if(res){
+        // console.log(res.data);
+        this.provinces = res.data
+
+      }
+    })
+
     this.auth.getProfile().subscribe((res:any)=>{
       if(res){
         this.user_id = res.data.id
@@ -52,7 +63,8 @@ export class FormComponent implements OnInit {
     })
 
   }
-  submitLogin() {
+
+  submitForm() {
     const token = "MbYkztaXnl+DazJZVZDBQEwPPpSRTK3qv9WF2tdIAE0xhFtbneqBGV6+gx0XLhpqjngjh3cVG6tnfqkflEta9A==";
     const header = {
       headers: new HttpHeaders({
@@ -125,9 +137,15 @@ export class FormComponent implements OnInit {
         // need to filter นาย นาง in FirstName and filter school , province school about โรงเรียน , จังหวัด  api จังหวัด
         this.predicForm.get('citizen_id')?.setValue(alreadyToUse)
         //user_id get
+        const storeProvince =this.predicForm.get('school_province_name')?.value.province
+        this.predicForm.get('school_province_name')?.setValue(storeProvince)
+        //Cut string "โรงเรียน"
+        var str = this.predicForm.get('school_name')?.value
+        var strReplace = str.replace("โรงเรียน","")
+        this.predicForm.get('school_name')?.setValue(strReplace)
+
         this.predicForm.get('user_id')?.setValue(this.user_id)
         const playload1:any =this.predicForm.value
-        // console.log(playload1);
 
         this.http.post('/privateprediction/store',playload1,headerToken).subscribe((resopnse:any)=>{
           // console.log(resopnse);

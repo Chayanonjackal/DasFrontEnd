@@ -36,13 +36,29 @@ export class PublicFormComponent implements OnInit {
 
   user_id:any = 0
   hindbutton:boolean = true
+  provinces: any[] = [];
+  selectedProvince: any;
+
 
   constructor(private http: HttpClient, private fb: FormBuilder,
     private auth: AuthService,
     private messageService : MessageService,
-    private router:Router) { }
+    private router:Router) {
+
+
+
+    }
 
   ngOnInit(): void {
+    const url = 'https://thaiaddressapi-thaikub.herokuapp.com/v1/thailand/provinces'
+    this.http.get(url).subscribe((res:any) => {
+      if(res){
+        // console.log(res.data);
+        this.provinces = res.data
+
+      }
+    })
+
     const token = localStorage.getItem('Token');
     if(token == null || token == undefined){
       this.hindbutton = false ;
@@ -51,7 +67,7 @@ export class PublicFormComponent implements OnInit {
     }
   }
 
-  submitLogin() {
+  submitForm() {
     const token = "MbYkztaXnl+DazJZVZDBQEwPPpSRTK3qv9WF2tdIAE0xhFtbneqBGV6+gx0XLhpqjngjh3cVG6tnfqkflEta9A==";
     const header = {
       headers: new HttpHeaders({
@@ -100,23 +116,11 @@ export class PublicFormComponent implements OnInit {
       },
       "GlobalParameters": {}
     }
-    // console.log(playload);
     this.http.post(url, playload, header).subscribe((res: any) => {
-      // console.log(res);
       if (res) {
-        // console.log(res.Results.output1.value.Values[0][13]);
         this.predicForm.get('predic')?.setValue(res.Results.output1.value.Values[0][13])
         this.predicForm.get('scoredProbabilities')?.setValue(res.Results.output1.value.Values[0][14])
-        // console.log(this.predicForm.controls['predic'].value);
-        // console.log(this.predicForm);
-        // this.predicForm.touched
         const token1 = localStorage.getItem('Token');
-        // const headerToken = {
-        //   headers: new HttpHeaders({
-        //     'Content-Type': 'application/json',
-        //     Authorization: `Bearer ${token1}`
-        //   })
-        // }
         //splitStrong
         var splitString  = this.predicForm.get('citizen_id')?.value
         var pureString = splitString.split("-")
@@ -124,18 +128,18 @@ export class PublicFormComponent implements OnInit {
         // need to filter นาย นาง in FirstName and filter school , province school about โรงเรียน , จังหวัด  api จังหวัด
         this.predicForm.get('citizen_id')?.setValue(alreadyToUse)
         //user_id get
-        // this.predicForm.get('user_id')?.setValue(this.user_id)
-        const playload1:any =this.predicForm.value
-        // console.log(playload1);
+        const storeProvince =this.predicForm.get('school_province_name')?.value.province
+        this.predicForm.get('school_province_name')?.setValue(storeProvince)
+        //Cut string "โรงเรียน"
+        var str = this.predicForm.get('school_name')?.value
+        var strReplace = str.replace("โรงเรียน","")
+        this.predicForm.get('school_name')?.setValue(strReplace)
 
+        const playload1:any =this.predicForm.value
+        console.log(playload1);
         this.http.post('/studentprediction/store',playload1).subscribe((resopnse:any)=>{
-          // console.log(resopnse);
           if(resopnse){
             this.messageService.add({severity:'success', summary: resopnse.message, detail:resopnse.message});
-            // setTimeout(function(){
-            //   location.reload();
-            // }, 500);
-            // window.location.reload();
             this.router.navigate(['finish'])
 
           }else{
@@ -146,8 +150,6 @@ export class PublicFormComponent implements OnInit {
 
       } else {
         //no res
-        console.log('no res');
-
       }
     })
   }
