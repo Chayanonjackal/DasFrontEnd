@@ -1,4 +1,33 @@
-<div class="grid navColor">
+<div class="nav-color midlogo md:col-12 lg:col-12 sm:col-12">
+  <div class="menu-group">
+    <img
+      (click)="GoHomePage()"
+      id="logo-img"
+      src="../../../../../assets/img/logo-noborder.png"
+      alt="logo"
+    />
+    <div pRipple (click)="GoHomePage()" class="rad bolder px-5 py-3">หน้าแรก</div>
+    <div pRipple (click)="GoAboutPage()" class="rad px-5 py-3">เกี่ยวกับ</div>
+    <div pRipple (click)="GotoHelp()" class="rad px-5 py-3">ช่วยเหลือ</div>
+    <div pRipple (click)="GotoForm()" class="rad px-5 py-3">
+      ฟอร์มการประเมิน
+    </div>
+    <div
+      pRipple
+      *ngIf="role == 'A'"
+      (click)="GotoAdmin()"
+      class="admin rad px-5 py-3"
+    >
+      ผู้ดูแลระบบ
+    </div>
+  </div>
+
+  <div class="account-logo" (click)="onLogout()">
+    <button pButton pRipple type="button" icon="pi pi-sign-out" class="p-button-rounded p-button-danger"></button>
+  </div>
+</div>
+
+<!-- <div class="grid navColor">
   <div class=" md:col-12 lg:col-12 sm:col-12 midlogo">
       <div pRipple  (click)="GoHomePage()" class="home" >HOME</div>
       <div pRipple (click)="GoAboutPage()" class="about">ABOUT</div>
@@ -8,5 +37,4 @@
       <div pRipple *ngIf="role == 'A'" (click)="GotoAdmin()"  class="admin">ADMIN</div>
       <div pRipple *ngIf="role == 'T'" (click)="GotoHelp()"  class="admin">HELP</div>
     </div>
-</div>
-
+</div> -->

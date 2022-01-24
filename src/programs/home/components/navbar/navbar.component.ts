@@ -7,49 +7,54 @@ import { AuthService } from 'src/app/shared/services/auth.service';
 @Component({
   selector: 'app-navbar',
   templateUrl: './navbar.component.html',
-  styleUrls: ['./navbar.component.css']
+  styleUrls: ['./navbar.component.css'],
 })
 export class NavbarComponent implements OnInit {
+  constructor(
+    private router: Router,
+    private primeNGConfig: PrimeNGConfig,
+    private auth: AuthService
+  ) {}
 
-  constructor(private router: Router,private primeNGConfig:PrimeNGConfig,private auth: AuthService) { }
-
-  role :any;
+  role: any;
 
   ngOnInit(): void {
     this.primeNGConfig.ripple = true;
-    this.auth.getProfile().subscribe((res :any)=>{
-      if(res){
-        this.role = res.data.role
-      }else{
-        console.log("user no role");
-
+    this.auth.getProfile().subscribe((res: any) => {
+      if (res) {
+        this.role = res.data.role;
+      } else {
+        console.log('user no role');
       }
-
-    })
+    });
   }
 
-  GoHomePage(){
-    this.router.navigate(['home/dashbord'])
+  GoHomePage() {
+    this.router.navigate(['home/dashbord']);
   }
 
-  GotoAdmin(){
-    if(this.role == 'A'){
-      this.router.navigate(['admin'])
+  GotoAdmin() {
+    if (this.role == 'A') {
+      this.router.navigate(['admin']);
       // console.log(this.router.url);
-    }else{
+    } else {
       //do nothing
     }
   }
 
-  GotoHelp(){
-    this.router.navigate(['home/help'])
+  GotoHelp() {
+    this.router.navigate(['home/help']);
   }
 
-  GoAboutPage(){
-    this.router.navigate(['home/about'])
+  GoAboutPage() {
+    this.router.navigate(['home/about']);
   }
-  GotoForm(){
-    this.router.navigate(['home/form'])
+  GotoForm() {
+    this.router.navigate(['home/form']);
   }
 
+  onLogout() {
+    localStorage.clear();
+    this.router.navigate(['login']);
+  }
 }
