@@ -8,10 +8,11 @@
   </div>
 
   <div class="grid grid-nogutter align-items-center justify-content-center">
-    <div
+    <form
       class="md:col-3 lg:col-4 sm:col-6 shadow-4 px-6 py-5"
       id="box-login"
-      [formGroup]="userForm"
+      [formGroup]="loginForm"
+      (ngSubmit)="submit()"
     >
       <h1 class="my-2 text-7xl animate__animated animate__fadeInRight">
         Login
@@ -46,26 +47,30 @@
         />
       </div>
       <!-- <p class="ForgotPassword animate__animated animate__fadeInRight">Forgot password?</p> -->
-      <div class="buttonPosition animate__animated animate__fadeInUp mt-5 mb-4">
+      <div class="buttonPosition animate__animated animate__fadeInUp mt-5 mb-2">
         <button
           pButton
           pRipple
-          type="button"
+          type="submit"
           label="Log in"
-          (click)="submit()"
           class="p-button-danger buttonStyle"
         ></button>
-        <!-- <div class="buttonColGap">
-            <p (click)="onCancel()" class="">Cancel</p>
-          </div> -->
+      </div>
+      <div class="buttonPosition animate__animated animate__fadeInUp mt-2 mb-3.6" (click)="cancle()">
+        <button
+          pButton
+          pRipple
+          type="reset"
+          label="Cancel"
+          class="p-button-warning buttonStyle"
+        ></button>
       </div>
       <!-- <div class="keep-login">Keep me logged in</div> -->
-    </div>
+    </form>
   </div>
 </div>
 
 <p-toast position="bottom-right"></p-toast>
-
 
 <!-- <div class="grid navColor">
 
