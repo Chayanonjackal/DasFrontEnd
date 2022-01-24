@@ -13,41 +13,41 @@ import {MessageService} from 'primeng/api';
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
-  styleUrls: ['./login.component.css']
+  styleUrls: ['./login.component.css'],
 })
 export class LoginComponent implements OnInit {
   validation: number = 0;
-
 
   constructor(
     private http: HttpClient,
     private route: ActivatedRoute,
     private router: Router,
     private auth: AuthService,
-    private messageService : MessageService
-    ) { }
+    private messageService: MessageService
+  ) {}
 
-  userForm = new FormGroup({
+  loginForm = new FormGroup({
     user_name: new FormControl(null),
-    password: new FormControl(null)
-  })
+    password: new FormControl(null),
+  });
 
-  ngOnInit(): void {
-
-  }
+  ngOnInit(): void {}
 
   submit() {
-    const playload = this.userForm.value
-   this.auth.login(playload).subscribe((res :any) =>{
-    this.messageService.add({severity:'info', summary: res.message, detail:res.message});
-    // setTimeout(function(){} ,2000) ;
-   })
+    const playload = this.loginForm.value;
+    this.auth.login(playload).subscribe((res: any) => {
+      this.messageService.add({
+        severity: 'info',
+        summary: res.message,
+        detail: res.message,
+      });
+      // setTimeout(function(){} ,2000) ;
+    });
   }
 
-  cancle(){
-        this.userForm.reset()
+  cancle() {
+    this.loginForm.reset();
   }
-
 }
 
 

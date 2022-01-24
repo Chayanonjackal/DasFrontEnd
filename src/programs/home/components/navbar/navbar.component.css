@@ -1,38 +1,45 @@
-.navColor{
-  background: #B00000;
-  height: 3.5em;
-  /* display: flex;
-  justify-content: center; */
+.nav-color {
+  background: #a30000;
+  height: 3.3rem;
 }
+
 .midlogo {
   display: flex;
-  justify-content: space-evenly;
+  justify-content: space-between;
+  align-items: center;
+
   padding: 0px;
-}
-.home{
-  padding-top: 1em;
-  font-size: 1.25em;
+  min-width: 100vmin;
+
   color: white;
-  /* border-radius: 5em; */
+  font-size: 1.5rem;
 }
-.about{
-  padding-top: 1em;
-  font-size: 1.25em;
-  color: white;
+
+.menu-group {
+  display: flex;
+  justify-content: space-around;
+  align-content: center;
+  align-items: center;
+  min-width: 800px;
+
+  cursor: pointer;
 }
-.form{
-  padding-top: 1em;
-  font-size: 1.25em;
-  color: white;
+
+#logo-img {
+  width: 6rem;
+  margin-top: 0.5rem;
 }
-.admin{
-  padding-top: 1em;
-  font-size: 1.25em;
+
+.account-logo {
+  margin: auto 2rem;
+}
+
+#user-icon-home {
+  font-size: 2rem;
   color: white;
 }
 
 @media screen and (max-width: 900px) {
-
   .logo {
     display: none;
   }
@@ -42,11 +49,8 @@
     padding: 0px;
     column-gap: 2em;
   }
-
-
 }
 @media screen and (max-width: 425px) {
-
   .logo {
     display: none;
   }
@@ -57,6 +61,4 @@
     column-gap: 2em;
     margin-left: 2.5em;
   }
-
-
 }
