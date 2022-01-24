@@ -23,6 +23,7 @@ export class FinishComponent implements OnInit {
     // if(this.pagecheck == false){
     //   this.refashPage()
     // }
+    console.clear();
   }
 
   refashPage(){
