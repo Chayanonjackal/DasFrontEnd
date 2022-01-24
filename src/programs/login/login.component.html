@@ -6,7 +6,7 @@
       <!-- เขียนให้เอารูปออกเมื่อเป็น ทรศ. แล้วก็ให้ช่องใส่ข้อความเป็น col-12 เมื่อเป็นทรศ. -->
       <img class="col-6 md:col-6 lg:col-6 sm:col-6 animate__animated animate__fadeInDown img"
         src="../../assets/img/loginPicturex2.png" alt="" width="auto" height="auto">
-      <div class=" md:col-6 lg:col-6 sm:col-12 movealltext" [formGroup]="userForm">
+      <form class=" md:col-6 lg:col-6 sm:col-12 movealltext" [formGroup]="userForm" (ngSubmit)="submit()">
         <h1 class="SIGEIN animate__animated animate__fadeInRight">SIGN IN</h1>
         <h1 class="forteacher animate__animated animate__fadeInRight">*สำหรับอาจารย์ และผู้ดูแลระบบ</h1>
         <br><br><br><br>
@@ -19,7 +19,7 @@
         <!-- <p class="ForgotPassword animate__animated animate__fadeInRight">Forgot password?</p> -->
         <div class="buttonPosition animate__animated animate__fadeInUp">
           <div class="buttonColGap">
-            <button pButton pRipple type="button" label="SIGN IN" (click)="submit()"
+            <button pButton pRipple type="submit" label="SIGN IN"
               class="p-button-rounded p-button-success buttonStyle"></button>
           </div>
           <div class="buttonColGap">
@@ -28,7 +28,7 @@
           </div>
 
         </div>
-      </div>
+      </form>
 
     </div>
   </div>
