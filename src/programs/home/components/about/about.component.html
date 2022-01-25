@@ -1,4 +1,92 @@
-<br>
+<div
+  class="md:col-12 lg:col-12 sm:col-12 outlineDiv animate__animated animate__fadeIn"
+>
+  <div class="container rad">
+    <div class="con-info rad">
+      <div class="f-k2d text-4xl animate__animated animate__zoomIn">
+        Contact Infomation
+      </div>
+      <div class="f-k2d text-base m-1 animate__animated animate__zoomIn">
+        There are many variations of passages of Lorem Ipsum available, but the
+        majority have suffered alteration in some form
+      </div>
+      <div class="container-phone animate__animated animate__zoomIn">
+        <div class="pl-2"><i class="pi pi-phone text-4xl"></i></div>
+        <div class="text-3xl">+6680 060 3100</div>
+      </div>
+      <div class="container-phone animate__animated animate__zoomIn">
+        <div class="pl-2"><i class="pi pi-envelope text-4xl"></i></div>
+        <div class="text-3xl">aimphaka.l@gmail.com</div>
+      </div>
+      <div class="container-phone animate__animated animate__zoomIn">
+        <div class="pl-2"><i class="pi pi-map-marker text-4xl"></i></div>
+        <div class="text-3xl">24/106 Bangkok</div>
+      </div>
+      <div class="container-phone animate__animated animate__zoomIn">
+        <div class="pl-2"><i class="pi pi-facebook text-4xl"></i></div>
+        <div class="text-3xl">
+          โครงการช่วยการตัดสินใจใน <br />การรับนักเรียนเข้าศึกษาต่อใน <br />CS
+          RMUTT
+        </div>
+      </div>
+    </div>
+    <div class="con-form rad">
+      <form class="" [formGroup]="contactForm" (ngSubmit)="onSubmit()">
+        <div class="f-k2d text-5xl">Contact Us</div>
+        <h1 class="text-3xl animate__animated animate__zoomIn">ชื่อ-นามสกุล</h1>
+        <input
+          formControlName="fullname"
+          name="fullname"
+          type="text"
+          pInputText
+          class="w-full sm:col-7 p-inputtext-sm animate__animated animate__zoomIn"
+        />
+        <div class="form-col">
+          <div class="pr-2">
+            <h1 class="text-3xl animate__animated animate__zoomIn">อีเมลล์</h1>
+            <input
+              formControlName="email"
+              name="email"
+              type="email"
+              pInputText
+              class="w-full sm:col-7 p-inputtext-sm animate__animated animate__zoomIn"
+            />
+          </div>
+          <div class="pl-2">
+            <h1 class="text-3xl animate__animated animate__zoomIn">เบอร์โทร</h1>
+            <input
+              formControlName="phone"
+              name="phone"
+              type="tel"
+              pInputText
+              class="w-full sm:col-7 p-inputtext-sm animate__animated animate__zoomIn"
+            />
+          </div>
+        </div>
+        <div class="pl-2">
+          <h1 class="text-3xl animate__animated animate__zoomIn">ข้อความ</h1>
+          <textarea
+            rows="5"
+            cols="71"
+            pInputTextarea
+            autoResize="autoResize"
+            class="textarea-style"
+          ></textarea>
+        </div>
+        <div class="buttonPosition animate__animated animate__fadeInUp mt-5 mb-2">
+        <button
+          pButton
+          pRipple
+          type="submit"
+          label="Send Message"
+          class="p-button-danger text-3xl"
+        ></button>
+      </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- <br>
 <br>
 <div class=" md:col-12 lg:col-12 sm:col-12 outlineDiv animate__animated  animate__fadeIn">
   <div>
@@ -35,4 +123,5 @@
     </p-card>
   </div>
 
+</div> -->
 </div>
