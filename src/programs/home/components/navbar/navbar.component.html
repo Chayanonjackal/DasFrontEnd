@@ -6,17 +6,54 @@
       src="../../../../../assets/img/logo-noborder.png"
       alt="logo"
     />
-    <div pRipple (click)="GoHomePage()" class="rad bolder px-5 py-3">หน้าแรก</div>
-    <div pRipple (click)="GoAboutPage()" class="rad px-5 py-3">เกี่ยวกับ</div>
-    <div pRipple (click)="GotoHelp()" class="rad px-5 py-3">ช่วยเหลือ</div>
-    <div pRipple (click)="GotoForm()" class="rad px-5 py-3">
+    <div
+      pRipple
+      routerLink="/home/dashbord"
+      routerLinkActive="g-route-actvie"
+      [routerLinkActiveOptions]="{ exact: true }"
+      (click)="GoHomePage()"
+      class="g-rad px-5 py-3"
+    >
+      หน้าแรก
+    </div>
+    <div
+      pRipple
+      routerLink="/home/about"
+      routerLinkActive="g-route-actvie"
+      [routerLinkActiveOptions]="{ exact: false }"
+      (click)="GoAboutPage()"
+      class="g-rad px-5 py-3"
+    >
+      เกี่ยวกับ
+    </div>
+    <div
+      pRipple
+      routerLink="/home/help"
+      routerLinkActive="g-route-actvie"
+      [routerLinkActiveOptions]="{ exact: true }"
+      (click)="GotoHelp()"
+      class="g-rad px-5 py-3"
+    >
+      ช่วยเหลือ
+    </div>
+    <div
+      pRipple
+      routerLink="/home/form"
+      routerLinkActive="g-route-actvie"
+      [routerLinkActiveOptions]="{ exact: true }"
+      (click)="GotoForm()"
+      class="g-rad px-5 py-3"
+    >
       ฟอร์มการประเมิน
     </div>
     <div
       pRipple
+      routerLink="/admin"
+      routerLinkActive="g-route-actvie"
+      [routerLinkActiveOptions]="{ exact: true }"
       *ngIf="role == 'A'"
       (click)="GotoAdmin()"
-      class="admin rad px-5 py-3"
+      class="admin g-rad px-5 py-3"
     >
       ผู้ดูแลระบบ
     </div>
@@ -31,9 +68,8 @@
       class="p-button-rounded p-button-danger"
       (click)="onConfirm($event)"
     ></button>
-    <p-confirmPopup showTransitionOptions="100ms" hideTransitionOptions></p-confirmPopup>
   </div>
-
+  <p-confirmPopup key="logoutPopup"></p-confirmPopup>
 </div>
 
 <!-- <div class="grid navColor">

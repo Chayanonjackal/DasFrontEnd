@@ -14,55 +14,55 @@
       [formGroup]="loginForm"
       (ngSubmit)="submit()"
     >
-      <h1 class="my-2 text-7xl animate__animated animate__fadeInRight">
+      <h1 class="my-2 text-7xl animate__animated animate__fadeIn">
         Login
       </h1>
       <h3
-        class="my-2 font-color-primary animate__animated animate__fadeInRight"
+        class="my-2 font-color-primary animate__animated animate__fadeIn"
       >
         *สำหรับอาจารย์ และผู้ดูแลระบบ
       </h3>
       <div class="">
-        <h1 class="text-4xl animate__animated animate__fadeInRight">
+        <h1 class="text-4xl animate__animated animate__fadeIn">
           Username
         </h1>
         <input
           formControlName="user_name"
           name="username"
-          class="w-full sm:col-7 p-inputtext-sm animate__animated animate__fadeInRight"
+          class="w-full sm:col-7 p-inputtext-sm animate__animated animate__fadeIn"
           type="text"
           pInputText
         />
       </div>
       <div class="">
-        <h1 class="text-4xl animate__animated animate__fadeInRight">
+        <h1 class="text-4xl animate__animated animate__fadeIn">
           PASSWORD
         </h1>
         <input
           formControlName="password"
-          class="w-full md:col-3 lg:col-4 sm:col-7 animate__animated animate__fadeInRight"
+          class="w-full md:col-3 lg:col-4 sm:col-7 animate__animated animate__fadeIn"
           type="password"
           [feedback]="false"
           pPassword
         />
       </div>
       <!-- <p class="ForgotPassword animate__animated animate__fadeInRight">Forgot password?</p> -->
-      <div class="buttonPosition animate__animated animate__fadeInUp mt-5 mb-2">
+      <div class="buttonPosition animate__animated animate__fadeIn animate_slow mt-5 mb-2">
         <button
           pButton
           pRipple
           type="submit"
-          label="Log in"
-          class="p-button-danger buttonStyle"
+          label="เข้าสู่ระบบ"
+          class="p-button-raised p-button-danger button-style"
         ></button>
       </div>
-      <div class="buttonPosition animate__animated animate__fadeInUp mt-2 mb-3.6" (click)="cancle()">
+      <div class="buttonPosition animate__animated animate__fadeIn animate_slower  mt-2 mb-3.6" (click)="cancle()">
         <button
           pButton
           pRipple
           type="reset"
-          label="Cancel"
-          class="p-button-warning buttonStyle"
+          label="ยกเลิก"
+          class="p-button-text p-button-secondary button-style text-2xl"
         ></button>
       </div>
       <!-- <div class="keep-login">Keep me logged in</div> -->
@@ -84,7 +84,7 @@
         src="../../assets/img/loginPicturex2.png" alt="" width="auto" height="auto">
 
       <form class=" md:col-6 lg:col-6 sm:col-12 movealltext" [formGroup]="userForm" (ngSubmit)="submit()">
-        <h1 class="SIGEIN animate__animated animate__fadeInRight">เข้าสู่ระบบ</h1>
+        <h1 class="SIGEIN animate__animated animate__fadeIn animate__slow">เข้าสู่ระบบ</h1>
         <h3 class="forteacher animate__animated animate__fadeInRight">*สำหรับอาจารย์ และผู้ดูแลระบบ</h3>
         <h1 class="USERNAME md:col-6 lg:col-6 sm:col-12  animate__animated animate__fadeInRight">USERNAME</h1>
         <input formControlName="user_name" class="md:col-6 lg:col-6 sm:col-12 animate__animated animate__fadeInRight"
@@ -96,11 +96,11 @@
         <div class="buttonPosition animate__animated animate__fadeInUp">
           <div class="buttonColGap">
             <button pButton pRipple type="submit" label="SIGN IN"
-              class="p-button-rounded p-button-success buttonStyle"></button>
+              class="p-button-rounded p-button-success button-style"></button>
           </div>
           <div class="buttonColGap">
             <button pButton pRipple type="button" label="CANCLE" (click)="cancle()"
-              class="p-button-rounded p-button-danger buttonStyle"></button>
+              class="p-button-rounded p-button-danger button-style"></button>
           </div>
         </div>
 

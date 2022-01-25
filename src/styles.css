@@ -6,6 +6,12 @@
   src: url("./assets/font/FC-Iconic/FC Iconic Regular.ttf") format("truetype");
 }
 
+
+@font-face {
+  font-family: "FC Iconic Bold";
+  src: url("./assets/font/FC-Iconic/FC Iconic Bold.ttf") format("truetype");
+}
+
 @font-face {
   font-family: "K2D";
   src: url("./assets/font/K2D/K2D-Regular.ttf");
@@ -21,7 +27,7 @@ body {
   padding: 0;
 }
 
-.f-k2d {
+.g-f-k2d {
   font-family: "K2D";
 }
 
@@ -29,7 +35,32 @@ body {
   font-weight: 900;
 }
 
-.rad {
-  border-radius: 8px;
+.g-rad {
+  border-radius: 16px;
 }
 
+.g-route-actvie {
+  /* font-size: 1.8rem; */
+  font-family: 'FC Iconic Bold';
+  font-weight: 900;
+  text-decoration: underline;
+}
+
+.g-text-primary {
+  color: #a30000;
+}
+
+.g-bg-primary {
+  background: #a30000 !important;
+}
+
+.g-btn-primary {
+  color: white !important;
+  background: #b60000 !important;
+  border: #a30000 !important;
+}
+
+.g-btn-primary :hover {
+  background: #a30000 !important;
+  color: #eeeeee;
+}

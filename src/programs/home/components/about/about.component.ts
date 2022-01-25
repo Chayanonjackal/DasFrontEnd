@@ -1,20 +1,30 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { FormControl, FormGroup } from '@angular/forms';
 
 @Component({
   selector: 'app-about',
   templateUrl: './about.component.html',
-  styleUrls: ['./about.component.css']
+  styleUrls: ['./about.component.css'],
 })
 export class AboutComponent implements OnInit {
+  constructor(private router: Router) {}
 
-  constructor(private router: Router) { }
+  contactForm = new FormGroup({
+    fullname: new FormControl(null),
+    email: new FormControl(null),
+    phone: new FormControl(null),
+    message: new FormControl(null),
+  });
 
-  ngOnInit(): void {
+  ngOnInit(): void {}
+
+  onSubmit() {
+    const playload = this.contactForm.value;
   }
 
-  goToHomePage(){
-    this.router.navigate(['home/dashbord'])
-  }
 
+  goToHomePage() {
+    this.router.navigate(['home/dashbord']);
+  }
 }
