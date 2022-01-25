@@ -1,18 +1,12 @@
 <app-navbar></app-navbar>
-<!-- 
-  <div class="grid navColor">
-    <div class="col-12 md:col-12 lg:col-12 sm:col-12 midlogo">
-      <img class="paddingPic" src="../../assets/img/logo.png"alt="logo" width="100px" height="100px">
-    </div>
-  </div>
- -->
+
 <div class="col-12 md:col-12 lg:col-12 sm:col-12" class="container_outline">
   <div class="col-12 md:col-12 lg:col-12 sm:col-12 grid borderShadow">
     <h1>User Mangement</h1>
   </div>
  <br><br>
  <div class="spaceTwoButton">
-   <p-button label="Add User" icon="pi pi-user" styleClass="p-button-danger" (onClick)="confirmAdd()" ></p-button>
+   <p-button label="Add User" icon="pi pi-user-plus" styleClass="p-button-danger" (onClick)="confirmAdd()" ></p-button>
    <p-button label="HomePage" icon="pi pi-home" styleClass="p-button-danger" (onClick)="GoHomePage()" ></p-button>
  </div>
  <br><br>
@@ -45,4 +39,46 @@
 </div>
 <p-toast></p-toast>
 <p-confirmDialog [style]="{width: '50vw'}" [baseZIndex]="10000" rejectButtonStyleClass="p-button-text"></p-confirmDialog>
+
+<!-- <app-navbar></app-navbar>
+
+<div class="col-12 md:col-12 lg:col-12 sm:col-12" class="container_outline">
+  <div class="col-12 md:col-12 lg:col-12 sm:col-12 grid borderShadow">
+    <h1>User Mangement</h1>
+  </div>
+ <br><br>
+ <div class="spaceTwoButton">
+   <p-button label="Add User" icon="pi pi-user" styleClass="p-button-danger" (onClick)="confirmAdd()" ></p-button>
+   <p-button label="HomePage" icon="pi pi-home" styleClass="p-button-danger" (onClick)="GoHomePage()" ></p-button>
+ </div>
+ <br><br>
+
+ <p-table responsiveLayout="scroll"  [scrollable]="true" [responsive]="false"  [value]="users" [paginator]="true" [rows]="5" [rowsPerPageOptions]="[5,10,15,20]" [totalRecords]="recordCount"
+ [pageLinks]="8" >
+  <ng-template pTemplate="header" let-columns>
+      <tr>
+          <th class="textSize">User Id</th>
+          <th class="textSize">UserName</th>
+          <th class="textSize">FirstName</th>
+          <th class="textSize">LastName</th>
+          <th class="textSize">Role</th>
+          <th class="textSize">Edit</th>
+          <th class="textSize">Delete</th>
+      </tr>
+  </ng-template>
+  <ng-template pTemplate="body" let-user let-columns="columns">
+      <tr>
+         <td class="textDataSize">{{user.user_id}}</td>
+         <td class="textDataSize">{{user.user_name}}</td>
+        <td class="textDataSize">{{user.first_name}}</td>
+        <td class="textDataSize">{{user.last_name}}</td>
+        <td class="textDataSize">{{user.role}}</td>
+        <td><button pButton pRipple (click)="confirmEdit(user.user_id)" type="button" icon="pi pi-pencil" class="p-button-rounded p-button-warning p-button-outlined buttonstyle"></button></td>
+        <td><button pButton pRipple (click)="confirmDelete(user.user_id)" type="button" icon="pi pi-times" class="p-button-rounded p-button-danger p-button-outlined buttonstyle"></button></td>
+      </tr>
+  </ng-template>
+</p-table>
+</div>
+<p-toast></p-toast>
+<p-confirmDialog [style]="{width: '50vw'}" [baseZIndex]="10000" rejectButtonStyleClass="p-button-text"></p-confirmDialog> -->
 
