@@ -55,7 +55,7 @@ export class PublicFormComponent implements OnInit {
       if(res){
         // console.log(res.data);
         this.provinces = res.data
-
+        this.selectedProvince = { province: 'กรุงเทพมหานคร' };
       }
     })
 

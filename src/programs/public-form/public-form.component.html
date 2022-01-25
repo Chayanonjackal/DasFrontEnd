@@ -1,184 +1,401 @@
-<div class="grid navColor">
-  <div class="col-12 md:col-12 lg:col-12 sm:col-12 midlogo"><img class="paddingPic" src="../../assets/img/logo.png"
-    alt="logo" width="100px" height="100px"></div>
-</div>
-<br>
-<br>
-
-<div class=" md:col-12 lg:col-12 sm:col-12 outlineDiv animate__animated  animate__fadeIn">
-  <div >
-    <p-card>
-      <ng-template pTemplate="header">
-        <!-- animate__animated animate__slideInDown -->
-        <div class="headerCard stylebutton">
-          <h1 >กรุณากรอกแบบฟอร์ม</h1>
-          <div class="homebuttonstyle">
-            <p-button *ngIf="hindbutton == true" label="HomePage" icon="pi pi-home" styleClass="p-button-danger" (onClick)="GoHomePage()" ></p-button>
-          </div>
-        </div>
-      </ng-template>
-
-      <div>
-        <form [formGroup]="predicForm">
-
-        <div class="inputTextStyle md:col-6 lg:col-4 sm:col-12 ">
-          <label class="labelStyle">รหัสบัตรประชาชน</label>
-            <p-inputMask  mask="9-9999-99999-99-9"  id="citizen_id" formControlName="citizen_id"
-             placeholder="x-xxxx-xxxxx-xx-x"></p-inputMask>
-            <small class="smallStyle" id="username2-help" *ngIf="predicForm.controls['citizen_id'].invalid && predicForm.controls['citizen_id'].touched" class="p-error">กรุณากรอกรหัสบัตรประชาชน</small>
-        </div>
-        <div class="inputTextStyle md:col-6 lg:col-4 sm:col-12 ">
-          <label class="labelStyle">ชื่อ</label>
-           <input formControlName="first_name_th" type="text" pInputText  >
-           <small class="smallStyle" id="username2-help" *ngIf="predicForm.controls['first_name_th'].invalid && predicForm.controls['first_name_th'].touched" class="p-error">กรุณากรอกชื่อ</small>
-
-        </div>
-        <div class="inputTextStyle md:col-6 lg:col-4 sm:col-12 ">
-
-
-          <label class="labelStyle">นามสกุล</label>
-            <input formControlName="last_name_th" type="text" pInputText >
-            <small class="smallStyle" id="username2-help" *ngIf="predicForm.controls['last_name_th'].invalid && predicForm.controls['last_name_th'].touched" class="p-error">กรุณากรอกนามสกุล</small>
-
-        </div>
-        <div class="inputTextStyle md:col-6 lg:col-4 sm:col-12 ">
-
-
-          <label class="labelStyle">ลำดับที่เลือกสาขาวิทยาการเลือก TCAS3</label>
-            <p-inputNumber [min]="1" [max]="10" formControlName="priority"></p-inputNumber>
-            <small class="smallStyle" id="username2-help" *ngIf="predicForm.controls['priority'].invalid && predicForm.controls['priority'].touched" class="p-error">กรุณากรอกลำดับที่เลือกสาขาวิทยาการเลือก TCAS3</small>
-
-        </div>
-        <div class="inputTextStyle md:col-6 lg:col-4 sm:col-12 ">
-
-
-          <label class="labelStyle">เกรดรวม (GPAX)</label>
-          <p-inputNumber formControlName="gpax"></p-inputNumber>
-            <small class="smallStyle" id="username2-help" *ngIf="predicForm.controls['gpax'].invalid && predicForm.controls['gpax'].touched" class="p-error">กรุณากรอกเกรดรวม</small>
-
-        </div>
-        <div class="inputTextStyle md:col-6 lg:col-4 sm:col-12 ">
-
-
-          <label class="labelStyle">ความถนัดทางคณิตศาสตร์ (PAT1)</label>
-            <p-inputNumber formControlName="pat1"></p-inputNumber>
-            <small class="smallStyle" id="username2-help" *ngIf="predicForm.controls['pat1'].invalid && predicForm.controls['pat1'].touched" class="p-error">กรุณากรอกความถนัดทางคณิตศาสตร์</small>
-
-        </div>
-        <div class="inputTextStyle md:col-6 lg:col-4 sm:col-12 ">
-
-
-          <label class="labelStyle">ความถนัดทางวิทยาศาสตร์ (PAT2)</label>
-            <p-inputNumber formControlName="pat2"></p-inputNumber>
-            <small class="smallStyle" id="username2-help" *ngIf="predicForm.controls['pat2'].invalid && predicForm.controls['pat2'].touched" class="p-error">กรุณากรอกความถนัดทางวิทยาศาสตร์</small>
-
-        </div>
-        <div class="inputTextStyle md:col-6 lg:col-4 sm:col-12 ">
-
-
-          <label class="labelStyle">ชื่อโรงเรียน</label>
-            <input formControlName="school_name" type="text" pInputText >
-            <small class="smallStyle" id="username2-help" *ngIf="predicForm.controls['school_name'].invalid && predicForm.controls['school_name'].touched" class="p-error">กรุณากรอกชื่อโรงเรียน</small>
-
-        </div>
-        <div class="inputTextStyle md:col-6 lg:col-4 sm:col-12 ">
-
-
-          <label class="labelStyle">จังหวัดของโรงเรียน</label>
-          <p-dropdown formControlName="school_province_name" [filter]="true" filterBy="province" [options]="provinces" [(ngModel)]="selectedProvince" optionLabel="province"></p-dropdown>
-            <!-- <input formControlName="school_province_name" type="text" pInputText > -->
-            <small class="smallStyle" id="username2-help" *ngIf="predicForm.controls['school_province_name'].invalid && predicForm.controls['school_province_name'].touched" class="p-error">กรุณากรอกจังหวัดของโรงเรียน</small>
-
-        </div>
-        <div class="inputTextStyle md:col-6 lg:col-4 sm:col-12 ">
-
-
-          <label class="labelStyle">ผลรวมหน่วยกิต</label>
-            <p-inputNumber formControlName="credit_sum"></p-inputNumber>
-            <small class="smallStyle" id="username2-help" *ngIf="predicForm.controls['credit_sum'].invalid && predicForm.controls['credit_sum'].touched" class="p-error">กรุณากรอกผลรวมหน่วยกิต</small>
-
-        </div>
-        <div class="inputTextStyle md:col-6 lg:col-4 sm:col-12 ">
-
-
-          <label class="labelStyle">โอเน็ตภาษาไทย (ONET01)</label>
-            <p-inputNumber formControlName="onet01"></p-inputNumber>
-            <small class="smallStyle" id="username2-help" *ngIf="predicForm.controls['onet01'].invalid && predicForm.controls['onet01'].touched" class="p-error">กรุณากรอกโอเน็ตภาษาไทย</small>
-
-        </div>
-        <div class="inputTextStyle md:col-6 lg:col-4 sm:col-12 ">
-
-
-          <label class="labelStyle">โอเน็ตสังคมศึกษา (ONET02)</label>
-            <p-inputNumber formControlName="onet02"></p-inputNumber>
-            <small class="smallStyle" id="username2-help" *ngIf="predicForm.controls['onet02'].invalid && predicForm.controls['onet02'].touched" class="p-error">กรุณากรอกโอเน็ตสังคมศึกษา</small>
-
-        </div>
-        <div class="inputTextStyle md:col-6 lg:col-4 sm:col-12 ">
-
-
-          <label class="labelStyle">โอเน็ตภาษาอังกฤษ (ONET03)</label>
-            <p-inputNumber formControlName="onet03"></p-inputNumber>
-
-            <small class="smallStyle" id="username2-help" *ngIf="predicForm.controls['onet03'].invalid && predicForm.controls['onet03'].touched" class="p-error">กรุณากรอกโอเน็ตภาษาอังกฤษ</small>
-
-        </div>
-        <div class="inputTextStyle md:col-6 lg:col-4 sm:col-12 ">
-
-
-          <label class="labelStyle">โอเน็ตคณิตศาสตร์ (ONET04)</label>
-            <p-inputNumber formControlName="onet04"></p-inputNumber>
-            <small class="smallStyle" id="username2-help" *ngIf="predicForm.controls['onet04'].invalid && predicForm.controls['onet04'].touched" class="p-error">กรุณากรอกโอเน็ตคณิตศาสตร์</small>
-
-        </div>
-        <div class="inputTextStyle md:col-6 lg:col-4 sm:col-12 ">
-
-
-          <label class="labelStyle">โอเน็ตควิทยาศาสตร์ (ONET05)</label>
-            <p-inputNumber formControlName="onet05"></p-inputNumber>
-            <small class="smallStyle" id="username2-help" *ngIf="predicForm.controls['onet05'].invalid && predicForm.controls['onet05'].touched" class="p-error">กรุณากรอกโอเน็ตควิทยาศาสตร์</small>
-
-
-        </div>
-        <div class="inputTextStyle md:col-6 lg:col-4 sm:col-12 ">
-
-
-          <label class="labelStyle">คะแนนแกท 1 ไทย  (GAT1)</label>
-            <p-inputNumber formControlName="gat1_current"></p-inputNumber>
-            <small class="smallStyle" id="username2-help" *ngIf="predicForm.controls['gat1_current'].invalid && predicForm.controls['gat1_current'].touched" class="p-error">กรุณากรอกคะแนนแกท 1</small>
-
-
-        </div>
-        <div class="inputTextStyle md:col-6 lg:col-4 sm:col-12 ">
-
-
-          <label class="labelStyle">คะแนนแกท 2 อังกฤษ  (GAT2)</label>
-            <p-inputNumber formControlName="gat2_current"></p-inputNumber>
-            <small class="smallStyle" id="username2-help" *ngIf="predicForm.controls['gat2_current'].invalid && predicForm.controls['gat2_current'].touched" class="p-error">กรุณากรอกคะแนนแกท 2</small>
-
-
-        </div>
-       </form>
-      </div>
-      <div style="display: flex;" class="md:col-6 lg:col-4 sm:col-12 buttonLocation ">
-        <div>
-          <button pButton pRipple [disabled]="predicForm.controls['citizen_id'].invalid || predicForm.controls['first_name_th'].invalid || predicForm.controls['last_name_th'].invalid
-          || predicForm.controls['priority'].invalid || predicForm.controls['gpax'].invalid || predicForm.controls['pat1'].invalid || predicForm.controls['pat2'].invalid
-          || predicForm.controls['school_name'].invalid || predicForm.controls['school_province_name'].invalid || predicForm.controls['credit_sum'].invalid
-          || predicForm.controls['onet01'].invalid || predicForm.controls['onet02'].invalid || predicForm.controls['onet03'].invalid
-          || predicForm.controls['onet04'].invalid || predicForm.controls['onet05'].invalid || predicForm.controls['gat1_current'].invalid
-          || predicForm.controls['gat2_current'].invalid" type="button" label="Submit" (click)="submitForm()"
-          class="p-button-rounded p-button-danger buttonStyle"></button>
-        </div>
-
-        <div style="padding-left: 2em;">
-          <button pButton pRipple   type="button" label="reset" (click)="reset()"
-          class="p-button-rounded p-button-secondary buttonStyle"></button>
-          <!-- {{predicForm.value | json}} -->
-        </div>
-        </div>
-    </p-card>
+<div class="md:col-12 lg:col-12 sm:col-12 animate__animated animate__fadeIn">
+  <div class="grid">
+    <div class="blacklogo col-12 md:col-12 lg:col-12 sm:col-12">
+      <img
+        src="../../assets/img/logo-black.png"
+        alt="logo"
+        width="200px"
+        height="140px"
+      />
+    </div>
+  </div>
+  <div class="header -mt-6">
+    <p class="bolder text-5xl">ฟอร์มการประเมิน</p>
+    <img
+      id="logo-img-form"
+      src="../../../../../assets/img/logo-text-border.png"
+      alt="logo"
+    />
   </div>
 
+  <div
+    class="box-form md:col-12 lg:col-12 sm:col-12 animate__animated animate__fadeIn"
+  >
+    <!-- animate__animated animate__slideInDown -->
+    <div class="headerCard stylebutton">
+      <p class="text-xl g-text-primary mt-4">*กรุณากรอกแบบฟอร์มให้ครบถ้วน</p>
+      <div class="homebuttonstyle">
+        <p-button
+          *ngIf="hindbutton == true"
+          label="HomePage"
+          icon="pi pi-home"
+          styleClass="p-button-danger"
+          (onClick)="GoHomePage()"
+        ></p-button>
+      </div>
+    </div>
+
+    <div>
+      <form [formGroup]="predicForm" class="flex-form">
+        <p-panel
+          header="ส่วนที่ 1 : ส่วนของข้อมูลส่วนตัวของนักเรียน"
+          styleClass="panel-header"
+        >
+          <div class="inputTextStyle">
+            <label class="labelStyle">รหัสบัตรประชาชน</label>
+            <p-inputMask
+              mask="9-9999-99999-99-9"
+              id="citizen_id"
+              formControlName="citizen_id"
+              placeholder="x-xxxx-xxxxx-xx-x"
+              class="w-full sm:col-7 p-inputtext-sm animate__animated animate__fadeIn"
+            ></p-inputMask>
+            <small
+              class="smallStyle"
+              id="username2-help"
+              *ngIf="
+                predicForm.controls['citizen_id'].invalid &&
+                predicForm.controls['citizen_id'].touched
+              "
+              class="p-error"
+              >กรุณากรอกรหัสบัตรประชาชน</small
+            >
+          </div>
+          <div class="input-col-2">
+            <div class="inputTextStyle">
+              <label class="labelStyle w-full">ชื่อ</label>
+              <input
+                formControlName="first_name_th"
+                type="text"
+                class="w-full sm:col-7 p-inputtext-sm animate__animated animate__fadeIn"
+                pInputText
+              />
+              <small
+                class="smallStyle"
+                id="username2-help"
+                *ngIf="
+                  predicForm.controls['first_name_th'].invalid &&
+                  predicForm.controls['first_name_th'].touched
+                "
+                class="p-error"
+                >กรุณากรอกชื่อ</small
+              >
+            </div>
+            <div class="inputTextStyle">
+              <label class="labelStyle">นามสกุล</label>
+
+              <input
+                formControlName="last_name_th"
+                type="text"
+                class="w-full sm:col-7 p-inputtext-sm animate__animated animate__fadeIn"
+                pInputText
+              />
+              <small
+                class="smallStyle"
+                id="username2-help"
+                *ngIf="
+                  predicForm.controls['last_name_th'].invalid &&
+                  predicForm.controls['last_name_th'].touched
+                "
+                class="p-error"
+                >กรุณากรอกนามสกุล</small
+              >
+            </div>
+          </div>
+
+          <div class="input-col-2">
+            <div class="inputTextStyle">
+              <label class="labelStyle">ชื่อโรงเรียน</label>
+              <input
+                formControlName="school_name"
+                type="text"
+                class="w-full sm:col-7 p-inputtext-sm animate__animated animate__fadeIn"
+                pInputText
+              />
+              <small
+                class="smallStyle"
+                id="username2-help"
+                *ngIf="
+                  predicForm.controls['school_name'].invalid &&
+                  predicForm.controls['school_name'].touched
+                "
+                class="p-error"
+                >กรุณากรอกชื่อโรงเรียน</small
+              >
+            </div>
+            <div class="inputTextStyle">
+              <label class="labelStyle">จังหวัดของโรงเรียน</label>
+              <p-dropdown
+                class="labelStyle"
+                formControlName="school_province_name"
+                [filter]="true"
+                filterBy="province"
+                [options]="provinces"
+                [(ngModel)]="selectedProvince"
+                optionLabel="province"
+              ></p-dropdown>
+              <!-- <input formControlName="school_province_name" type="text" pInputText > -->
+              <small
+                class="smallStyle"
+                id="username2-help"
+                *ngIf="
+                  predicForm.controls['school_province_name'].invalid &&
+                  predicForm.controls['school_province_name'].touched
+                "
+                class="p-error"
+                >กรุณากรอกจังหวัดของโรงเรียน</small
+              >
+            </div>
+          </div>
+
+          <div class="input-col-2">
+            <div class="inputTextStyle">
+              <label class="labelStyle">เกรดรวม (GPAX)</label>
+              <p-inputNumber
+                formControlName="gpax"
+                class="w-full sm:col-7 p-inputtext-sm animate__animated animate__fadeIn"
+              ></p-inputNumber>
+              <small
+                class="smallStyle"
+                id="username2-help"
+                *ngIf="
+                  predicForm.controls['gpax'].invalid &&
+                  predicForm.controls['gpax'].touched
+                "
+                class="p-error"
+                >กรุณากรอกเกรดรวม</small
+              >
+            </div>
+            <div class="inputTextStyle">
+              <label class="labelStyle">ผลรวมหน่วยกิต</label>
+              <p-inputNumber
+                formControlName="credit_sum"
+                class="w-full sm:col-7 p-inputtext-sm animate__animated animate__fadeIn"
+              ></p-inputNumber>
+              <small
+                class="smallStyle"
+                id="username2-help"
+                *ngIf="
+                  predicForm.controls['credit_sum'].invalid &&
+                  predicForm.controls['credit_sum'].touched
+                "
+                class="p-error"
+                >กรุณากรอกผลรวมหน่วยกิต</small
+              >
+            </div>
+          </div>
+          <div class="inputTextStyle">
+            <label class="labelStyle"
+              >ลำดับที่เลือกสาขาวิทยาการเลือก TCAS3</label
+            >
+            <p-inputNumber
+              [min]="1"
+              [max]="10"
+              formControlName="priority"
+            ></p-inputNumber>
+            <small
+              class="smallStyle"
+              id="username2-help"
+              *ngIf="
+                predicForm.controls['priority'].invalid &&
+                predicForm.controls['priority'].touched
+              "
+              class="p-error"
+              >กรุณากรอกลำดับที่เลือกสาขาวิทยาการเลือก TCAS3</small
+            >
+          </div>
+        </p-panel>
+
+        <p-panel
+          header="ส่วนที่ 2 : ส่วนของคะแนน"
+          styleClass="panel-header mt-4"
+        >
+          <div class="input-col-2">
+            <div class="inputTextStyle">
+              <label class="labelStyle">ความถนัดทางคณิตศาสตร์ (PAT1)</label>
+              <p-inputNumber formControlName="pat1"></p-inputNumber>
+              <small
+                class="smallStyle"
+                id="username2-help"
+                *ngIf="
+                  predicForm.controls['pat1'].invalid &&
+                  predicForm.controls['pat1'].touched
+                "
+                class="p-error"
+                >กรุณากรอกความถนัดทางคณิตศาสตร์</small
+              >
+            </div>
+            <div class="inputTextStyle">
+              <label class="labelStyle">ความถนัดทางวิทยาศาสตร์ (PAT2)</label>
+              <p-inputNumber formControlName="pat2"></p-inputNumber>
+              <small
+                class="smallStyle"
+                id="username2-help"
+                *ngIf="
+                  predicForm.controls['pat2'].invalid &&
+                  predicForm.controls['pat2'].touched
+                "
+                class="p-error"
+                >กรุณากรอกความถนัดทางวิทยาศาสตร์</small
+              >
+            </div>
+          </div>
+
+          <div class="input-col-2">
+            <div class="inputTextStyle">
+              <label class="labelStyle">คะแนนแกท 1 ไทย (GAT1)</label>
+              <p-inputNumber formControlName="gat1_current"></p-inputNumber>
+              <small
+                class="smallStyle"
+                id="username2-help"
+                *ngIf="
+                  predicForm.controls['gat1_current'].invalid &&
+                  predicForm.controls['gat1_current'].touched
+                "
+                class="p-error"
+                >กรุณากรอกคะแนนแกท 1</small
+              >
+            </div>
+            <div class="inputTextStyle">
+              <label class="labelStyle">คะแนนแกท 2 อังกฤษ (GAT2)</label>
+              <p-inputNumber formControlName="gat2_current"></p-inputNumber>
+              <small
+                class="smallStyle"
+                id="username2-help"
+                *ngIf="
+                  predicForm.controls['gat2_current'].invalid &&
+                  predicForm.controls['gat2_current'].touched
+                "
+                class="p-error"
+                >กรุณากรอกคะแนนแกท 2</small
+              >
+            </div>
+          </div>
+
+          <div class="input-col-2">
+            <div class="inputTextStyle">
+              <label class="labelStyle">โอเน็ตภาษาไทย (ONET01)</label>
+              <p-inputNumber formControlName="onet01"></p-inputNumber>
+              <small
+                class="smallStyle"
+                id="username2-help"
+                *ngIf="
+                  predicForm.controls['onet01'].invalid &&
+                  predicForm.controls['onet01'].touched
+                "
+                class="p-error"
+                >กรุณากรอกโอเน็ตภาษาไทย</small
+              >
+            </div>
+            <div class="inputTextStyle">
+              <label class="labelStyle">โอเน็ตสังคมศึกษา (ONET02)</label>
+              <p-inputNumber formControlName="onet02"></p-inputNumber>
+              <small
+                class="smallStyle"
+                id="username2-help"
+                *ngIf="
+                  predicForm.controls['onet02'].invalid &&
+                  predicForm.controls['onet02'].touched
+                "
+                class="p-error"
+                >กรุณากรอกโอเน็ตสังคมศึกษา</small
+              >
+            </div>
+          </div>
+
+          <div class="input-col-2">
+            <div class="inputTextStyle">
+              <label class="labelStyle">โอเน็ตภาษาอังกฤษ (ONET03)</label>
+              <p-inputNumber formControlName="onet03"></p-inputNumber>
+
+              <small
+                class="smallStyle"
+                id="username2-help"
+                *ngIf="
+                  predicForm.controls['onet03'].invalid &&
+                  predicForm.controls['onet03'].touched
+                "
+                class="p-error"
+                >กรุณากรอกโอเน็ตภาษาอังกฤษ</small
+              >
+            </div>
+            <div class="inputTextStyle">
+              <label class="labelStyle">โอเน็ตคณิตศาสตร์ (ONET04)</label>
+              <p-inputNumber formControlName="onet04"></p-inputNumber>
+              <small
+                class="smallStyle"
+                id="username2-help"
+                *ngIf="
+                  predicForm.controls['onet04'].invalid &&
+                  predicForm.controls['onet04'].touched
+                "
+                class="p-error"
+                >กรุณากรอกโอเน็ตคณิตศาสตร์</small
+              >
+            </div>
+          </div>
+
+          <div class="inputTextStyle">
+            <label class="labelStyle">โอเน็ตวิทยาศาสตร์ (ONET05)</label>
+            <p-inputNumber formControlName="onet05"></p-inputNumber>
+            <small
+              class="smallStyle"
+              id="username2-help"
+              *ngIf="
+                predicForm.controls['onet05'].invalid &&
+                predicForm.controls['onet05'].touched
+              "
+              class="p-error"
+              >กรุณากรอกโอเน็ตวิทยาศาสตร์</small
+            >
+          </div>
+        </p-panel>
+      </form>
+    </div>
+    <div
+      class="buttonPosition animate__animated animate__fadeIn animate_slow mt-2 mb-2"
+    >
+      <button
+        pButton
+        pRipple
+        [disabled]="
+          predicForm.controls['citizen_id'].invalid ||
+          predicForm.controls['first_name_th'].invalid ||
+          predicForm.controls['last_name_th'].invalid ||
+          predicForm.controls['priority'].invalid ||
+          predicForm.controls['gpax'].invalid ||
+          predicForm.controls['pat1'].invalid ||
+          predicForm.controls['pat2'].invalid ||
+          predicForm.controls['school_name'].invalid ||
+          predicForm.controls['school_province_name'].invalid ||
+          predicForm.controls['credit_sum'].invalid ||
+          predicForm.controls['onet01'].invalid ||
+          predicForm.controls['onet02'].invalid ||
+          predicForm.controls['onet03'].invalid ||
+          predicForm.controls['onet04'].invalid ||
+          predicForm.controls['onet05'].invalid ||
+          predicForm.controls['gat1_current'].invalid ||
+          predicForm.controls['gat2_current'].invalid
+        "
+        type="button"
+        label="Submit"
+        class="p-button-raised p-button-danger button-style"
+      ></button>
+    </div>
+
+    <div
+      class="buttonPosition animate__animated animate__fadeIn animate_slower mt-2 mb-3.6"
+    >
+      <button
+        pButton
+        pRipple
+        type="button"
+        label="reset"
+        (click)="reset()"
+        class="p-button-text p-button-secondary button-style text-2xl"
+      ></button>
+      <!-- {{predicForm.value | json}} -->
+    </div>
+  </div>
 </div>
 <p-toast position="bottom-center"></p-toast>

@@ -21,14 +21,12 @@ import { ConfirmDialogModule } from 'primeng/confirmdialog';
 import { DividerModule } from 'primeng/divider';
 import {InputNumberModule} from 'primeng/inputnumber';
 import {DropdownModule} from 'primeng/dropdown';
+import { PanelModule } from 'primeng/panel';
 
 
 
 @NgModule({
-  declarations: [
-    PublicFormComponent,
-
-  ],
+  declarations: [PublicFormComponent],
   imports: [
     CommonModule,
     PublicFormRoutingModule,
@@ -50,7 +48,8 @@ import {DropdownModule} from 'primeng/dropdown';
     ConfirmDialogModule,
     DividerModule,
     InputNumberModule,
-    DropdownModule
-  ]
+    DropdownModule,
+    PanelModule,
+  ],
 })
-export class PublicFormModule { }
+export class PublicFormModule {}
