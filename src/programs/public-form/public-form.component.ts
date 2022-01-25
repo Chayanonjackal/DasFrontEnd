@@ -31,7 +31,8 @@ export class PublicFormComponent implements OnInit {
     gat1_current: new FormControl(null, Validators.required), //maining
     gat2_current: new FormControl(null, Validators.required), //maining
     predic: new FormControl(null),
-    scoredProbabilities: new FormControl(null)
+    scoredProbabilities: new FormControl(null),
+    add_year: new FormControl(null)
   })
 
   user_id:any = 0
@@ -55,6 +56,7 @@ export class PublicFormComponent implements OnInit {
       if(res){
         // console.log(res.data);
         this.provinces = res.data
+        this.selectedProvince = {province : 'กรุงเทพมหานคร'}
 
       }
     })
@@ -125,15 +127,18 @@ export class PublicFormComponent implements OnInit {
         var splitString  = this.predicForm.get('citizen_id')?.value
         var pureString = splitString.split("-")
         var alreadyToUse = pureString[0]+pureString[1]+pureString[2]+pureString[3]+pureString[4]
-        // need to filter นาย นาง in FirstName and filter school , province school about โรงเรียน , จังหวัด  api จังหวัด
+
         this.predicForm.get('citizen_id')?.setValue(alreadyToUse)
         //user_id get
+
         const storeProvince =this.predicForm.get('school_province_name')?.value.province
         this.predicForm.get('school_province_name')?.setValue(storeProvince)
         //Cut string "โรงเรียน"
         var str = this.predicForm.get('school_name')?.value
         var strReplace = str.replace("โรงเรียน","")
         this.predicForm.get('school_name')?.setValue(strReplace)
+        //timestamp
+        this.predicForm.get('add_year')?.setValue(new Date().getFullYear())
 
         const playload1:any =this.predicForm.value
         console.log(playload1);

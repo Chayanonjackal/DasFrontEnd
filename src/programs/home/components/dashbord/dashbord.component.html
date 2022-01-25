@@ -90,7 +90,7 @@
   <div >
     <p-card >
       <ng-template pTemplate="header" >
-        <h1>จำนวนนักเรียนในแต่ละโรงเรียนที่ยื่นเข้ามาในสาขาวิทยาการคอมพิวเตอร์</h1>
+        <h1>จำนวนนักเรียนทั้งหมดในแต่ละโรงเรียนที่ยื่นเข้ามาในสาขาวิทยาการคอมพิวเตอร์</h1>
       </ng-template>
       <div style="display: flex; justify-content: center;">
         <p-chart type="pie" class="chartStyle" [data]="data" [options]="chartOptions"  [style]="{'width': '50%'}" ></p-chart>
@@ -116,7 +116,7 @@
   <div>
     <p-card>
       <ng-template pTemplate="header">
-        <h1>จำนวนนักเรียนในแต่ละจังหวัดของโรงเรียนที่ยื่นเข้ามาในสาขาวิทยาการคอมพิวเตอร์</h1>
+        <h1>จำนวนนักเรียนทั้งหมดในแต่ละจังหวัดของโรงเรียนที่ยื่นเข้ามาในสาขาวิทยาการคอมพิวเตอร์</h1>
       </ng-template>
       <div style="display: flex; justify-content: center;">
         <!-- <p-chart type="pie" class="chartStyle" [data]="data" [options]="chartOptions"  [style]="{'width': '50%'}" ></p-chart>
@@ -141,4 +141,39 @@
       </div>
     </p-card>
   </div>
+  <!-- ตามปี -->
+  <div >
+    <p-card >
+      <ng-template pTemplate="header" >
+        <h1>ปี </h1>
+        <!-- มาใส่ปีด้วยนะ -->
+        <h1>จำนวนนักเรียนมนทั้งหมดในแต่ละโรงเรียนที่ยื่นเข้ามาในสาขาวิทยาการคอมพิวเตอร์</h1>
+      </ng-template>
+      <p-dropdown [options]="dropDownObject" [(ngModel)]="selectedYear" (onChange)="onYearSelected($event)" optionLabel="year"></p-dropdown>
+      <!-- <p>{{selectedYear|json}}</p> -->
+      <div style="display: flex; justify-content: center;">
+        <p-chart type="doughnut" class="chartStyle" [data]="dataProvinceYear" [options]="chartOptions"  [style]="{'width': '50%'}" ></p-chart>
+      </div>
+      <div style="display: flex; justify-content: center;">
+        <p-chart type="pie" class="chartStyle" [data]="dataSchoolYear" [options]="chartOptions"  [style]="{'width': '50%'}" ></p-chart>
+      </div>
+      <!-- <div class="md:col-12 lg:col-12 sm:col-12  ">
+        <p-table [value]="schools" [scrollable]="true" scrollHeight="400px" responsiveLayout="scroll">
+          <ng-template pTemplate="header">
+              <tr>
+                  <th>โรงเรียน</th>
+                  <th>จำนวน</th>
+              </tr>
+          </ng-template>
+          <ng-template pTemplate="body" let-school>
+              <tr>
+                  <td>{{school.name}}</td>
+                  <td>{{school.count}}</td>
+              </tr>
+          </ng-template>
+      </p-table>
+      </div> -->
+    </p-card>
+  </div>
+
 </div>
