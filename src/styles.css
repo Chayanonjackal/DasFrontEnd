@@ -45,3 +45,22 @@ body {
   font-weight: 900;
   text-decoration: underline;
 }
+
+.g-text-primary {
+  color: #a30000;
+}
+
+.g-bg-primary {
+  background: #a30000 !important;
+}
+
+.g-btn-primary {
+  color: white !important;
+  background: #b60000 !important;
+  border: #a30000 !important;
+}
+
+.g-btn-primary :hover {
+  background: #a30000 !important;
+  color: #eeeeee;
+}

@@ -11,6 +11,9 @@ import { ConfirmationService } from 'primeng/api';
   styleUrls: ['./navbar.component.css'],
 })
 export class NavbarComponent implements OnInit {
+
+  role: any;
+
   constructor(
     private router: Router,
     private auth: AuthService,
@@ -18,8 +21,6 @@ export class NavbarComponent implements OnInit {
     private confirmationService: ConfirmationService,
     private messageService: MessageService
   ) {}
-
-  role: any;
 
   ngOnInit(): void {
     this.primeNGConfig.ripple = true;
@@ -64,10 +65,12 @@ export class NavbarComponent implements OnInit {
   onConfirm(event: Event) {
     // console.log(event);
     this.confirmationService.confirm({
+      key: 'logoutPopup',
       target: event.target!,
       message: 'ยืนยันการออกจากระบบ?',
       icon: 'pi pi-power-off',
-      acceptLabel: "ออกจากระบบ",
+      acceptLabel: 'ออกจากระบบ',
+      acceptButtonStyleClass: "g-bg-primary",
       accept: () => {
         //confirm action
         this.onLogout();
@@ -76,7 +79,7 @@ export class NavbarComponent implements OnInit {
           detail: 'ออกจากระบบสำเร็จ',
         });
       },
-      rejectLabel: "ยกเลิก",
+      rejectLabel: 'ยกเลิก',
       reject: () => {
         //reject action
       },

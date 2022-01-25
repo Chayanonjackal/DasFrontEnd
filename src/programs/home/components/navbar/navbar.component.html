@@ -48,6 +48,9 @@
     </div>
     <div
       pRipple
+      routerLink="/admin"
+      routerLinkActive="g-route-actvie"
+      [routerLinkActiveOptions]="{ exact: true }"
       *ngIf="role == 'A'"
       (click)="GotoAdmin()"
       class="admin g-rad px-5 py-3"
@@ -65,11 +68,8 @@
       class="p-button-rounded p-button-danger"
       (click)="onConfirm($event)"
     ></button>
-    <p-confirmPopup
-      showTransitionOptions="100ms"
-      hideTransitionOptions
-    ></p-confirmPopup>
   </div>
+  <p-confirmPopup key="logoutPopup"></p-confirmPopup>
 </div>
 
 <!-- <div class="grid navColor">

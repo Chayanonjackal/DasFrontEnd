@@ -13,12 +13,13 @@ import { FormComponent } from './components/form/form.component';
 import { PrivatepredictionComponent } from './components/privateprediction/privateprediction.component';
 import { PpinfoComponent } from './components/ppinfo/ppinfo.component';
 import { StudentpredictionComponent } from './components/studentprediction/studentprediction.component';
-import {DropdownModule} from 'primeng/dropdown';
-import {InputNumberModule} from 'primeng/inputnumber';
+import { NavbarModule } from './components/navbar/navbar.module';
 
 // primeng
 import { ButtonModule } from 'primeng/button';
 import { RippleModule } from 'primeng/ripple';
+import { DropdownModule } from 'primeng/dropdown';
+import { InputNumberModule } from 'primeng/inputnumber';
 import { CardModule } from 'primeng/card';
 import { ChartModule } from 'primeng/chart';
 import { TableModule } from 'primeng/table';
@@ -37,7 +38,6 @@ import { ConfirmPopupModule } from 'primeng/confirmpopup';
 @NgModule({
   declarations: [
     HomeComponent,
-    NavbarComponent,
     DashbordComponent,
     AboutComponent,
     HelpComponent,
@@ -49,6 +49,7 @@ import { ConfirmPopupModule } from 'primeng/confirmpopup';
   imports: [
     CommonModule,
     HomeRoutingModule,
+    NavbarModule,
     ButtonModule,
     RippleModule,
     CardModule,
