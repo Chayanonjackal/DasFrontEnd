@@ -34,6 +34,7 @@ import { ConfirmDialogModule } from 'primeng/confirmdialog';
 import { DividerModule } from 'primeng/divider';
 import { AccordionModule } from 'primeng/accordion';
 import { ConfirmPopupModule } from 'primeng/confirmpopup';
+import { PanelModule } from 'primeng/panel';
 
 @NgModule({
   declarations: [
@@ -70,6 +71,7 @@ import { ConfirmPopupModule } from 'primeng/confirmpopup';
     InputNumberModule,
     AccordionModule,
     ConfirmPopupModule,
+    PanelModule,
   ],
 })
 export class HomeModule {}
