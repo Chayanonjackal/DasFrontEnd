@@ -70,6 +70,7 @@ export class NavbarComponent implements OnInit {
       acceptLabel: "ออกจากระบบ",
       accept: () => {
         //confirm action
+        this.onLogout();
         this.messageService.add({
           severity: 'success',
           detail: 'ออกจากระบบสำเร็จ',
