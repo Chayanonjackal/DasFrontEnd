@@ -6,6 +6,11 @@
   src: url("./assets/font/FC-Iconic/FC Iconic Regular.ttf") format("truetype");
 }
 
+@font-face {
+  font-family: "K2D";
+  src: url("./assets/font/K2D/K2D-Regular.ttf");
+}
+
 * {
   font-family: "FC Iconic";
   font-weight: 100;
@@ -14,6 +19,10 @@
 body {
   margin: 0;
   padding: 0;
+}
+
+.f-k2d {
+  font-family: "K2D";
 }
 
 .bolder {

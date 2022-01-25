@@ -22,9 +22,18 @@
     </div>
   </div>
 
-  <div class="account-logo" (click)="onLogout()">
-    <button pButton pRipple type="button" icon="pi pi-sign-out" class="p-button-rounded p-button-danger"></button>
+  <div class="account-logo">
+    <button
+      pButton
+      pRipple
+      type="button"
+      icon="pi pi-sign-out"
+      class="p-button-rounded p-button-danger"
+      (click)="onConfirm($event)"
+    ></button>
+    <p-confirmPopup showTransitionOptions="100ms" hideTransitionOptions></p-confirmPopup>
   </div>
+
 </div>
 
 <!-- <div class="grid navColor">
