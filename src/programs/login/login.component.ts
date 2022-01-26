@@ -53,8 +53,8 @@ export class LoginComponent implements OnInit {
     this.auth.login(playload).subscribe((res: any) => {
       this.messageService.add({
         severity: res.status === 200 ? 'success' : 'warn',
-        summary: res.message,
-        detail: res.message,
+        summary: res.message ?? 'การเชื่อมต่อผิดพลาด',
+        detail: res.message ?? 'ไม่สามารถเชืื่อมต่อกับเซิร์ฟเวอร์ได้, โปรดลองใหม่อีกครั้ง'
       });
       // setTimeout(function(){} ,2000) ;
     });
@@ -63,4 +63,5 @@ export class LoginComponent implements OnInit {
   cancle() {
     this.loginForm.reset();
   }
+
 }
