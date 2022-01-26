@@ -28,6 +28,7 @@
         </h1>
         <input
           formControlName="user_name"
+          appAutofocus
           name="username"
           class="w-full sm:col-7 p-inputtext-sm animate__animated animate__fadeIn"
           type="text"
@@ -54,6 +55,7 @@
           type="submit"
           label="เข้าสู่ระบบ"
           class="p-button-raised p-button-danger button-style"
+          [disabled]="loginForm.invalid"
         ></button>
       </div>
       <div class="buttonPosition animate__animated animate__fadeIn animate_slower  mt-2 mb-3.6" (click)="cancle()">
