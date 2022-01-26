@@ -1,0 +1,9 @@
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 66.66%;
+  margin: auto 15rem;
+  padding-top:5rem;
+}

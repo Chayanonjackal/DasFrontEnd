@@ -1,0 +1,26 @@
+<div class="container ">
+  <div class=" md:col-12 lg:col-12 sm:col-12">
+    <p-card>
+      <ng-template pTemplate="header">
+        นำเข้าข้อมูลไฟล์ XLSX
+      </ng-template>
+      <input type="file" (change)="onBasicUploadAuto($event)" multiple="false">
+      <p-fileUpload mode="basic" name="demo[]" url="./upload.php"   (change)="onBasicUploadAuto($event)"></p-fileUpload>
+      <p-fileUpload #fubauto mode="basic"   (onUpload)="onBasicUploadAuto($event)"
+       [auto]="true" chooseLabel="Upload"></p-fileUpload>
+
+       <table>
+         <tbody>
+           <tr *ngFor="let row of data">
+              <td *ngFor="let cell of row">
+                  {{cell}}
+              </td>
+           </tr>
+         </tbody>
+       </table>
+
+    </p-card>
+  </div>
+
+</div>
+<p-toast></p-toast>

@@ -35,6 +35,9 @@ import { DividerModule } from 'primeng/divider';
 import { AccordionModule } from 'primeng/accordion';
 import { ConfirmPopupModule } from 'primeng/confirmpopup';
 import { PanelModule } from 'primeng/panel';
+import { ExcelImportComponent } from './components/excel-import/excel-import.component';
+import { FileUploadModule } from 'primeng/fileupload';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -46,6 +49,7 @@ import { PanelModule } from 'primeng/panel';
     PrivatepredictionComponent,
     PpinfoComponent,
     StudentpredictionComponent,
+    ExcelImportComponent,
   ],
   imports: [
     CommonModule,
@@ -72,6 +76,8 @@ import { PanelModule } from 'primeng/panel';
     AccordionModule,
     ConfirmPopupModule,
     PanelModule,
+    FileUploadModule,
+    HttpClientModule
   ],
 })
-export class HomeModule {}
+export class HomeModule { }

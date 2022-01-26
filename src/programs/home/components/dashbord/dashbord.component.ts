@@ -236,7 +236,6 @@ export class DashbordComponent implements OnInit {
   }
 
   onYearSelected(val:any){
-    console.log(val);
 
     //call api
     const token = localStorage.getItem('Token');
@@ -403,6 +402,9 @@ export class DashbordComponent implements OnInit {
   }
   GoToSp() {
     this.router.navigate(['home/studentprediction'])
+  }
+  GoToExcelImport() {
+    this.router.navigate(['home/excel-import'])
   }
 
 }

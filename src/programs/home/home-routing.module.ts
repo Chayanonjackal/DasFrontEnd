@@ -1,3 +1,4 @@
+import { ExcelImportComponent } from './components/excel-import/excel-import.component';
 import { StudentpredictionComponent } from './components/studentprediction/studentprediction.component';
 
 import { PrivatepredictionComponent } from './components/privateprediction/privateprediction.component';
@@ -38,6 +39,10 @@ const routes: Routes = [
      {
       path:'studentprediction',
       component: StudentpredictionComponent
+     },
+     {
+      path:'excel-import',
+      component: ExcelImportComponent
      },
      {
        path:'**',
