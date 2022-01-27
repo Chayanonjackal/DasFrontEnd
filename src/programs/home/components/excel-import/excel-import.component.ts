@@ -110,7 +110,7 @@ export class ExcelImportComponent implements OnInit {
       // gat1_current	    minimg
       // gat2_current     minimg
 
-      console.log(this.data);
+      // console.log(this.data);
 
       // "priority",
       // "GPAX",
@@ -215,8 +215,8 @@ export class ExcelImportComponent implements OnInit {
       this.http.post(url, playload, header).subscribe((res: any) => {
         if (res) {
         //  console.log(res);
-        console.log("azureRes");
-        console.log(res.Results.output1.value.Values);
+        // console.log("azureRes");
+        // console.log(res.Results.output1.value.Values);
         this.reaPredicData = res.Results.output1.value.Values  //ถูกต้อง
 
         //loop for change arr to obj
@@ -286,7 +286,7 @@ export class ExcelImportComponent implements OnInit {
             // console.log(this.dataForm.value);
             this.dataArr.push(this.dataForm.value)
          }
-          console.log(this.dataArr);
+          // console.log(this.dataArr);
           const token = localStorage.getItem('Token');
           const headerToken = {
             headers: new HttpHeaders({
@@ -295,7 +295,7 @@ export class ExcelImportComponent implements OnInit {
             })
           }
           this.http.post("/studentprediction/post-excel-data", this.dataArr, headerToken).subscribe((res: any) => {
-            console.log(res);
+            // console.log(res);
             if(res){
               this.messageService.add({severity:'success', summary: res.message, detail:res.message});
               // this.router.navigate(['finish'])
