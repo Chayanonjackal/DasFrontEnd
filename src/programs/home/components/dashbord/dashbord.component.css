@@ -1,6 +1,86 @@
-.outlineDiv{
-  padding:6em
+.outlineDiv {
+  padding: 5rem 1rem 1rem 2rem; 
 }
+
+.box-content{
+  margin: auto 5rem !important;
+}
+
+.box-text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  font-size: 2.8rem;
+  margin-top: -1.4rem;
+}
+
+.bulider {
+  margin-top: 4rem;
+  align-items: center;
+  text-align: center;
+  font-size: 1rem;
+}
+
+.bulider-under {
+  margin-top: -2rem;
+  align-items: center;
+  text-align: center;
+  font-size: 1.5rem;
+}
+
+.container-btn{
+  display: flex;
+  justify-content: center;
+}
+
+.logo-background {
+  display: flex;
+  justify-content: center;
+  margin-top: 2.5rem;
+  width: 35rem;
+}
+
+.photo {
+  width: 30%;
+}
+
+.text-search {
+  font-size: 2rem;
+  padding-right: 1rem;
+}
+
+.box-card {
+  margin: auto 10rem !important;
+}
+
+.chart {
+  display: flex;
+
+}
+
+.wordSize{
+  font-size: 1rem;
+}
+
+.chartyear {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.text-visua {
+  align-items: center;
+  text-align: center;
+}
+
+.dropdown-year {
+  display: flex;
+  justify-content: flex-end;
+}
+
+
 .buttonRow{
     display: flex;
     justify-content: space-around;
@@ -13,9 +93,6 @@
 .buttonSize{
   min-width: 5rem;
   min-height: 5rem;
-}
-.wordSize{
-  font-size: 2em
 }
 
 

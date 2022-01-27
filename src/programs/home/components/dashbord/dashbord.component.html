@@ -1,7 +1,5 @@
 
-<br>
-<br>
-<!-- animate__animated  animate__fadeIn -->
+<!-- animate__animated  animate__fadeIn outlineDiv -->
 <div class=" md:col-12 lg:col-12 sm:col-12 outlineDiv ">
   <!-- <div>
     <p-card >
@@ -12,10 +10,41 @@
     </p-card>
   </div> -->
 
-  <div>
-    <p-card  >
+  <div class="box-content">
+    <p class="bulider">WEBSITE BUILDER</p>
+    <p class="box-text">
+      ระบบช่วยการตัดสินใจในการรับนักเรียนเข้าศึกษาต่อใน <br>
+      สาขาวิชาวิทยาการคอมพิวเตอร์ <br>
+      มหาวิทยาลัยเทคโนโลยีราชมงคลธัญบุรี
+    </p>
+    <p class="bulider-under">
+      เพื่อใช้เป็นส่วนประกอบในการตัดสินใจในการเลือกรับนักเรียนมัธยมปลาย
+      ที่สมัครมาเรียน 
+    </p>
+    <div class="container-btn">
+        <button (click)="GoFormPage()" pButton pRipple type="button" label="กรอกแบบประเมิน" class="p-button-danger m-1 text-3xl"></button>
+        <button (click)="GoToExcelImport()" pButton pRipple type="button" label="นำไฟล์ข้อมูลนักเรียนเข้า" class="p-button-danger m-1 text-3xl"></button>
+      </div>
+    <div class="container-btn">
+      <img src="../../../../../assets/img/logo-background.jpg" alt="logo-background" class="logo-background">
+    </div>
+    <p class="box-text m-6 text-4xl">ส่วนประกอบในการตัดสินใจในการเลือกรับนักเรียนมัธยมปลายที่สมัครมาเรียน</p>
+    <p class="bulider-under"> 
+      โครงงานวิจัย เรื่อง ระบบช่วยการตัดสินใจในการรับนักเรียนเข้าศึกษาต่อใน <br> 
+      หลักสูตรวิทยาการคอมพิวเตอร์ มหาวิทยาลัยเทคโนโลยีราชมงคลธัญบุรี ผู้วิจัยได้รวบรวมประเด็นปัญหา <br>
+      รวมถึงแนวทางการแก้ไขปัญหาบนพื้นฐานการประยุกต์ใช้เทคโนโลยีสารสนเทศเข้ามาช่วยจัดการอย่างเป็นระบบ
+    </p>
+
+    <div class="text-visua mt-8">
+      <p class="text-6xl">Operation menu</p>
+      <p class="text-base -mt-6 mb-4">เมนูการทำงาน</p>
+    </div>
+
+
+  <div class="box-card">
+    <p-card >
       <ng-template pTemplate="header">
-        <h1 style="padding-top: 1em; padding-left: 1em;" class="">กรอกแบบฟอร์มเพื่อทำการเก็บข้อมูลนักเรียนลงระบบ และทำการประเมินสำหรับอาจารย์</h1>
+        <h2 style="padding-top: 1em; padding-left: 1em;" class="text-center">กรอกแบบฟอร์มเพื่อทำการเก็บข้อมูลนักเรียนลงระบบฐานข้อมูล และทำการประเมินสำหรับอาจารย์</h2>
       </ng-template>
       <div class="buttonRow">
         <div class="buttonWord">
@@ -59,10 +88,10 @@
     </p-card>
   </div> -->
 
-  <div>
+  <div class="box-card">
     <p-card >
       <ng-template pTemplate="header">
-        <h1 style="padding-top: 1em; padding-left: 1em;" class="">กรอกแบบฟอร์มเพื่อทำการพยากรณ์ส่วนตัวของอาจารย์</h1>
+        <h2 style="padding-top: 1em; padding-left: 1em;" class="text-center">กรอกแบบฟอร์มเพื่อทำการพยากรณ์ส่วนตัวของอาจารย์</h2>
       </ng-template>
       <div class="buttonRow">
         <div class="buttonWord">
@@ -74,23 +103,48 @@
             class="p-button-rounded p-button-danger buttonSize animate__animated animate__slideInDown"></button>
           <p class="wordSize">ผลลัพธ์การพยากรณ์</p>
         </div>
-        <div class="buttonWord">
-          <button pButton pRipple type="button" (click)="logout()" icon="pi pi-power-off" class="p-button-rounded  p-button-danger buttonSize animate__animated animate__slideInDown"></button>
-          <P class="wordSize">ออกจากระบบ</P>
-        </div>
-        <div class="buttonWord">
-          <button (click)="GoHelpPage()" pButton pRipple type="button" icon="pi pi-question-circle"
-            class="p-button-rounded p-button-danger buttonSize animate__animated animate__slideInDown"></button>
-          <p class="wordSize">ช่วยเหลือ</p>
-        </div>
       </div>
     </p-card>
   </div>
 
-  <div >
+    <div class="container-btn mt-6 mb-5">
+      <img src="../../../../../assets/img/search.jpg" alt="search" class="photo">
+      <div class="ml-5 align-self-center">
+        <p class="text-search">ค้นหา และ คัดกรอง</p>
+        <p>
+          It is a long established fact that a reader will <br>
+          be distracted by the readable content of a <br> 
+          page when looking at its layout. The point of <br>
+          using Lorem Ipsum
+        </p>
+        <button (click)="GoToSp()" pButton pRipple type="button" label="ค้นหา" class="p-button-danger m-1 text-1xl"></button>
+      </div>
+    </div>
+    <br><br>
+    <div class="container-btn">
+      <div class="ml-5 align-self-center">
+        <p class="text-search">นักเรียนที่มีคุณสมบัติตรงกับ <br>สาขาวิทยาการคอมพิวเตอร์</p>
+        <p>
+          It is a long established fact that a reader will <br>
+          be distracted by the readable content of a <br> 
+          page when looking at its layout. The point of <br>
+          using Lorem Ipsum
+        </p>
+        <button (click)="GoToSp()" pButton pRipple type="button" label="ดูข้อมูล" class="p-button-danger m-1 text-1xl"></button>
+      </div>
+      <img src="../../../../../assets/img/result.jpg" alt="search" class="photo">
+    </div>
+    <br><br><br><br>
+
+    <div class="text-visua">
+      <p class="text-6xl">Visualization</p>
+      <p class="text-base -mt-6 mb-6">ข้อมูลทางสถิติ</p>
+    </div>
+
+  <div class="box-card mt-7">
     <p-card >
       <ng-template pTemplate="header" >
-        <h1>จำนวนนักเรียนทั้งหมดในแต่ละโรงเรียนที่ยื่นเข้ามาในสาขาวิทยาการคอมพิวเตอร์</h1>
+        <h1 class="text-center">จำนวนนักเรียนทั้งหมดในแต่ละโรงเรียนที่ยื่นเข้ามาในสาขาวิทยาการคอมพิวเตอร์</h1>
       </ng-template>
       <div style="display: flex; justify-content: center;">
         <p-chart type="pie" class="chartStyle" [data]="data" [options]="chartOptions"  [style]="{'width': '50%'}" ></p-chart>
@@ -113,10 +167,10 @@
       </div>
     </p-card>
   </div>
-  <div>
+  <div class="box-card">
     <p-card>
       <ng-template pTemplate="header">
-        <h1>จำนวนนักเรียนทั้งหมดในแต่ละจังหวัดของโรงเรียนที่ยื่นเข้ามาในสาขาวิทยาการคอมพิวเตอร์</h1>
+        <h1 class="text-center">จำนวนนักเรียนทั้งหมดในแต่ละจังหวัดของโรงเรียนที่ยื่นเข้ามาในสาขาวิทยาการคอมพิวเตอร์</h1>
       </ng-template>
       <div style="display: flex; justify-content: center;">
         <!-- <p-chart type="pie" class="chartStyle" [data]="data" [options]="chartOptions"  [style]="{'width': '50%'}" ></p-chart>
@@ -142,20 +196,23 @@
     </p-card>
   </div>
   <!-- ตามปี -->
-  <div >
+  <div class="box-card">
     <p-card >
       <ng-template pTemplate="header" >
-        <h1>ปี </h1>
         <!-- มาใส่ปีด้วยนะ -->
-        <h1>จำนวนนักเรียนมนทั้งหมดในแต่ละโรงเรียนที่ยื่นเข้ามาในสาขาวิทยาการคอมพิวเตอร์</h1>
+        <h1 class="text-center">จำนวนนักเรียนทั้งหมดในแต่ละโรงเรียนที่ยื่นเข้ามาในสาขาวิทยาการคอมพิวเตอร์ ในแต่ละปี</h1>
       </ng-template>
-      <p-dropdown [options]="dropDownObject" [(ngModel)]="selectedYear" (onChange)="onYearSelected($event)" optionLabel="year"></p-dropdown>
+      <div class="dropdown-year">
+        <p-dropdown class="" [options]="dropDownObject" [(ngModel)]="selectedYear" (onChange)="onYearSelected($event)" optionLabel="year"></p-dropdown>
+      </div>
       <!-- <p>{{selectedYear|json}}</p> -->
-      <div style="display: flex; justify-content: center;">
+      <div class="chartyear">
+      <div>
         <p-chart type="doughnut" class="chartStyle" [data]="dataProvinceYear" [options]="chartOptions"  [style]="{'width': '50%'}" ></p-chart>
       </div>
-      <div style="display: flex; justify-content: center;">
+      <div>
         <p-chart type="pie" class="chartStyle" [data]="dataSchoolYear" [options]="chartOptions"  [style]="{'width': '50%'}" ></p-chart>
+      </div>
       </div>
       <!-- <div class="md:col-12 lg:col-12 sm:col-12  ">
         <p-table [value]="schools" [scrollable]="true" scrollHeight="400px" responsiveLayout="scroll">
@@ -174,6 +231,7 @@
       </p-table>
       </div> -->
     </p-card>
+  </div>
   </div>
 
 </div>
