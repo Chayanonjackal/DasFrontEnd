@@ -15,34 +15,8 @@ export class ExcelImportComponent implements OnInit {
   uploadedFiles: any[] = [];
   data!: any[][];
   azureArr: any[][] = [];
-  // dataObj: any = {
-  //   citizen_id : '' ,
-  //   first_name_th : '',
-  //   last_name_th : '' ,
-  //   priority : '' ,
-  //   gpax : '' ,
-  //   pat1 : '' ,
-  //   pat2 : '' ,
-  //   school_name : '',
-  //   school_province_name : '',
-  //   credit_sum : '' ,
-  //   onet01 : '' ,
-  //   onet02 : '',
-  //   onet03 : '',
-  //   onet04 : '' ,
-  //   onet05 : '' ,
-  //   gat1_current : '',
-  //   gat2_current : '',
-  //   predic : '' ,
-  //   scoredprobabilities : '' ,
-  //   add_year : ''
-  // }
   reaPredicData: any [][]=[];
   dataArr: any[] = [] ;
-  // test:any [][] =[];
-  // payloadDataDB:any [][] =[];
-
-
   dataForm = new FormGroup({
     citizen_id: new FormControl(null),
     first_name_th: new FormControl(null),
@@ -72,13 +46,19 @@ export class ExcelImportComponent implements OnInit {
   }
 
   onBasicUploadAuto(event: any) {
-    console.log(event);
+    //Clear Data
+    this.dataForm.reset();
+    this.uploadedFiles = [];
+    this.data = [];
+    this.azureArr = [];
+    this.reaPredicData=[];
+    this.dataArr =[] ;
+
 
     const target: DataTransfer = <DataTransfer>(event.target);
     if (target.files.length !== 1) throw new Error('Cannot use multiple files');
 
     const reader: FileReader = new FileReader();
-    // console.log(reader);
 
     reader.onload = (e: any) => {
       const bstr: string = e.target.result;
@@ -88,8 +68,6 @@ export class ExcelImportComponent implements OnInit {
       const wsname: string = wb.SheetNames[0];
 
       const ws: xlsx.WorkSheet = wb.Sheets[wsname];
-
-      // console.log(ws);
 
       this.data = (xlsx.utils.sheet_to_json(ws, { header: 1 }));  // all data when input   arr[0] mean collum name
       // citizen_id
@@ -128,14 +106,11 @@ export class ExcelImportComponent implements OnInit {
 
 
       // must be String all in arr
-
       //filter arr for API azure service
       for (let index = 1; index < this.data.length; index++) {
         const rowData = this.data[index];
         this.azureArr[index-1] = [];
-        //  console.log("head"+rowData);
         for (let j = 0; j < rowData.length; j++) {
-          // console.log("===>"+rowData[j]);
           if (j == 3) {
             this.azureArr[index-1][0] = rowData[j]
           }
@@ -176,13 +151,11 @@ export class ExcelImportComponent implements OnInit {
 
         }
       }
-      // console.log(this.azureArr);
 
       //API service azure
       const token = "MbYkztaXnl+DazJZVZDBQEwPPpSRTK3qv9WF2tdIAE0xhFtbneqBGV6+gx0XLhpqjngjh3cVG6tnfqkflEta9A==";
       const header = {
         headers: new HttpHeaders({
-          // 'Access-Control-Allow-Origin':'*',
           'Content-Type': 'application/json',
           Authorization: `Bearer ${token}`
         })
@@ -214,18 +187,13 @@ export class ExcelImportComponent implements OnInit {
       //api shoot
       this.http.post(url, playload, header).subscribe((res: any) => {
         if (res) {
-        //  console.log(res);
-        // console.log("azureRes");
-        // console.log(res.Results.output1.value.Values);
-        this.reaPredicData = res.Results.output1.value.Values  //ถูกต้อง
+        this.reaPredicData = res.Results.output1.value.Values
 
         //loop for change arr to obj
          for (let index = 1; index < this.data.length; index++) {
            const row = this.data[index];
-          //  console.log(row);
            for (let j = 0; j < row.length; j++) {
              const col = row[j];
-              // console.log(col);
               if (j == 0) {
                 this.dataForm.get('citizen_id')?.setValue(col)
                 this.dataForm.get('add_year')?.setValue(new Date().getFullYear())
@@ -283,10 +251,8 @@ export class ExcelImportComponent implements OnInit {
 
 
             }
-            // console.log(this.dataForm.value);
             this.dataArr.push(this.dataForm.value)
          }
-          // console.log(this.dataArr);
           const token = localStorage.getItem('Token');
           const headerToken = {
             headers: new HttpHeaders({
@@ -295,11 +261,8 @@ export class ExcelImportComponent implements OnInit {
             })
           }
           this.http.post("/studentprediction/post-excel-data", this.dataArr, headerToken).subscribe((res: any) => {
-            // console.log(res);
             if(res){
               this.messageService.add({severity:'success', summary: res.message, detail:res.message});
-              // this.router.navigate(['finish'])
-
             }else{
               this.messageService.add({severity:'error', summary: res.message, detail:res.message});
             }
@@ -318,13 +281,6 @@ export class ExcelImportComponent implements OnInit {
     };
 
     reader.readAsBinaryString(target.files[0]);
-
-
-    // for(let file of event.files) {
-    //     this.uploadedFiles.push(file);
-    // }
-
-    // this.messageService.add({severity: 'info', summary: 'File Uploaded', detail: ''});
   }
 
   downloadFileSample(){
