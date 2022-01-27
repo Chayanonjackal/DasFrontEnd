@@ -1,5 +1,5 @@
 <div>
-  <div class="container-login-img" id="logo-img">
+  <div class="container-img">
     <img
       id="logo-img"
       src="../../../../../assets/img/logo-black.png"
@@ -7,9 +7,9 @@
     />
   </div>
 
-  <div class="grid grid-nogutter align-items-center justify-content-center">
+  <div class="grid  align-items-center justify-content-center">
     <form
-      class="md:col-3 lg:col-4 sm:col-6 shadow-4 px-6 py-5"
+      class="col-12 md:col-8 lg:col-4 sm:col-8 shadow-4 px-6 py-5"
       id="box-login"
       [formGroup]="loginForm"
       (ngSubmit)="submit()"
@@ -37,7 +37,7 @@
       </div>
       <div class="">
         <h1 class="text-4xl animate__animated animate__fadeIn">
-          PASSWORD
+          Password
         </h1>
         <input
           formControlName="password"
