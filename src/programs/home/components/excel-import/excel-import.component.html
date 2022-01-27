@@ -5,15 +5,16 @@
         นำเข้าข้อมูลไฟล์ XLSX
       </ng-template>
       <div>
-        <p>โปรดตัวอย่างคอลลัมไฟล์ในการเลือกนำข้อมูลเข้า</p>
+        <p>โปรดดูตัวอย่างคอลลัมไฟล์ในการเลือกนำข้อมูลเข้า</p>
         <img style="width: 100%; height: 100%;" src="./../../../../assets/img/Sample.png" alt="Italian Trulli">
-        <p-button label="Download Template" (onClick)="downloadFileSample()" icon="pi pi-download" iconPos="left"></p-button>
+        <p-button label="ดาวโหลดไฟล์ตัวอย่าง" (onClick)="downloadFileSample()" icon="pi pi-download" iconPos="left"></p-button>
 
       </div>
       <div>
-        <input type="file" accept=".xlsx" (change)="onBasicUploadAuto($event)" multiple="false">
+        <input type="file" id="file" accept=".xlsx" (change)="onBasicUploadAuto($event)" multiple="false">
+        <label for="file"><i class="pi pi-upload" style="margin-right: 1em ;"></i> โปรดเลือกไฟล์</label>
       </div>
-       <table>
+       <!-- <table>
          <tbody>
            <tr *ngFor="let row of data">
               <td *ngFor="let cell of row">
@@ -21,7 +22,7 @@
               </td>
            </tr>
          </tbody>
-       </table>
+       </table> -->
 
     </p-card>
   </div>

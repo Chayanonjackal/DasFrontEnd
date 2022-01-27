@@ -75,7 +75,7 @@ export class ExcelImportComponent implements OnInit {
     console.log(event);
 
     const target: DataTransfer = <DataTransfer>(event.target);
-    // if (target.files.length !== 1) throw new Error('Cannot use multiple files');
+    if (target.files.length !== 1) throw new Error('Cannot use multiple files');
 
     const reader: FileReader = new FileReader();
     // console.log(reader);
