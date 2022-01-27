@@ -30,7 +30,7 @@
          <td class="textDataSize">{{user.user_name}}</td>
         <td class="textDataSize">{{user.first_name}}</td>
         <td class="textDataSize">{{user.last_name}}</td>
-        <td class="textDataSize">{{user.role}}</td>
+        <td class="textDataSize">{{user.role | statusPipe : user.role}}</td>
         <td><button pButton pRipple (click)="confirmEdit(user.user_id)" type="button" icon="pi pi-pencil" class="p-button-rounded p-button-warning p-button-outlined buttonstyle"></button></td>
         <td><button pButton pRipple (click)="confirmDelete(user.user_id)" type="button" icon="pi pi-times" class="p-button-rounded p-button-danger p-button-outlined buttonstyle"></button></td>
       </tr>

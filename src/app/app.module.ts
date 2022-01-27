@@ -18,6 +18,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { JwtModule } from '@auth0/angular-jwt';
 import { AuthGuard } from './auth.guard';
 import { CachingInterceptor } from './shared/interceptor/caching.interceptor';
+// import { StatusPipePipe } from './shared/pipes/status-pipe.pipe';
 
 
 
@@ -28,6 +29,7 @@ import { CachingInterceptor } from './shared/interceptor/caching.interceptor';
 @NgModule({
   declarations: [
     AppComponent,
+    // StatusPipePipe,
 
   ],
   imports: [
@@ -49,5 +51,8 @@ import { CachingInterceptor } from './shared/interceptor/caching.interceptor';
       multi: true
     }],
   bootstrap: [AppComponent],
+  exports: [
+    // StatusPipePipe
+  ]
 })
 export class AppModule { }

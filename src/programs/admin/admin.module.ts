@@ -20,12 +20,16 @@ import { InputTextModule } from 'primeng/inputtext';
 import { RadioButtonModule } from 'primeng/radiobutton';
 import { PasswordModule } from 'primeng/password';
 
+//pipe
+import { StatusPipePipe } from '../../app/shared/pipes/status-pipe.pipe';
+
 @NgModule({
   declarations: [
     AdminComponent,
     EditFormComponent,
     AddFormComponent,
     EditPasswordFormComponent,
+    StatusPipePipe
     // NavbarComponent
   ],
   imports: [
@@ -40,8 +44,12 @@ import { PasswordModule } from 'primeng/password';
     InputTextModule,
     RadioButtonModule,
     PasswordModule,
-    NavbarModule
+    NavbarModule,
     // NavbarComponent
+  ],
+  exports: [
+    // StatusPipePipe
+    // statusPipe
   ]
 })
 export class AdminModule { }
