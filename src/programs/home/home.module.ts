@@ -39,6 +39,7 @@ import { ExcelImportComponent } from './components/excel-import/excel-import.com
 import { FileUploadModule } from 'primeng/fileupload';
 import { HttpClientModule } from '@angular/common/http';
 
+
 @NgModule({
   declarations: [
     HomeComponent,
@@ -77,7 +78,8 @@ import { HttpClientModule } from '@angular/common/http';
     ConfirmPopupModule,
     PanelModule,
     FileUploadModule,
-    HttpClientModule
+    HttpClientModule,
+
   ],
 })
 export class HomeModule { }

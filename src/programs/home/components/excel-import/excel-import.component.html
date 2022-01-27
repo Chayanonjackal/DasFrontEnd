@@ -4,11 +4,15 @@
       <ng-template pTemplate="header">
         นำเข้าข้อมูลไฟล์ XLSX
       </ng-template>
-      <input type="file" (change)="onBasicUploadAuto($event)" multiple="false">
-      <p-fileUpload mode="basic" name="demo[]" url="./upload.php"   (change)="onBasicUploadAuto($event)"></p-fileUpload>
-      <p-fileUpload #fubauto mode="basic"   (onUpload)="onBasicUploadAuto($event)"
-       [auto]="true" chooseLabel="Upload"></p-fileUpload>
+      <div>
+        <p>โปรดตัวอย่างคอลลัมไฟล์ในการเลือกนำข้อมูลเข้า</p>
+        <img style="width: 100%; height: 100%;" src="./../../../../assets/img/Sample.png" alt="Italian Trulli">
+        <p-button label="Download Template" (onClick)="downloadFileSample()" icon="pi pi-download" iconPos="left"></p-button>
 
+      </div>
+      <div>
+        <input type="file" accept=".xlsx" (change)="onBasicUploadAuto($event)" multiple="false">
+      </div>
        <table>
          <tbody>
            <tr *ngFor="let row of data">

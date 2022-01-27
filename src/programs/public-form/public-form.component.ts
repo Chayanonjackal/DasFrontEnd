@@ -140,7 +140,7 @@ export class PublicFormComponent implements OnInit {
         this.predicForm.get('add_year')?.setValue(new Date().getFullYear())
 
         const playload1:any =this.predicForm.value
-        console.log(playload1);
+        // console.log(playload1);
         this.http.post('/studentprediction/store',playload1).subscribe((resopnse:any)=>{
           if(resopnse){
             this.messageService.add({severity:'success', summary: resopnse.message, detail:resopnse.message});

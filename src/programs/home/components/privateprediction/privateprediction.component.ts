@@ -42,9 +42,9 @@ export class PrivatepredictionComponent implements OnInit {
     this.auth.getProfile().subscribe((res: any) => {
       if (res) {
         this.playload.user_id = res.data.id
-        console.log(this.playload);
+        // console.log(this.playload);
         this.http.post('/privateprediction/get-all-pp', this.playload, headerToken).subscribe((res: any) => {
-          console.log(res);
+          // console.log(res);
           this.pps = res
         })
       } else {

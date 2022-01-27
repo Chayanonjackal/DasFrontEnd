@@ -43,7 +43,7 @@ export class StudentpredictionComponent implements OnInit {
         // this.playload.user_id = res.data.id
         // console.log(this.playload);
         this.http.get('/studentprediction/get-all-sp', headerToken).subscribe((res: any) => {
-          console.log(res);
+          // console.log(res);
           this.sps = res
         })
       } else {

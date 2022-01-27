@@ -1,0 +1,22 @@
+export interface dataObj{
+  citizen_id :string ,
+  first_name_th :string,
+  last_name_th :string ,
+  priority :string ,
+  gpax :string ,
+  pat1 :string ,
+  pat2 :string ,
+  school_name :string,
+  school_province_name :string,
+  credit_sum :string ,
+  onet01 :string ,
+  onet02 :string,
+  onet03 :string,
+  onet04 :string ,
+  onet05 :string ,
+  gat1_current :string,
+  gat2_current :string,
+  predic :string ,
+  scoredprobabilities :string ,
+  add_year :string
+}
