@@ -1,3 +1,42 @@
+.box-content{
+  margin: auto 5rem !important;
+}
+
+.box-text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  font-size: 2.8rem;
+  margin-top: -1.4rem;
+}
+
+.bulider {
+  margin-top: 4rem;
+  align-items: center;
+  text-align: center;
+  font-size: 1rem;
+}
+
+.bulider-under {
+  margin-top: -2rem;
+  align-items: center;
+  text-align: center;
+  font-size: 1.5rem;
+}
+
+.container-btn{
+  display: flex;
+  justify-content: center;
+}
+
+.logo-background {
+  display: flex;
+  justify-content: center;
+  margin-top: 2.5rem;
+  width: 35rem;
+}
 .container {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -66,8 +105,44 @@
   font-size: 2em;
 } */
 
-@media screen and (max-width: 900px) {
-  .outlineDiv {
-    padding: 0em;
+@media screen and (max-width: 768px) {
+  .container {
+    display: flex;
+    flex-direction: row;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 7rem;
+    padding: 5px;
+    width: 70%;
+    border: 1px solid #BFBFBF;
+  }
+  .con-form {
+  padding: 2rem;
+}
+}
+
+@media screen and (min-width: 576px) and (min-width: 768px) {
+  .container {
+    display: flex;
+    flex-direction: row;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 7rem;
+    padding: 5px;
+    width: 70%;
+    border: 1px solid #BFBFBF;
+  }
+}
+
+@media screen and (min-width: 576px) {
+  .container {
+    display: flex;
+    flex-direction: row;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 7rem;
+    padding: 5px;
+    width: 70%;
+    border: 1px solid #BFBFBF;
   }
 }
