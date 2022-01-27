@@ -6,7 +6,6 @@
   src: url("./assets/font/FC-Iconic/FC Iconic Regular.ttf") format("truetype");
 }
 
-
 @font-face {
   font-family: "FC Iconic Bold";
   src: url("./assets/font/FC-Iconic/FC Iconic Bold.ttf") format("truetype");
@@ -27,8 +26,13 @@ body {
   padding: 0;
 }
 
+button:active {
+  outline: none;
+  border: none;
+}
+
 button:focus {
-  outline: none !important;
+  outline: none;
 }
 
 .g-f-k2d {
@@ -43,11 +47,23 @@ button:focus {
   border-radius: 16px;
 }
 
+.g-nav-item {
+  text-decoration: none;
+  color: white;
+  max-width: fit-content;
+  max-height: max-content;
+}
+
+/* a.col.g-nav-item.g-rad.p-ripple {
+  margin-top: auto;
+  margin-bottom: auto;
+} */
+
 .g-route-actvie {
   /* font-size: 1.8rem; */
-  font-family: 'FC Iconic Bold';
+  font-family: "FC Iconic Bold";
   font-weight: 900;
-  text-decoration: underline;
+  text-decoration: underline !important;
 }
 
 .g-text-primary {

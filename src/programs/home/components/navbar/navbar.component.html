@@ -1,76 +1,87 @@
-<div class="nav-color midlogo md:col-12 lg:col-12 sm:col-12">
-  <div class="menu-group">
+<div class="nav-color midlogo grid">
+  <div class="menu-group col-12 md:col-12 lg:col-12 sm:col-12 pt-1">
     <img
       (click)="GoHomePage()"
-      id="logo-img"
-      src="../../../../../assets/img/logo-noborder.png"
+      src="../../../../../assets/img/logo-noborder-2.png"
       alt="logo"
+      id="logo-img"
+      class="col"
     />
-    <div
-      pRipple
+
+    <a
       routerLink="/home/dashbord"
       routerLinkActive="g-route-actvie"
       [routerLinkActiveOptions]="{ exact: true }"
       (click)="GoHomePage()"
-      class="g-rad px-5 py-3"
+      class="col g-nav-item g-rad"
     >
       หน้าแรก
-    </div>
-    <div
-      pRipple
+    </a>
+    <a
       routerLink="/home/about"
       routerLinkActive="g-route-actvie"
       [routerLinkActiveOptions]="{ exact: false }"
       (click)="GoAboutPage()"
-      class="g-rad px-5 py-3"
+      class="col g-nav-item g-rad"
     >
       เกี่ยวกับ
-    </div>
-    <div
-      pRipple
+    </a>
+    <a
       routerLink="/home/help"
       routerLinkActive="g-route-actvie"
       [routerLinkActiveOptions]="{ exact: true }"
       (click)="GotoHelp()"
-      class="g-rad px-5 py-3"
+      class="col g-nav-item g-rad"
     >
       ช่วยเหลือ
-    </div>
-    <div
-      pRipple
+    </a>
+    <a
       routerLink="/home/form"
       routerLinkActive="g-route-actvie"
       [routerLinkActiveOptions]="{ exact: true }"
       (click)="GotoForm()"
-      class="g-rad px-5 py-3"
+      class="col g-nav-item g-rad"
     >
       ฟอร์มการประเมิน
-    </div>
-    <div
-      pRipple
+    </a>
+    <a
       routerLink="/admin"
       routerLinkActive="g-route-actvie"
       [routerLinkActiveOptions]="{ exact: true }"
       *ngIf="role == 'A'"
       (click)="GotoAdmin()"
-      class="admin g-rad px-5 py-3"
+      class="admin col g-nav-item g-rad mr-auto"
     >
       ผู้ดูแลระบบ
-    </div>
-  </div>
+    </a>
 
-  <div class="account-logo">
-    <button
-      pButton
-      pRipple
-      type="button"
-      icon="pi pi-sign-out"
-      class="p-button-rounded p-button-danger"
-      (click)="onConfirm($event)"
-    ></button>
+    <div class="account-logo">
+      
+      <p-splitButton
+        id="btn-split1"
+        label="บัญชีผู้ใช้"
+        icon="pi pi-user"
+        [model]="menuItem"
+        styleClass="p-button-danger"
+      ></p-splitButton>
+
+      <p-splitButton
+        id="btn-split2"
+        icon="pi pi-bars"
+        [model]="menuItem2"
+        styleClass="p-button-danger"
+      ></p-splitButton>
+
+    </div>
   </div>
   <p-confirmPopup key="logoutPopup"></p-confirmPopup>
 </div>
+
+<p-menu #menu [popup]="true" [model]="menuItem" [baseZIndex]="20"></p-menu>
+
+<p-sidebar [(visible)]="sidebarToggle" position="right" [baseZIndex]="10000">
+  <p-menu [model]="menuItem"></p-menu>
+</p-sidebar>
 
 <!-- <div class="grid navColor">
   <div class=" md:col-12 lg:col-12 sm:col-12 midlogo">

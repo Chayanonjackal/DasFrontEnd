@@ -2,8 +2,7 @@ import { Component, Input, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { AuthService } from 'src/app/shared/services/auth.service';
 
-import { MessageService, PrimeNGConfig } from 'primeng/api';
-import { ConfirmationService } from 'primeng/api';
+import { MenuItem, ConfirmationService, MessageService, PrimeNGConfig } from 'primeng/api';
 
 @Component({
   selector: 'app-navbar',
@@ -11,8 +10,117 @@ import { ConfirmationService } from 'primeng/api';
   styleUrls: ['./navbar.component.css'],
 })
 export class NavbarComponent implements OnInit {
+  menuItem: MenuItem[] = [
+    {
+      label: 'สำหรับผู้ดูแลระบบ',
+      items: [
+        {
+          label: 'การจัดการผู้ใช้',
+          icon: 'pi pi-users',
+          routerLink: ['/admin'],
+          // command: () => {
+          //   this.update();
+          // },
+        },
+        {
+          label: 'อัพโหลดไฟล์ Excel',
+          icon: 'pi pi-file-excel',
+          routerLink: ['/home/excel-import'],
+        },
+      ],
+    },
+    { separator: true },
+    {
+      label: 'การจัดการบัญชี',
+      icon: 'pi pi-users',
+      items: [
+        {
+          label: 'แก้ไขข้อมูลส่วนตัว',
+          icon: 'pi pi-user-edit',
+          // routerLink: ['/home/dashbord'],
+        },
+        {
+          label: 'ออกจากระบบ',
+          icon: 'pi pi-sign-out',
+          command: () => this.onLogout(),
+        },
+      ],
+    },
+  ];
 
+  menuItem2: MenuItem[] = [
+    {
+      label: 'เมนู',
+      icon: 'pi pi-lists',
+      items: [
+        {
+          label: 'หน้าแรก',
+          icon: 'pi pi-home',
+          routerLink: ['/home/dashbord'],
+        },
+        {
+          label: 'เกี่ยวกับ',
+          icon: 'pi pi-info-circle',
+          routerLink: ['/home/about'],
+        },
+        {
+          label: 'ช่วยเหลือ',
+          icon: 'pi pi-question-circle',
+          routerLink: ['/home/help'],
+        },
+        {
+          label: 'ฟอร์มการประเมิน',
+          icon: 'pi pi-file',
+          routerLink: ['/home/form'],
+        },
+        {
+          label: 'ผู้ดูแลระบบ',
+          icon: 'pi pi-users',
+          routerLink: ['/admin'],
+        },
+      ],
+    },
+    {
+      separator: true,
+    },
+    {
+      label: 'สำหรับผู้ดูแลระบบ',
+      items: [
+        {
+          label: 'การจัดการผู้ใช้',
+          icon: 'pi pi-users',
+          routerLink: ['/admin'],
+          // command: () => {
+          //   this.update();
+          // },
+        },
+        {
+          label: 'อัพโหลดไฟล์ Excel',
+          icon: 'pi pi-file-excel',
+          routerLink: ['/home/excel-import'],
+        },
+      ],
+    },
+    { separator: true },
+    {
+      label: 'การจัดการบัญชี',
+      icon: 'pi pi-users',
+      items: [
+        {
+          label: 'แก้ไขข้อมูลส่วนตัว',
+          icon: 'pi pi-user-edit',
+          // routerLink: ['/home/dashbord'],
+        },
+        {
+          label: 'ออกจากระบบ',
+          icon: 'pi pi-sign-out',
+          command: () => this.onLogout(),
+        },
+      ],
+    },
+  ];
   role: any;
+  sidebarToggle: boolean = false;
 
   constructor(
     private router: Router,
@@ -70,7 +178,7 @@ export class NavbarComponent implements OnInit {
       message: 'ยืนยันการออกจากระบบ?',
       icon: 'pi pi-power-off',
       acceptLabel: 'ออกจากระบบ',
-      acceptButtonStyleClass: "g-bg-primary",
+      acceptButtonStyleClass: 'g-bg-primary',
       accept: () => {
         //confirm action
         this.onLogout();

@@ -10,6 +10,10 @@ import { ButtonModule } from 'primeng/button';
 import { MessagesModule } from 'primeng/messages';
 import { MessageModule } from 'primeng/message';
 import { RippleModule } from 'primeng/ripple';
+import { MenuModule } from 'primeng/menu';
+import { OverlayPanelModule } from "primeng/overlaypanel";
+import { SidebarModule } from "primeng/sidebar";
+import { SplitButtonModule } from "primeng/splitbutton";
 
 @NgModule({
   declarations: [NavbarComponent],
@@ -21,6 +25,10 @@ import { RippleModule } from 'primeng/ripple';
     MessagesModule,
     MessageModule,
     RippleModule,
+    MenuModule,
+    // OverlayPanelModule,
+    SidebarModule,
+    SplitButtonModule
   ],
   exports: [NavbarComponent],
 })

@@ -1,41 +1,48 @@
 .nav-color {
   background: #a30000;
-  height: 3.3rem;
+  color: white;
+  font-size: 1.25rem;
+  /* height: 3.3rem; */
 }
 
+/* 
 .midlogo {
   display: flex;
   justify-content: space-between;
   align-content: center;
   align-items: center;
 
-  /* padding: 0px;
-  min-width: 100vmin; */
   width: 100%;
 
   color: white;
   font-size: 1.5rem;
 }
+ */
 
 .menu-group {
   display: flex;
-  justify-content: space-around;
-  align-content: center;
+  /* justify-content: space-around; */
+  justify-content: flex-start;
+  /* align-content: center; */
   align-items: center;
-  min-width: 800px;
+  /* align-items: stretch; */
 
   margin-right: auto;
+  padding: 0;
 
-  cursor: pointer;
+  /* cursor: pointer; */
 }
 
 #logo-img {
-  width: 6rem;
-  margin-top: 0.5rem;
+  max-width: 3rem !important;
+  margin-left: 2rem;
+  margin-right: 4rem;
+  cursor: pointer;
+  /* margin-top: 0.5rem; */
 }
 
 .account-logo {
-  margin: auto 2rem;
+  margin: auto 1rem;
 }
 
 #user-icon-home {
@@ -43,26 +50,75 @@
   color: white;
 }
 
-@media screen and (max-width: 900px) {
+#btn-hamburger {
+  display: none;
+  color: white;
+}
+
+#btn-logout {
+  display: none;
+}
+
+#btn-split2 {
+  display: none;
+}
+
+/* tablet */
+@media screen and (max-width: 0px) {
   .logo {
     display: none;
+  }
+
+  .menu-group > div {
+    font-size: 1rem;
+    padding: 0px;
+    width: max-content;
+  }
+
+  .px-5 {
+    padding-left: 1rem !important;
+    padding-right: 1rem !important;
   }
 
   .midlogo {
     display: flex;
     padding: 0px;
-    column-gap: 2em;
+    column-gap: 1em;
+    justify-content: flex-start;
+    font-size: 1.25rem;
+  }
+
+
+  #btn-hamburger {
+    display: none;
+    color: white;
   }
 }
-@media screen and (max-width: 425px) {
-  .logo {
+
+
+/* mobile */
+@media screen and (max-width: 576px) {
+  #logo-img {
+    margin-top: 0;
+    margin-right: 2rem;
+    width: 4rem;
+  }
+
+  #btn-split1 {
     display: none;
   }
 
-  .midlogo {
-    display: flex;
-    padding: 0px;
-    column-gap: 2em;
-    margin-left: 2.5em;
+  #btn-split2 {
+    display: inline-flex;
   }
+
+  a.g-nav-item {
+    display: none;
+  }
+
+  .account-logo {
+    margin-right: 1rem;
+    margin-left: auto;
+  }
+
 }
