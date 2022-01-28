@@ -13,9 +13,10 @@ input[type="file"]{
 label{
   border-radius: 0.3em;
   color: white;
-  height: 60px;
-  width: 250px;
-  background-color: #33FFFA ;
+  height: 35px;
+  width: 165px;
+  background-color: #169FF5
+   ;
   /* position: absolute; */
   /* margin: auto; */
   top: 0;

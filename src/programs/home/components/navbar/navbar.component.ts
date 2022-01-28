@@ -34,11 +34,11 @@ export class NavbarComponent implements OnInit {
       label: 'การจัดการบัญชี',
       icon: 'pi pi-users',
       items: [
-        {
-          label: 'แก้ไขข้อมูลส่วนตัว',
-          icon: 'pi pi-user-edit',
-          // routerLink: ['/home/dashbord'],
-        },
+        // {
+        //   label: 'แก้ไขข้อมูลส่วนตัว',
+        //   icon: 'pi pi-user-edit',
+        //   // routerLink: ['/home/dashbord'],
+        // },
         {
           label: 'ออกจากระบบ',
           icon: 'pi pi-sign-out',
