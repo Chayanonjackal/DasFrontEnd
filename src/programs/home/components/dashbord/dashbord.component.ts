@@ -413,11 +413,11 @@ export class DashbordComponent implements OnInit {
             icon: 'pi pi-chart-line',
             routerLink: ['/home/privateprediction'],
           },
-          {
-            label: 'ผลลัพธ์นักเรียนที่มีคุณสมบัติผ่านเกณฑ์ (Public Prediction Result)',
-            icon: 'pi pi-check-square',
-            routerLink: ['/home/studentprediction'],
-          },
+          // {
+          //   label: 'ผลลัพธ์นักเรียนที่มีคุณสมบัติผ่านเกณฑ์ (Public Prediction Result)',
+          //   icon: 'pi pi-check-square',
+          //   routerLink: ['/home/studentprediction'],
+          // },
           {
             label: 'นำเข้าไฟล์ Excel (Excel Import)',
             icon: 'pi pi-file-excel',
