@@ -23,6 +23,27 @@
 }
 @media screen and (max-width:900px){
   .container_outline{
+    padding-left: 25%;
+    padding-right: 0em;
+    padding-top: 1em;
+  }
+  .buttonstyle{
+    /* width: 1em; */
+    /* height: 0.5em; */
+  }
+  .textSize{
+    font-size: 0.7em;
+  }
+  .textDataSize{
+    font-size: 0.8em;
+  }
+
+
+}
+
+@media screen and (max-width:426px){
+  .container_outline{
+    width: auto;
     padding-left: 0em;
     padding-right: 0em;
     padding-top: 1em;

@@ -90,7 +90,7 @@
           <!-- มาใส่ปีด้วยนะ -->
           จำนวนนักเรียนทั้งหมดในแต่ละโรงเรียนที่ยื่นเข้ามาในสาขาวิทยาการคอมพิวเตอร์ในแต่ละปี
         </div>
-       
+
         <div class="dropdown-year">
           <p-dropdown
             class=""
@@ -102,23 +102,28 @@
         </div>
         <!-- <p>{{selectedYear|json}}</p> -->
         <div class="chartyear">
-          <div>
-            <p-chart
-              type="doughnut"
-              class="chartStyle"
-              [data]="dataProvinceYear"
-              [options]="chartOptions"
-              [style]="{ width: '50%' }"
-            ></p-chart>
+          <div class="donutStyle">
+            <div class="donutWidth">
+              <p-chart
+                type="doughnut"
+                class="chartStyle"
+                [data]="dataProvinceYear"
+                [options]="chartOptions"
+                [style]="{ width: '100%' }"
+              ></p-chart>
+            </div>
           </div>
-          <div>
-            <p-chart
-              type="pie"
-              class="chartStyle"
-              [data]="dataSchoolYear"
-              [options]="chartOptions"
-              [style]="{ width: '50%' }"
-            ></p-chart>
+          <br>
+          <div class="pieStyle">
+            <div class="pieWidth">
+              <p-chart
+                type="pie"
+                class="chartStyle"
+                [data]="dataSchoolYear"
+                [options]="chartOptions"
+                [style]="{ width: '100%' }"
+              ></p-chart>
+            </div>
           </div>
         </div>
       </p-card>
@@ -128,7 +133,7 @@
 </div>
 
 <!-- ส่วนนี้ "คิดว่าควรย้ายไปอยู่หน้า About" -->
-<!-- 
+<!--
   <div class="container-btn mt-6 mb-5">
     <img
       src="../../../../../assets/img/search.jpg"
