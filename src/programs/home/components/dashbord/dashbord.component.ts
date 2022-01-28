@@ -397,6 +397,11 @@ export class DashbordComponent implements OnInit {
             icon: 'pi pi-chart-line',
             routerLink: ['/home/studentprediction'],
           },
+          {
+            label: 'นำเข้าไฟล์ Excel (Excel Import)',
+            icon: 'pi pi-file-excel',
+            routerLink: ['/home/excel-import'],
+          },
         ],
       },
       { separator: true },
@@ -418,11 +423,7 @@ export class DashbordComponent implements OnInit {
           //   icon: 'pi pi-check-square',
           //   routerLink: ['/home/studentprediction'],
           // },
-          {
-            label: 'นำเข้าไฟล์ Excel (Excel Import)',
-            icon: 'pi pi-file-excel',
-            routerLink: ['/home/excel-import'],
-          },
+
         ],
       },
     ];
