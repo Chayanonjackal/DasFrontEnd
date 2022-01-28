@@ -1,19 +1,30 @@
 .header {
   text-align: center;
   font-size: 3rem;
-  padding-top: 2rem;
+  /* padding-top: 1.5rem; */
 }
 
 .container {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 66.66%;
-  margin: auto 15rem;
+  /* width: 66.66%; */
+  /* margin: auto 15rem; */
+}
+
+/* changed all font style in <p> elements */
+p {
+  font-family: "K2D";
 }
 
 .m-accordion {
   background: red !important;
+}
+
+@media screen and (max-width: 768px) {
+  .header {
+    font-size: 2.5rem;
+  }
 }
 
 /* .buttonLocation{
