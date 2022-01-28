@@ -52,6 +52,11 @@
   justify-content: center;
 }
 /*
+
+.card-container {
+  margin-bottom: 0.5rem;
+}
+/*
 .photo {
   width: 30%;
 }

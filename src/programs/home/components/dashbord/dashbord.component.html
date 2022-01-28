@@ -7,7 +7,8 @@
   </div>
 
   <div class="visualize-group">
-    <p-card>
+    <div class="card-container">
+          <p-card>
       <ng-template pTemplate="header">
         <div class="text-xl p-2">
           จำนวนนักเรียนทั้งหมดในแต่ละโรงเรียนที่ยื่นเข้ามาในสาขาวิทยาการคอมพิวเตอร์
@@ -44,8 +45,9 @@
         </p-table>
       </div>
     </p-card>
+    </div>
 
-    <div class="box-card">
+    <div class="card-container">
       <p-card>
         <div class="text-xl p-2">
           จำนวนนักเรียนทั้งหมดในแต่ละจังหวัดของโรงเรียนที่ยื่นเข้ามาในสาขาวิทยาการคอมพิวเตอร์
@@ -56,7 +58,7 @@
             type="doughnut"
             [data]="dataProvince"
             [options]="chartOptions"
-            [style]="{ width: '80%' }"
+            [style]="{ width: '50%' }"
           ></p-chart>
         </div>
         <div class="md:col-12 lg:col-12 sm:col-12">
@@ -84,7 +86,7 @@
     </div>
 
     <!-- ตามปี -->
-    <div class="box-card">
+    <div class="card-container">
       <p-card>
         <div class="text-xl p-2">
           <!-- มาใส่ปีด้วยนะ -->
