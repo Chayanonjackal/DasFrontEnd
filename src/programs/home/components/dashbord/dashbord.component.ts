@@ -1,7 +1,7 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { ConfirmationService, MessageService } from 'primeng/api';
+import { ConfirmationService, MenuItem, MessageService } from 'primeng/api';
 import { DialogService } from 'primeng/dynamicdialog';
 import { count } from 'rxjs/operators';
 import { AuthService } from 'src/app/shared/services/auth.service';
@@ -12,6 +12,9 @@ import { AuthService } from 'src/app/shared/services/auth.service';
   styleUrls: ['./dashbord.component.css']
 })
 export class DashbordComponent implements OnInit {
+
+  // side menu
+  allMenu!: MenuItem[];
 
   data: any;
   dataProvince:any ;
@@ -49,7 +52,8 @@ export class DashbordComponent implements OnInit {
     private auth: AuthService,
     private confirmationService: ConfirmationService,
     private dialogService: DialogService,
-    private messageService: MessageService) {
+    private messageService: MessageService
+  ) {
 
   }
 
@@ -377,6 +381,51 @@ export class DashbordComponent implements OnInit {
 
 
     })
+
+    // side menu
+    this.allMenu = [
+      {
+        label: 'ส่วนเก็บข้อมูลนักเรียน',
+        items: [
+          {
+            label: 'แบบประเมินสาธารณะ (Public Form)',
+            icon: 'pi pi-file',
+            routerLink: ['/publicform'],
+          },
+          {
+            label: 'ผลลัพธ์แบบประเมินสาธารณะ (Public Prediction Result)',
+            icon: 'pi pi-chart-line',
+            routerLink: ['/home/studentprediction'],
+          },
+        ],
+      },
+      { separator: true },
+      {
+        label: 'ส่วนเก็บข้อมูลสำหรับอาจารย์',
+        items: [
+          {
+            label: 'แบบประเมินภายใน (Private Form)',
+            icon: 'pi pi-file',
+            routerLink: ['/home/form'],
+          },
+          {
+            label: 'ผลลัพธ์แบบประเมินภายใน (Private Prediction Result)',
+            icon: 'pi pi-chart-line',
+            routerLink: ['/home/privateprediction'],
+          },
+          {
+            label: 'ผลลัพธ์นักเรียนที่มีคุณสมบัติผ่านเกณฑ์ (Public Prediction Result)',
+            icon: 'pi pi-check-square',
+            routerLink: ['/home/studentprediction'],
+          },
+          {
+            label: 'นำเข้าไฟล์ Excel (Excel Import)',
+            icon: 'pi pi-file-excel',
+            routerLink: ['/home/excel-import'],
+          },
+        ],
+      },
+    ];
 
   }
 

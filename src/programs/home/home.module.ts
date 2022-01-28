@@ -38,7 +38,7 @@ import { PanelModule } from 'primeng/panel';
 import { ExcelImportComponent } from './components/excel-import/excel-import.component';
 import { FileUploadModule } from 'primeng/fileupload';
 import { HttpClientModule } from '@angular/common/http';
-
+import { MenuModule } from "primeng/menu";
 
 @NgModule({
   declarations: [
@@ -79,7 +79,7 @@ import { HttpClientModule } from '@angular/common/http';
     PanelModule,
     FileUploadModule,
     HttpClientModule,
-
+    MenuModule
   ],
 })
 export class HomeModule { }
