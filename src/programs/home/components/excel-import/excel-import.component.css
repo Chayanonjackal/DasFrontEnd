@@ -1,12 +1,25 @@
 
-.container {
+.outline{
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 66.66%;
-  margin: auto 15rem;
   padding-top:5rem;
+  margin-left: 4em;
+  margin-right: 4em;
 }
+@media screen and (max-width:900px){
+  .outline{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top:5rem;
+    margin-left: 0em;
+    margin-right: 0em;
+  }
+
+
+}
+
 input[type="file"]{
   display: none;
 }
