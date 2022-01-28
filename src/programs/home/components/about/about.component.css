@@ -31,6 +31,15 @@
   justify-content: center;
 }
 
+.photo {
+  width: 30%;
+}
+
+.text-search {
+  font-size: 2rem;
+  padding-right: 1rem;
+} 
+
 .logo-background {
   display: flex;
   justify-content: center;
@@ -106,6 +115,14 @@
 } */
 
 @media screen and (max-width: 768px) {
+  .box-content{
+    display: flex;
+    flex-direction: column;
+    justify-self: center;
+    width: 100vw;
+}
+
+
   .container {
     display: flex;
     flex-direction: row;
@@ -119,9 +136,20 @@
   .con-form {
   padding: 2rem;
 }
+
+  .photo {
+  width: 200px;
+  height: 200px;
+}
 }
 
-@media screen and (min-width: 576px) and (min-width: 768px) {
+@media screen and (max-width: 425px) {
+
+}
+
+
+
+/* @media screen and (min-width: 576px) and (min-width: 768px) {
   .container {
     display: flex;
     flex-direction: row;
@@ -145,4 +173,4 @@
     width: 70%;
     border: 1px solid #BFBFBF;
   }
-}
+} */

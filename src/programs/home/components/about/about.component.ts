@@ -23,8 +23,11 @@ export class AboutComponent implements OnInit {
     const playload = this.contactForm.value;
   }
 
-
   goToHomePage() {
     this.router.navigate(['home/dashbord']);
+  }
+
+  GoToSp() {
+    this.router.navigate(['home/studentprediction']);
   }
 }
