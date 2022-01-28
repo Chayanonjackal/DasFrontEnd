@@ -2,7 +2,6 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-top: 10rem;
 }
 
 #logo-img-form {
@@ -10,7 +9,6 @@
 }
 
 .box-form {
-  width: 50%;
   margin: auto;
 }
 
@@ -20,14 +18,10 @@
   width: 100%;
 }
 
-.headerCard {
-  display: flex;
-  justify-content: flex-end;
-  padding-left: 1rem;
-}
-
 .inputTextStyle {
   padding: 1rem;
+  margin: 0.5rem;
+
   display: flex;
   flex-direction: column;
 }
@@ -35,12 +29,15 @@
 .input-col-2 {
   display: grid;
   grid-template-columns: 1fr 1fr;
+  grid-column-gap: 1rem;
   width: 100%;
 }
 
 .labelStyle {
   font-size: 1rem;
+  font-family: 'K2D';
   padding-bottom: 0.5rem;
+  
 }
 
 .stylebutton {
@@ -55,17 +52,7 @@
   border-radius: 8px;
 }
 
-.outlineDiv {
-}
-
-/* input.p-inputmask.p-inputtext.p-component {
-  width: 100%;
-} */
-
 @media screen and (max-width: 768px) {
-
-  
-
 
   .header {
     display: flex;
@@ -95,6 +82,20 @@
   }
 }
 
+/* if 'resolution screen' less than 425px */
+@media screen and (max-width: 425px) {
+  .input-col-2 {
+    grid-template-columns: 1fr;
+    grid-column-gap: 1rem;
+  }
+
+  .button-style {
+    font-size: 1.5rem;
+    width: 80%;
+  }
+}
+
+/* 
 @media screen and (min-width: 576px) and (min-width: 768px) {
   .header {
     display: flex;
@@ -145,3 +146,4 @@
     flex-direction: column;
   }
 }
+ */

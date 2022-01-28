@@ -65,6 +65,7 @@ export class FormComponent implements OnInit {
   }
 
   submitForm() {
+    console.log(`submit button has clicked`);
     const token = "MbYkztaXnl+DazJZVZDBQEwPPpSRTK3qv9WF2tdIAE0xhFtbneqBGV6+gx0XLhpqjngjh3cVG6tnfqkflEta9A==";
     const header = {
       headers: new HttpHeaders({
@@ -148,13 +149,14 @@ export class FormComponent implements OnInit {
         const playload1:any =this.predicForm.value
 
         this.http.post('/privateprediction/store',playload1,headerToken).subscribe((resopnse:any)=>{
-          // console.log(resopnse);
+          console.log(resopnse);
           if(resopnse){
-            this.messageService.add({severity:'success', summary: resopnse.message, detail:resopnse.message});
-            // setTimeout(function(){
-            //   location.reload();
-            // }, 500);
-
+            this.messageService.add({
+              severity:'success', 
+              summary: resopnse.message, 
+              detail:resopnse.message
+            });
+            this.predicForm.reset();
           }else{
             this.messageService.add({severity:'error', summary: resopnse.message, detail:resopnse.message});
           }
@@ -173,7 +175,5 @@ export class FormComponent implements OnInit {
     this.predicForm.reset()
     this.predicForm.get('user_id')?.setValue(this.user_id)
   }
-
-
 
 }
