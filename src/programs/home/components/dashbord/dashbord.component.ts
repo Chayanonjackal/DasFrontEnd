@@ -46,6 +46,7 @@ export class DashbordComponent implements OnInit {
   filterschoolNameYear: any[]=[];
   purlSchoolNameYear: any[] = [];
   countSchoolNameYear: any[]=[];
+  arrColor: any[]=[] ;
 
   constructor(private router: Router,
     private http: HttpClient,
@@ -58,7 +59,13 @@ export class DashbordComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    // this.onYearSelected({ "year": "2022" })
+
+    for (let index = 0; index < 100; index++) {
+      var randomColor = Math.floor(Math.random()*16777215).toString(16);
+       this.arrColor[index] = "#"+randomColor
+    }
+
+
     const token = localStorage.getItem('Token');
     const headerToken = {
       headers: new HttpHeaders({
@@ -86,39 +93,7 @@ export class DashbordComponent implements OnInit {
             datasets: [
               {
                 data: this.countSchool,
-                backgroundColor: [
-                  "#42A5F5",
-                  "#66BB6A",
-                  "#FFA726",
-                  "#8c07b8",
-                  "#b80780",
-                  "#22b807",
-                  "#42A5F5",
-                  "#66BB6A",
-                  "#FFA726",
-                  "#8c07b8",
-                  "#b80780",
-                  "#22b807",
-                  "#42A5F5",
-                  "#66BB6A",
-                  "#FFA726",
-                  "#8c07b8",
-                  "#b80780",
-                  "#22b807",
-                  "#42A5F5",
-                  "#66BB6A",
-                  "#FFA726",
-                  "#8c07b8",
-                  "#b80780",
-                  "#22b807",
-                  "#42A5F5",
-                  "#66BB6A",
-                  "#FFA726",
-                  "#8c07b8",
-                  "#b80780",
-                  "#22b807",
-
-                ]
+                backgroundColor: this.arrColor
               }
             ]
           };
@@ -154,39 +129,7 @@ export class DashbordComponent implements OnInit {
             datasets: [
               {
                 data: this.countSchoolProvinceName,
-                backgroundColor: [
-                  "#42A5F5",
-                  "#66BB6A",
-                  "#FFA726",
-                  "#8c07b8",
-                  "#b80780",
-                  "#22b807",
-                  "#42A5F5",
-                  "#66BB6A",
-                  "#FFA726",
-                  "#8c07b8",
-                  "#b80780",
-                  "#22b807",
-                  "#42A5F5",
-                  "#66BB6A",
-                  "#FFA726",
-                  "#8c07b8",
-                  "#b80780",
-                  "#22b807",
-                  "#42A5F5",
-                  "#66BB6A",
-                  "#FFA726",
-                  "#8c07b8",
-                  "#b80780",
-                  "#22b807",
-                  "#42A5F5",
-                  "#66BB6A",
-                  "#FFA726",
-                  "#8c07b8",
-                  "#b80780",
-                  "#22b807",
-
-                ]
+                backgroundColor: this.arrColor
               }
             ]
           };
@@ -227,7 +170,7 @@ export class DashbordComponent implements OnInit {
 
         })
       } else {
-        console.log("user not login");
+        // console.log("user not login");
 
       }
     })
@@ -280,39 +223,7 @@ export class DashbordComponent implements OnInit {
           datasets: [
             {
               data: this.countSchoolProvinceNameYear,
-              backgroundColor: [
-                "#42A5F5",
-                "#66BB6A",
-                "#FFA726",
-                "#8c07b8",
-                "#b80780",
-                "#22b807",
-                "#42A5F5",
-                "#66BB6A",
-                "#FFA726",
-                "#8c07b8",
-                "#b80780",
-                "#22b807",
-                "#42A5F5",
-                "#66BB6A",
-                "#FFA726",
-                "#8c07b8",
-                "#b80780",
-                "#22b807",
-                "#42A5F5",
-                "#66BB6A",
-                "#FFA726",
-                "#8c07b8",
-                "#b80780",
-                "#22b807",
-                "#42A5F5",
-                "#66BB6A",
-                "#FFA726",
-                "#8c07b8",
-                "#b80780",
-                "#22b807",
-
-              ]
+              backgroundColor: this.arrColor
             }
           ]
         };
@@ -342,39 +253,7 @@ export class DashbordComponent implements OnInit {
           datasets: [
             {
               data: this.countSchoolNameYear,
-              backgroundColor: [
-                "#42A5F5",
-                "#66BB6A",
-                "#FFA726",
-                "#8c07b8",
-                "#b80780",
-                "#22b807",
-                "#42A5F5",
-                "#66BB6A",
-                "#FFA726",
-                "#8c07b8",
-                "#b80780",
-                "#22b807",
-                "#42A5F5",
-                "#66BB6A",
-                "#FFA726",
-                "#8c07b8",
-                "#b80780",
-                "#22b807",
-                "#42A5F5",
-                "#66BB6A",
-                "#FFA726",
-                "#8c07b8",
-                "#b80780",
-                "#22b807",
-                "#42A5F5",
-                "#66BB6A",
-                "#FFA726",
-                "#8c07b8",
-                "#b80780",
-                "#22b807",
-
-              ]
+              backgroundColor: this.arrColor
             }
           ]
         };
