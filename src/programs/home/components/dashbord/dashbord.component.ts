@@ -59,7 +59,7 @@ export class DashbordComponent implements OnInit {
   }
 
   ngOnInit(): void {
-
+    //random color
     for (let index = 0; index < 100; index++) {
       var randomColor = Math.floor(Math.random()*16777215).toString(16);
        this.arrColor[index] = "#"+randomColor
