@@ -80,25 +80,67 @@ export class NavbarComponent implements OnInit {
         },
       ],
     },
+    // {
+    //   separator: true,
+    // },
+    // {
+    //   label: 'สำหรับผู้ดูแลระบบ',
+    //   items: [
+    //     {
+    //       label: 'การจัดการผู้ใช้',
+    //       icon: 'pi pi-users',
+    //       routerLink: ['/admin'],
+    //       // command: () => {
+    //       //   this.update();
+    //       // },
+    //     },
+    //     // {
+    //     //   label: 'อัพโหลดไฟล์ Excel',
+    //     //   icon: 'pi pi-file-excel',
+    //     //   routerLink: ['/home/excel-import'],
+    //     // },
+    //   ],
+    // },
+    { separator: true },
     {
-      separator: true,
+      label: 'ส่วนเก็บข้อมูลนักเรียน',
+      items: [
+        // {
+        //   label: 'แบบประเมินสาธารณะ (Public Form)',
+        //   icon: 'pi pi-file',
+        //   routerLink: ['/publicform'],
+        // },
+        {
+          label: 'ผลลัพธ์แบบประเมินสาธารณะ (Public Prediction Result)',
+          icon: 'pi pi-chart-line',
+          routerLink: ['/home/studentprediction'],
+        },
+        // {
+        //   label: 'นำเข้าไฟล์ Excel (Excel Import)',
+        //   icon: 'pi pi-file-excel',
+        //   routerLink: ['/home/excel-import'],
+        // },
+      ],
     },
+    { separator: true },
     {
-      label: 'สำหรับผู้ดูแลระบบ',
+      label: 'ส่วนเก็บข้อมูลสำหรับอาจารย์',
       items: [
         {
-          label: 'การจัดการผู้ใช้',
-          icon: 'pi pi-users',
-          routerLink: ['/admin'],
-          // command: () => {
-          //   this.update();
-          // },
+          label: 'แบบประเมินภายใน (Private Form)',
+          icon: 'pi pi-file',
+          routerLink: ['/home/form'],
         },
         {
-          label: 'อัพโหลดไฟล์ Excel',
-          icon: 'pi pi-file-excel',
-          routerLink: ['/home/excel-import'],
+          label: 'ผลลัพธ์แบบประเมินภายใน (Private Prediction Result)',
+          icon: 'pi pi-chart-line',
+          routerLink: ['/home/privateprediction'],
         },
+        // {
+        //   label: 'ผลลัพธ์นักเรียนที่มีคุณสมบัติผ่านเกณฑ์ (Public Prediction Result)',
+        //   icon: 'pi pi-check-square',
+        //   routerLink: ['/home/studentprediction'],
+        // },
       ],
     },
     { separator: true },

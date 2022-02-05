@@ -3,7 +3,7 @@
 <div class="container-group">
 
   <div class="controller-group">
-    <p-menu #menu [model]="allMenu"></p-menu>
+    <p-menu id="menu" #menu [model]="allMenu"></p-menu>
   </div>
 
   <div class="visualize-group">
@@ -17,7 +17,7 @@
       <div style="display: flex; justify-content: center">
         <p-chart
           type="pie"
-          class="chartStyle"
+          styleClass="w-full"
           [data]="data"
           [options]="chartOptions"
           [style]="{ width: '50%' }"
@@ -133,58 +133,3 @@
   </div>
 
 </div>
-
-<!-- ส่วนนี้ "คิดว่าควรย้ายไปอยู่หน้า About" -->
-<!--
-  <div class="container-btn mt-6 mb-5">
-    <img
-      src="../../../../../assets/img/search.jpg"
-      alt="search"
-      class="photo"
-    />
-    <div class="ml-5 align-self-center">
-      <p class="text-search">ค้นหา และ คัดกรอง</p>
-      <p>
-        It is a long established fact that a reader will <br />
-        be distracted by the readable content of a <br />
-        page when looking at its layout. The point of <br />
-        using Lorem Ipsum
-      </p>
-      <button
-        (click)="GoToSp()"
-        pButton
-        pRipple
-        type="button"
-        label="ค้นหา"
-        class="p-button-danger m-1 text-1xl"
-      ></button>
-    </div>
-  </div>
-  <br /><br />
-  <div class="container-btn">
-    <div class="ml-5 align-self-center">
-      <p class="text-search">
-        นักเรียนที่มีคุณสมบัติตรงกับ <br />สาขาวิทยาการคอมพิวเตอร์
-      </p>
-      <p>
-        It is a long established fact that a reader will <br />
-        be distracted by the readable content of a <br />
-        page when looking at its layout. The point of <br />
-        using Lorem Ipsum
-      </p>
-      <button
-        (click)="GoToSp()"
-        pButton
-        pRipple
-        type="button"
-        label="ดูข้อมูล"
-        class="p-button-danger m-1 text-1xl"
-      ></button>
-    </div>
-    <img
-      src="../../../../../assets/img/result.jpg"
-      alt="search"
-      class="photo"
-    />
-  </div>
-  <br /><br /><br /><br /> -->

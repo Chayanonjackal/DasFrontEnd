@@ -1,3 +1,8 @@
+.text-4xl {
+  font-size: 2rem !important;
+  margin: 2rem;
+}
+
 .container-group {
   display: grid;
   grid-template-columns: auto 1fr;
@@ -30,20 +35,20 @@
   padding-right: 0.5rem;
   padding-left: 0.5rem;
 }
-.donutStyle{
+.donutStyle {
   /* width: 50%; */
   display: flex;
   justify-content: center;
 }
-.donutWidth{
+.donutWidth {
   width: 50%;
 }
-.pieStyle{
+.pieStyle {
   /* width: 50%; */
   display: flex;
   justify-content: center;
 }
-.pieWidth{
+.pieWidth {
   width: 50%;
 }
 .chartyear {
@@ -51,6 +56,12 @@
   flex-direction: column;
   justify-content: center;
 }
+
+.chart-size {
+  width: 150%;
+  aspect-ratio: auto;
+}
+
 /*
 
 .card-container {
@@ -108,33 +119,22 @@
 }
  */
 
-
-@media screen and (max-width:900px) {
-
+@media screen and (max-width: 900px) {
   /* .outlineDiv{
     padding:0em
   } */
-
-
 }
 
-@media screen and (max-width:450px) {
-/*
-
-  .buttonSize{
-    min-width: 2rem;
-    min-height: 2rem;
-  }
-  .wordSize{
-    font-size: 1em
-  }
-  .chartStyle{
+@media screen and (max-width: 576px) {
+  #menu {
     display: none;
-  } */
+  }
 
-}
+  .text-xl {
+    font-size: 0.9rem !important;
+  }
 
-.img{
-  /* height: auto; */
-  /* width: auto; */
+  .chart-size {
+    width: 50%;
+  }
 }
