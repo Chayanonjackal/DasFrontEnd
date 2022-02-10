@@ -8,10 +8,17 @@
   box-shadow: 10px 10px 5px #EAE9E9
 }
 .acceptColor{
-  color:  #00FF00
+  color:  #00FF00 ;
+  text-align: center !important;
 }
 .notAcceptColor{
-  color: #FF0000
+  color: #FF0000 ;
+  text-align: center !important;
+}
+
+#text {
+  text-align: center !important;
+
 }
 
 @media screen and (max-width:900px) {

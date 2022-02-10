@@ -34,24 +34,24 @@
 
        <ng-template pTemplate="header" let-columns>
            <tr>
-               <th pSortableColumn="first_name_th" class="textSize">ชื่อ <p-sortIcon field="first_name_th"></p-sortIcon></th>
-               <th pSortableColumn="last_name_th" class="textSize">นามสกุล <p-sortIcon field="last_name_th"></p-sortIcon></th>
-               <th pSortableColumn="predic" class="textSize">ผลลัพธ์การพยากรณ์ <p-sortIcon field="predic"></p-sortIcon></th>
-               <th class="textSize">ข้อมูลเพิ่มเติม</th>
-               <th class="textSize">ลบข้อมูล</th>
+               <th pSortableColumn="first_name_th" class="textSize" id="text">ชื่อ <p-sortIcon field="first_name_th"></p-sortIcon></th>
+               <th pSortableColumn="last_name_th" class="textSize" id="text">นามสกุล <p-sortIcon field="last_name_th"></p-sortIcon></th>
+               <th pSortableColumn="predic" class="textSize" id="text">ผลลัพธ์การพยากรณ์ <p-sortIcon field="predic"></p-sortIcon></th>
+               <th class="textSize" id="text">ข้อมูลเพิ่มเติม</th>
+               <th class="textSize" id="text">ลบข้อมูล</th>
 
            </tr>
        </ng-template>
        <ng-template pTemplate="body" let-pp let-columns="columns">
            <tr>
             <!-- {{pp.user_id}} -->
-              <td class="textDataSize">{{pp.first_name_th}}</td>
-              <td class="textDataSize">{{pp.last_name_th}}</td>
-             <td [ngClass]="{'acceptColor' : ( pp.predic === 'Yes') , 'notAcceptColor' : ( pp.predic === 'No')}" class="textDataSize">{{pp.predic | predictPipe : pp.predic}}</td>
+              <td class="textDataSize" id="text">{{pp.first_name_th}}</td>
+              <td class="textDataSize" id="text">{{pp.last_name_th}}</td>
+             <td   [ngClass]="{'acceptColor' : ( pp.predic === 'Yes') , 'notAcceptColor' : ( pp.predic === 'No')}" class="textDataSize">{{pp.predic | predictPipe : pp.predic}}</td>
 
              <!-- (click)="confirmEdit(user.user_id)" -->
-             <td><button pButton pRipple (click)="infoDetail(pp)" type="button" icon="pi pi-info" class="p-button-rounded p-button-info p-button-outlined buttonstyle"></button></td>
-             <td><button pButton pRipple (click)="deleteDataPp(pp.pp_id)" type="button" icon="pi pi-times" class="p-button-rounded p-button-danger p-button-outlined buttonstyle"></button></td>
+             <td  id="text"><button pButton pRipple (click)="infoDetail(pp)" type="button" icon="pi pi-info" class="p-button-rounded p-button-info p-button-outlined buttonstyle"></button></td>
+             <td  id="text"><button pButton pRipple (click)="deleteDataPp(pp.pp_id)" type="button" icon="pi pi-times" class="p-button-rounded p-button-danger p-button-outlined buttonstyle"></button></td>
            </tr>
        </ng-template>
      </p-table>
