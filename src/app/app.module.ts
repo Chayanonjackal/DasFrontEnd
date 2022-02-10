@@ -18,6 +18,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { JwtModule } from '@auth0/angular-jwt';
 import { AuthGuard } from './auth.guard';
 import { CachingInterceptor } from './shared/interceptor/caching.interceptor';
+// import { PredictPipePipe } from './shared/pipes/predict-pipe.pipe';
 // import { StatusPipePipe } from './shared/pipes/status-pipe.pipe';
 
 
@@ -29,6 +30,7 @@ import { CachingInterceptor } from './shared/interceptor/caching.interceptor';
 @NgModule({
   declarations: [
     AppComponent,
+    // PredictPipePipe,
     // StatusPipePipe,
 
   ],

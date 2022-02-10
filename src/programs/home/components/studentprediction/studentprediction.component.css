@@ -7,6 +7,12 @@
   background-color: #FFE8E8;
   box-shadow: 10px 10px 5px #EAE9E9
 }
+.acceptColor{
+  color:  #00FF00
+}
+.notAcceptColor{
+  color: #FF0000
+}
 
 @media screen and (max-width:900px) {
 

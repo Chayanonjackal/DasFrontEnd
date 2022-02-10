@@ -47,7 +47,7 @@
             <!-- {{pp.user_id}} -->
               <td class="textDataSize">{{pp.first_name_th}}</td>
               <td class="textDataSize">{{pp.last_name_th}}</td>
-             <td class="textDataSize">{{pp.predic}}</td>
+             <td [ngClass]="{'acceptColor' : ( pp.predic === 'Yes') , 'notAcceptColor' : ( pp.predic === 'No')}" class="textDataSize">{{pp.predic | predictPipe : pp.predic}}</td>
 
              <!-- (click)="confirmEdit(user.user_id)" -->
              <td><button pButton pRipple (click)="infoDetail(pp)" type="button" icon="pi pi-info" class="p-button-rounded p-button-info p-button-outlined buttonstyle"></button></td>

@@ -46,9 +46,9 @@
        <ng-template pTemplate="body" let-sp let-columns="columns">
            <tr>
             <!-- {{pp.user_id}} -->
-              <td class="textDataSize">{{sp.first_name_th}}</td>
+              <td  class="textDataSize">{{sp.first_name_th}}</td>
               <td class="textDataSize">{{sp.last_name_th}}</td>
-             <td class="textDataSize">{{sp.predic}}</td>
+             <td [ngClass]="{'acceptColor' : ( sp.predic === 'Yes') , 'notAcceptColor' : ( sp.predic === 'No')}" class="textDataSize">{{sp.predic | predictPipe : sp.predic}}</td>
 
              <!-- (click)="confirmEdit(user.user_id)" -->
              <td><button pButton pRipple (click)="infoDetail(sp)" type="button" icon="pi pi-info" class="p-button-rounded p-button-info p-button-outlined buttonstyle"></button></td>

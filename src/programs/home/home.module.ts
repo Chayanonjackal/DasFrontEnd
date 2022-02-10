@@ -39,6 +39,7 @@ import { ExcelImportComponent } from './components/excel-import/excel-import.com
 import { FileUploadModule } from 'primeng/fileupload';
 import { HttpClientModule } from '@angular/common/http';
 import { MenuModule } from "primeng/menu";
+import { PredictPipePipe } from 'src/app/shared/pipes/predict-pipe.pipe';
 
 @NgModule({
   declarations: [
@@ -51,6 +52,7 @@ import { MenuModule } from "primeng/menu";
     PpinfoComponent,
     StudentpredictionComponent,
     ExcelImportComponent,
+    PredictPipePipe
   ],
   imports: [
     CommonModule,

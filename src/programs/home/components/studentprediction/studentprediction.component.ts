@@ -79,6 +79,7 @@ export class StudentpredictionComponent implements OnInit {
       icon: 'pi pi-info-circle',
       accept: () => {
         this.deletePP(sp_id)
+        this.ngOnInit() // reload
       },
 
   });
@@ -96,7 +97,7 @@ export class StudentpredictionComponent implements OnInit {
     }
     this.http.delete('/studentprediction/delete-datasp',headerToken).subscribe((res:any) =>{
       this.messageService.add({severity:'success', summary: res.message, detail: 'Delete success!'});
-      window.location.reload();
+      // window.location.reload();
     },err=>{
       this.messageService.add({severity:'error', summary: err, detail: 'Can not Delete'});
     })
