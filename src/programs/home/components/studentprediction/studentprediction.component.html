@@ -1,9 +1,8 @@
-<br>
-<br>
-<div class=" md:col-12 lg:col-12 sm:col-12 outlineDiv animate__animated  animate__fadeIn">
+
+<div class="animate__animated  animate__fadeIn">
   <div>
-    <div class="col-12 md:col-12 lg:col-12 sm:col-12 grid borderShadow">
-      <h1>ผลลัพธ์การพยากรณ์ของนักเรียนที่กรอกข้อมูล</h1>
+    <div class="top borderShadow">
+      <p class="header">ผลลัพธ์การพยากรณ์ของนักเรียนที่กรอกข้อมูล</p>
     </div>
     <br><br>
     <p-card>
@@ -23,36 +22,40 @@
       <ng-template pTemplate="caption">
         <div class="table-header">
             <!-- List of Customers -->
+            <!-- <div _ngcontent-kin-c86="" class="display-header table-header ng-star-inserted"> List of Customers </div> -->
             <span class="p-input-icon-left">
                 <i class="pi pi-search"></i>
                 <!-- (input)="dt.filterGlobal($event, 'contains')"     $event.target.value-->
                 <!-- (input)='showTb($event)' -->
-                <input pInputText type="text" (input)="applyFilterGlobal($event, 'contains')" placeholder="Search" />
+                <input pInputText type="text" class="search-size" (input)="applyFilterGlobal($event, 'contains')" placeholder="Search" />
 
             </span>
         </div>
     </ng-template>
 
-       <ng-template pTemplate="header" let-columns>
+       <ng-template pTemplate="header" let-columns id="text">
            <tr>
-               <th pSortableColumn="first_name_th" class="textSize">ชื่อ <p-sortIcon field="first_name_th"></p-sortIcon></th>
-               <th pSortableColumn="last_name_th" class="textSize">นามสกุล <p-sortIcon field="last_name_th"></p-sortIcon></th>
-               <th pSortableColumn="predic" class="textSize">ผลลัพธ์การพยากรณ์ <p-sortIcon field="predic"></p-sortIcon></th>
-               <th class="textSize">ข้อมูลเพิ่มเติม</th>
-               <th class="textSize">ลบข้อมูล</th>
+               <th pSortableColumn="first_name_th" class="textSize" id="text">ชื่อ <p-sortIcon field="first_name_th"></p-sortIcon></th>
+               <th pSortableColumn="last_name_th" class="textSize" id="text">นามสกุล <p-sortIcon field="last_name_th"></p-sortIcon></th>
+               <th pSortableColumn="predic" class="textSize" id="text">ผลลัพธ์การพยากรณ์ <p-sortIcon field="predic"></p-sortIcon></th>
+               <th class="textSize" id="text">ข้อมูลเพิ่มเติม</th>
+               <th class="textSize" id="text">ลบข้อมูล</th>
 
            </tr>
        </ng-template>
-       <ng-template pTemplate="body" let-sp let-columns="columns">
+       <ng-template pTemplate="body" let-sp let-columns="columns" id="text">
            <tr>
             <!-- {{pp.user_id}} -->
-              <td  class="textDataSize">{{sp.first_name_th}}</td>
-              <td class="textDataSize">{{sp.last_name_th}}</td>
-             <td [ngClass]="{'acceptColor' : ( sp.predic === 'Yes') , 'notAcceptColor' : ( sp.predic === 'No')}" class="textDataSize">{{sp.predic | predictPipe : sp.predic}}</td>
+              <td  class="textDataSize text" id="text">{{sp.first_name_th}}</td>
+              <td class="textDataSize text" id="text">{{sp.last_name_th}}</td>
+             <td [ngClass]="{'acceptColor' : ( sp.predic === 'Yes') , 'notAcceptColor' : ( sp.predic === 'No')}" class="textDataSize ">{{sp.predic | predictPipe : sp.predic}}</td>
+              <!-- <td class="textDataSize" id="text">{{sp.first_name_th}}</td>
+              <td class="textDataSize" id="text">{{sp.last_name_th}}</td>
+             <td class="textDataSize hightlight" id="text">{{sp.predic}}</td> -->
 
              <!-- (click)="confirmEdit(user.user_id)" -->
-             <td><button pButton pRipple (click)="infoDetail(sp)" type="button" icon="pi pi-info" class="p-button-rounded p-button-info p-button-outlined buttonstyle"></button></td>
-             <td><button pButton pRipple (click)="deleteDataPp(sp.sp_id)" type="button" icon="pi pi-times" class="p-button-rounded p-button-danger p-button-outlined buttonstyle"></button></td>
+             <td id="text"><button pButton pRipple (click)="infoDetail(sp)" type="button" icon="pi pi-info" class="p-button-rounded p-button-info p-button-outlined buttonstyle" id="text"></button></td>
+             <td id="text"><button pButton pRipple (click)="deleteDataPp(sp.sp_id)" type="button" icon="pi pi-times" class="p-button-rounded p-button-danger p-button-outlined buttonstyle" id="text"></button></td>
            </tr>
        </ng-template>
      </p-table>
