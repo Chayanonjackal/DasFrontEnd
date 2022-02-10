@@ -46,14 +46,16 @@
   margin-top: 2.5rem;
   width: 35rem;
 }
+
 .container {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
+  display: flex;
+  /* grid-template-columns: 1fr 1fr; */
+  flex-direction: column;
   margin-left: auto;
   margin-right: auto;
-  margin-top: 7rem;
+  margin-top: 3rem;
   padding: 5px;
-  width: 60%;
+  width: 40%;
   border: 1px solid #BFBFBF;
 }
 
@@ -114,14 +116,15 @@
   font-size: 2em;
 } */
 
+
 @media screen and (max-width: 768px) {
+
   .box-content{
     display: flex;
     flex-direction: column;
     justify-self: center;
-    width: 100vw;
-}
-
+    /* width: 100vw; */
+  }
 
   .container {
     display: flex;
@@ -133,17 +136,150 @@
     width: 70%;
     border: 1px solid #BFBFBF;
   }
+
   .con-form {
-  padding: 2rem;
+    padding: 2rem;
+  }
+
+
+  .box-content{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* margin: auto 1rem !important; */
+  }
+
+  .bulider {
+    font-size: 0.9rem;
+    margin-bottom: 1.3rem;
+  }
+
+  .box-text {
+    font-size: 2rem;
+    margin-top: -1.4rem;
+  }
+
+  .bulider-under {
+    margin-top: -1rem;
+    font-size: 1.3rem;
+  }
+
+  #sub {
+    font-size: 1.8rem !important;
+  }
+
+  .logo-background {
+    display: flex;
+    justify-content: center;
+    margin-top: 2rem;
+    width: 28rem;
+  }
+
+  .container {
+    display: flex;
+    /* grid-template-columns: 1fr 1fr; */
+    flex-direction: column;
+    justify-content: center;
+    align-self: center;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 2rem;
+    width: 50%;
+  }
+
+  .con-info {
+    padding: 2rem;
+    background: #a30000;
+    color: white;
+  }
+  
+  .photo {
+    width: 28%;
+    height: 28%;
+  }
+
+  .text-search {
+    font-size: 1.4rem;
+    padding-right: 1rem;
+  } 
+  
+  #data-photo {
+    margin-top: 1.5rem;
+  }
+
+  #sub_title{
+    font-size: 1rem;
+    margin-top: -1.8rem;
+  }
+
+  .text-3xl {
+    font-size: 1.3rem !important;
+  }
+
+  .text-4xl {
+    font-size: 1.75rem;
+  }
+
 }
+
+@media screen and (max-width: 576px) {
+  .box-content{
+    margin: auto !important;
+  }
+  
+  .bulider {
+    font-size: 0.9rem;
+    margin-bottom: 1.3rem;
+  }
+
+  .box-text {
+    font-size: 1.4rem;
+    margin-top: -1.4rem;
+  }
+
+  .bulider-under {
+    margin-top: -1rem;
+    font-size: 1rem;
+  }
+
+  .container {
+    display: flex;
+    /* grid-template-columns: 1fr 1fr; */
+    flex-direction: column;
+    justify-content: center;
+    align-self: center;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 2rem;
+    width: 100%;
+  }
+
+  .con-info {
+    padding: 2rem;
+    background: #a30000;
+    color: white;
+  }
+
+  .logo-background {
+    display: flex;
+    justify-content: center;
+    margin-top: 2rem;
+    width: 18rem;
+  }
+
+  #sub {
+    font-size: 1.4rem !important;
+  }
 
   .photo {
-  width: 200px;
-  height: 200px;
-}
-}
+    width: 50%;
+    height: 50%;
+  }
 
-@media screen and (max-width: 425px) {
+  .text-search {
+    font-size: 1.2rem;
+    padding-right: 1rem;
+  } 
 
 }
 

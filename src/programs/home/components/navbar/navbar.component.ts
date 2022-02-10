@@ -63,11 +63,11 @@ export class NavbarComponent implements OnInit {
           icon: 'pi pi-info-circle',
           routerLink: ['/home/about'],
         },
-        {
-          label: 'ช่วยเหลือ',
-          icon: 'pi pi-question-circle',
-          routerLink: ['/home/help'],
-        },
+        // {
+        //   label: 'ช่วยเหลือ',
+        //   icon: 'pi pi-question-circle',
+        //   routerLink: ['/home/help'],
+        // },
         {
           label: 'ฟอร์มการประเมิน',
           icon: 'pi pi-file',

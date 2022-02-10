@@ -16,70 +16,15 @@
     <div class="container-btn">
       <img src="../../../../../assets/img/logo-background.jpg" alt="logo-background" class="logo-background">
     </div>
-    <p class="box-text m-6 text-4xl">ส่วนประกอบในการตัดสินใจในการเลือกรับนักเรียนมัธยมปลายที่สมัครมาเรียน</p>
-    <p class="bulider-under">
+    <p class="box-text m-6 text-4xl" id="sub">ส่วนประกอบในการตัดสินใจในการเลือกรับนักเรียนมัธยมปลายที่สมัครมาเรียน</p>
+    <p class="bulider-under" id="sub_title">
       โครงงานวิจัย เรื่อง ระบบช่วยการตัดสินใจในการรับนักเรียนเข้าศึกษาต่อใน <br>
       หลักสูตรวิทยาการคอมพิวเตอร์ มหาวิทยาลัยเทคโนโลยีราชมงคลธัญบุรี ผู้วิจัยได้รวบรวมประเด็นปัญหา <br>
       รวมถึงแนวทางการแก้ไขปัญหาบนพื้นฐานการประยุกต์ใช้เทคโนโลยีสารสนเทศเข้ามาช่วยจัดการอย่างเป็นระบบ
     </p>
   </div>
 
-  <div class="container-btn mt-6 mb-5">
-    <img
-      src="../../../../../assets/img/search.jpg"
-      alt="search"
-      class="photo"
-    />
-    <div class="ml-5 align-self-center">
-      <p class="text-search">ค้นหา และ คัดกรอง</p>
-      <p>
-        It is a long established fact that a reader will <br />
-        be distracted by the readable content of a <br />
-        page when looking at its layout. The point of <br />
-        using Lorem Ipsum
-      </p>
-      <button
-        (click)="GoToSp()"
-        pButton
-        pRipple
-        type="button"
-        label="ค้นหา"
-        class="p-button-danger m-1 text-1xl"
-      ></button>
-    </div>
-  </div>
-  <br /><br />
-  <div class="container-btn">
-    <div class="ml-5 align-self-center">
-      <p class="text-search">
-        นักเรียนที่มีคุณสมบัติตรงกับ <br />สาขาวิทยาการคอมพิวเตอร์
-      </p>
-      <p>
-        It is a long established fact that a reader will <br />
-        be distracted by the readable content of a <br />
-        page when looking at its layout. The point of <br />
-        using Lorem Ipsum
-      </p>
-      <button
-        (click)="GoToSp()"
-        pButton
-        pRipple
-        type="button"
-        label="ดูข้อมูล"
-        class="p-button-danger m-1 text-1xl"
-      ></button>
-    </div>
-    <img
-      src="../../../../../assets/img/result.jpg"
-      alt="search"
-      class="photo"
-    />
-  </div>
-  <br /><br /><br /><br /> -->
-
-
-  <div class="container g-rad shadow-3 border-0">
-    <div class="con-info g-rad">
+  <div class="container con-info g-rad">
       <div class="g-f-k2d text-4xl animate__animated animate__faster animate__fadeInRight">
         Contact Infomation
       </div>
@@ -106,7 +51,63 @@
         </div>
       </div>
     </div>
-    <div class="con-form g-rad">
+
+  <div class="container-btn mt-6 mb-5">
+    <img
+      src="../../../../../assets/img/search.jpg"
+      alt="search"
+      class="photo"
+    />
+    <div class="ml-5 align-self-center">
+      <p class="text-search">ค้นหา และ คัดกรอง</p>
+      <p>
+        สามารถค้นหาข้อมูลของนักเรียนแต่ละคน <br> 
+        และคัดกรองเลือกแต่ละผลลัพธ์ได้ <br>
+        ดูรายละเอียดของข้อมูลที่กรอกมาได้
+      </p>
+      <button
+        (click)="GoToSp()"
+        pButton
+        pRipple
+        type="button"
+        label="ค้นหา"
+        class="p-button-danger m-1 text-1xl"
+      ></button>
+    </div>
+  </div>
+  <br /><br />
+  <div class="container-btn">
+    <div class="ml-3 align-self-center">
+      <p class="text-search">
+        นักเรียนที่มีคุณสมบัติตรงกับ <br />สาขาวิทยาการคอมพิวเตอร์
+      </p>
+      <p>
+        ผลลัพธ์การกรอกข้อมูลลงแบบประเมิน <br>
+        จะมีแสดงผลลัพธ์ว่านักเรียนเหมาะสมกับ <br>
+        หลักสูตรวิทยาการคอมพิวเตอร์ <br>
+      </p>
+      <button
+        (click)="GoToSp()"
+        pButton
+        pRipple
+        type="button"
+        label="ดูข้อมูล"
+        class="p-button-danger m-1 text-1xl"
+      ></button>
+    </div>
+    <img
+      src="../../../../../assets/img/result.jpg"
+      alt="search"
+      class="photo"
+      id="data-photo"
+    />
+  </div>
+  <br /><br /><br /><br /> 
+
+
+  <!-- <div class="container g-rad shadow-3 border-0"> -->
+    
+    <!-- <div class="con-form g-rad">
       <form class="" [formGroup]="contactForm" (ngSubmit)="onSubmit()">
         <div class="g-f-k2d text-5xl animate__animated animate__faster animate__fadeInLeft">Contact Us</div>
         <h1 class="text-3xl animate__animated animate__faster animate__fadeInLeft">ชื่อ-นามสกุล</h1>
@@ -159,8 +160,8 @@
         ></button>
       </div>
       </form>
-    </div>
-  </div>
+    </div> -->
+
 
   <!-- <br>
 <br>
