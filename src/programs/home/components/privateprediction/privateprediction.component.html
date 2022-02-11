@@ -45,13 +45,12 @@
        <ng-template pTemplate="body" let-pp let-columns="columns">
            <tr>
             <!-- {{pp.user_id}} -->
-              <td class="textDataSize" id="text">{{pp.first_name_th}}</td>
-              <td class="textDataSize" id="text">{{pp.last_name_th}}</td>
-             <td   [ngClass]="{'acceptColor' : ( pp.predic === 'Yes') , 'notAcceptColor' : ( pp.predic === 'No')}" class="textDataSize">{{pp.predic | predictPipe : pp.predic}}</td>
-
-             <!-- (click)="confirmEdit(user.user_id)" -->
-             <td  id="text"><button pButton pRipple (click)="infoDetail(pp)" type="button" icon="pi pi-info" class="p-button-rounded p-button-info p-button-outlined buttonstyle"></button></td>
-             <td  id="text"><button pButton pRipple (click)="deleteDataPp(pp.pp_id)" type="button" icon="pi pi-times" class="p-button-rounded p-button-danger p-button-outlined buttonstyle"></button></td>
+            <td class="textDataSize" id="text">{{pp.first_name_th}}</td>
+            <td class="textDataSize" id="text">{{pp.last_name_th}}</td>
+            <td class="textDataSize" id="text"><span [ngClass]="{'acceptColor' : ( pp.predic === 'Yes') , 'notAcceptColor' : ( pp.predic === 'No')}">{{pp.predic | predictPipe : pp.predic}}</span> </td>
+            <!-- (click)="confirmEdit(user.user_id)" -->
+            <td  id="text"><button pButton pRipple (click)="infoDetail(pp)" type="button" icon="pi pi-info" class="p-button-rounded p-button-info p-button-outlined buttonstyle"></button></td>
+            <td  id="text"><button pButton pRipple (click)="deleteDataPp(pp.pp_id)" type="button" icon="pi pi-times" class="p-button-rounded p-button-danger p-button-outlined buttonstyle"></button></td>
            </tr>
        </ng-template>
      </p-table>

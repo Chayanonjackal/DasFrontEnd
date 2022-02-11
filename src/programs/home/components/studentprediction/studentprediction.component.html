@@ -48,7 +48,7 @@
             <!-- {{pp.user_id}} -->
               <td  class="textDataSize text" id="text">{{sp.first_name_th}}</td>
               <td class="textDataSize text" id="text">{{sp.last_name_th}}</td>
-             <td [ngClass]="{'acceptColor' : ( sp.predic === 'Yes') , 'notAcceptColor' : ( sp.predic === 'No')}" class="textDataSize ">{{sp.predic | predictPipe : sp.predic}}</td>
+              <td  class="textDataSize " id="text"><span [ngClass]="{'acceptColor' : ( sp.predic === 'Yes') , 'notAcceptColor' : ( sp.predic === 'No')}">{{sp.predic | predictPipe : sp.predic}}</span></td>
               <!-- <td class="textDataSize" id="text">{{sp.first_name_th}}</td>
               <td class="textDataSize" id="text">{{sp.last_name_th}}</td>
              <td class="textDataSize hightlight" id="text">{{sp.predic}}</td> -->

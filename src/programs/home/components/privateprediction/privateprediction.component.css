@@ -8,12 +8,22 @@
   box-shadow: 10px 10px 5px #EAE9E9
 }
 .acceptColor{
-  color:  #00FF00 ;
   text-align: center !important;
+  border-radius: 2px;
+  padding: 0.5rem 0.5rem;
+  font-weight: 700;
+  letter-spacing: 0.3px;
+  background-color: #c8e6c9;
+  color: #256029;
 }
 .notAcceptColor{
-  color: #FF0000 ;
   text-align: center !important;
+  border-radius: 2px;
+  padding: 0.5rem 0.5rem;
+  font-weight: 700;
+  letter-spacing: 0.3px;
+  background-color: #ffcdd2;
+  color: #c63737;
 }
 
 #text {
