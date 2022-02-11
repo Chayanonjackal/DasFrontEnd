@@ -1,8 +1,7 @@
-<br>
-<div class=" md:col-12 lg:col-12 sm:col-12 outlineDiv animate__animated  animate__fadeIn">
+<div class="animate__animated  animate__fadeIn">
   <div>
-    <div class="col-12 md:col-12 lg:col-12 sm:col-12 grid borderShadow">
-      <h1>ผลลัพธ์การพยากรณ์ที่อาจารย์กรอกข้อมูล</h1>
+    <div class="top borderShadow">
+      <p class="header">ผลลัพธ์การพยากรณ์ที่อาจารย์กรอกข้อมูล</p>
     </div>
     <br><br>
     <p-card>
@@ -32,7 +31,7 @@
         </div>
     </ng-template>
 
-       <ng-template pTemplate="header" let-columns>
+       <ng-template pTemplate="header" let-columns id="text">
            <tr>
                <th pSortableColumn="first_name_th" class="textSize" id="text">ชื่อ <p-sortIcon field="first_name_th"></p-sortIcon></th>
                <th pSortableColumn="last_name_th" class="textSize" id="text">นามสกุล <p-sortIcon field="last_name_th"></p-sortIcon></th>
@@ -42,7 +41,7 @@
 
            </tr>
        </ng-template>
-       <ng-template pTemplate="body" let-pp let-columns="columns">
+       <ng-template pTemplate="body" let-pp let-columns="columns" id="text">
            <tr>
             <!-- {{pp.user_id}} -->
             <td class="textDataSize" id="text">{{pp.first_name_th}}</td>

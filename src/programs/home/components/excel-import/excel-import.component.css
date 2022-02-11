@@ -1,3 +1,20 @@
+.top {
+  display: flex;
+  justify-content: center;
+}
+
+.borderShadow{
+  border-bottom-left-radius: 1em;
+  border-bottom-right-radius: 1em;
+  background-color: #FFE8E8;
+  box-shadow: 10px 10px 5px #EAE9E9
+}
+
+.header {
+  font-size: 2rem;
+  align-items: center;
+  align-self: center;
+}
 
 .outline{
   display: flex;
@@ -7,17 +24,13 @@
   margin-left: 4em;
   margin-right: 4em;
 }
-@media screen and (max-width:900px){
-  .outline{
-    display: flex;
-    justify-content: center;
+
+@media screen and (max-width: 576px){
+  .header {
+    font-size: 1.4rem;
     align-items: center;
-    padding-top:5rem;
-    margin-left: 0em;
-    margin-right: 0em;
+    align-self: center;
   }
-
-
 }
 
 input[type="file"]{

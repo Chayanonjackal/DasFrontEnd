@@ -42,7 +42,6 @@
   font-size: 2rem;
   align-items: center;
   align-self: center;
-
 }
 
 #text {
@@ -86,6 +85,14 @@
     justify-content: center;
   }
 
+  .acceptColor{
+    font-size: 0.49rem;
+  }
+
+  .notAcceptColor{
+    font-size: 0.49rem;
+  }
+
 }
 
 @media screen and (max-width: 376px){
@@ -97,6 +104,14 @@
 
   .display-header {
     display: none;
+  }
+
+  .acceptColor{
+    font-size: 0.3rem;
+  }
+
+  .notAcceptColor{
+    font-size: 0.3rem;
   }
 
 }
