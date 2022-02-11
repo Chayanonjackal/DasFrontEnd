@@ -134,7 +134,7 @@ export class StudentpredictionComponent implements OnInit {
       noDownload: false,
       headers: ["pp_id", "citizen_id","first_name_th","last_name_th","priority","gpax","pat1",
     "pat2","school_name","school_province_name","credit_sum","onet01","onet02","onet03","onet04","onet05","gat1_current"
-  ,"gat2_current","predic","scoredProbabilities"]
+  ,"gat2_current","predic","scoredProbabilities","add_year"]
     };
 
     new ngxCsv(this.sps, "StudentData",options);

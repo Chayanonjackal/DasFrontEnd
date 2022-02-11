@@ -18,6 +18,7 @@
   <p>คะแนน GAT1 : {{studentData.gat1_current}}</p>
   <p>คะแนน GAT2 : {{studentData.gat2_current}}</p>
   <p-divider></p-divider>
-  <p>ผลการพยากรณ์ : {{studentData.predic}}</p>
+  <!-- [ngClass]="{'acceptColor' : ( sp.predic === 'Yes') , 'notAcceptColor' : ( sp.predic === 'No')}" -->
+  <p >ผลการพยากรณ์ : {{studentData.predic | predictPipe : studentData.predic}}</p>
   <p>ความน่าจะเป็นของการพยาการณ์ : {{studentData.scoredProbabilities}}</p>
 </div>

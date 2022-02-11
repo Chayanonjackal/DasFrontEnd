@@ -1,0 +1,12 @@
+.acceptColor{
+  color:  #00FF00 ;
+  /* border-radius: 50px; */
+  /* text-align: center !important; */
+  /* font-size: 1.2rem; */
+}
+.notAcceptColor{
+  color: #FF0000 ;
+  /* border-radius: 50px; */
+  /* text-align: center !important; */
+  /* font-size: 1.2rem; */
+}
