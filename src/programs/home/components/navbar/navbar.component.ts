@@ -11,25 +11,25 @@ import { MenuItem, ConfirmationService, MessageService, PrimeNGConfig } from 'pr
 })
 export class NavbarComponent implements OnInit {
   menuItem: MenuItem[] = [
-    {
-      label: 'สำหรับผู้ดูแลระบบ',
-      items: [
-        {
-          label: 'การจัดการผู้ใช้',
-          icon: 'pi pi-users',
-          routerLink: ['/admin'],
-          // command: () => {
-          //   this.update();
-          // },
-        },
-        {
-          label: 'อัพโหลดไฟล์ Excel',
-          icon: 'pi pi-file-excel',
-          routerLink: ['/home/excel-import'],
-        },
-      ],
-    },
-    { separator: true },
+    // {
+    //   label: 'สำหรับผู้ดูแลระบบ',
+    //   items: [
+    //     {
+    //       label: 'การจัดการผู้ใช้',
+    //       icon: 'pi pi-users',
+    //       routerLink: ['/admin'],
+    //       // command: () => {
+    //       //   this.update();
+    //       // },
+    //     },
+    //     {
+    //       label: 'อัพโหลดไฟล์ Excel',
+    //       icon: 'pi pi-file-excel',
+    //       routerLink: ['/home/excel-import'],
+    //     },
+    //   ],
+    // },
+    // { separator: true },
     {
       label: 'การจัดการบัญชี',
       icon: 'pi pi-users',

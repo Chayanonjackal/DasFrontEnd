@@ -62,7 +62,8 @@ export class AdminComponent implements OnInit {
           summary: res.message,
           detail: 'Delete success!',
         });
-        window.location.reload();
+        // window.location.reload();
+        this.ngOnInit()
       },
       (err) => {
         this.messageService.add({
@@ -84,7 +85,7 @@ export class AdminComponent implements OnInit {
       },
     });
   }
-  
+
   confirmEdit(userId: any) {
     this.confirmationService.confirm({
       message: 'Do you want to edit?',
@@ -118,8 +119,10 @@ export class AdminComponent implements OnInit {
           contentStyle: { 'max-height': '500px', overflow: 'auto' },
           baseZIndex: 10000,
         });
+        // this.ngOnInit()
       },
     });
+
   }
 
   GoHomePage() {
