@@ -19,6 +19,7 @@ export class PrivatepredictionComponent implements OnInit {
   ref: DynamicDialogRef | undefined
   recordCount: number = 0;
   pps: any
+  ppsExcel: any
   playload: any = {
     "user_id": ""
   }
@@ -46,6 +47,19 @@ export class PrivatepredictionComponent implements OnInit {
         this.http.post('/privateprediction/get-all-pp', this.playload, headerToken).subscribe((res: any) => {
           // console.log(res);
           this.pps = res
+        })
+      } else {
+        console.log("user not login");
+
+      }
+    })
+    this.auth.getProfile().subscribe((res: any) => {
+      if (res) {
+        this.playload.user_id = res.data.id
+        // console.log(this.playload);
+        this.http.post('/privateprediction/get-all-pp-excel', this.playload, headerToken).subscribe((res: any) => {
+          // console.log(res);
+          this.ppsExcel = res
         })
       } else {
         console.log("user not login");
@@ -118,7 +132,8 @@ export class PrivatepredictionComponent implements OnInit {
 
   exportExcel(){
     import("xlsx").then(xlsx => {
-      const worksheet = xlsx.utils.json_to_sheet(this.pps);
+      //start fix here
+      const worksheet = xlsx.utils.json_to_sheet(this.ppsExcel);
       const workbook = { Sheets: { 'data': worksheet }, SheetNames: ['data'] };
       const excelBuffer: any = xlsx.write(workbook, { bookType: 'xlsx', type: 'array' });
       this.saveAsExcelFile(excelBuffer, "studentData");
@@ -136,12 +151,12 @@ export class PrivatepredictionComponent implements OnInit {
       title: 'studentData',
       useBom: true,
       noDownload: false,
-      headers: ["pp_id", "citizen_id","first_name_th","last_name_th","priority","gpax","pat1",
+      headers: [ "citizen_id","first_name_th","last_name_th","priority","gpax","pat1",
     "pat2","school_name","school_province_name","credit_sum","onet01","onet02","onet03","onet04","onet05","gat1_current"
-  ,"gat2_current","predic","scoredProbabilities","user_id"]
+  ,"gat2_current","predic","scoredProbabilities"]
     };
 
-    new ngxCsv(this.pps, "StudentData",options);
+    new ngxCsv(this.ppsExcel, "StudentData",options);
 
   }
 

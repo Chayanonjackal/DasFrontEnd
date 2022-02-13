@@ -153,7 +153,8 @@ export class DashbordComponent implements OnInit {
                     year: this.filteraddYearDropdown[index]
                   }
                    )
-                } //year for dropdown
+                }
+                //year for dropdown
                 this.selectedYear = {
                   "originalEvent": {
                       "isTrusted": true
