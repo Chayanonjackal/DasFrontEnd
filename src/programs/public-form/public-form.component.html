@@ -219,7 +219,7 @@
           <div class="input-col-2">
             <div class="inputTextStyle">
               <label class="labelStyle">ความถนัดทางคณิตศาสตร์ (PAT1)</label>
-              <p-inputNumber formControlName="pat1" 
+              <p-inputNumber formControlName="pat1"
               styleClass="w-full labelStyle p-inputtext-sm animate__animated animate__fadeIn"
               [minFractionDigits]="2"></p-inputNumber>
               <small
@@ -235,7 +235,7 @@
             </div>
             <div class="inputTextStyle">
               <label class="labelStyle">ความถนัดทางวิทยาศาสตร์ (PAT2)</label>
-              <p-inputNumber formControlName="pat2" 
+              <p-inputNumber formControlName="pat2"
               styleClass="w-full labelStyle p-inputtext-sm animate__animated animate__fadeIn"
               [minFractionDigits]="2"></p-inputNumber>
               <small
@@ -254,7 +254,7 @@
           <div class="input-col-2">
             <div class="inputTextStyle">
               <label class="labelStyle">คะแนนแกท 1 ไทย (GAT1)</label>
-              <p-inputNumber formControlName="gat1_current" 
+              <p-inputNumber formControlName="gat1_current"
               styleClass="w-full labelStyle p-inputtext-sm animate__animated animate__fadeIn"
               [minFractionDigits]="2"></p-inputNumber>
               <small
@@ -270,7 +270,7 @@
             </div>
             <div class="inputTextStyle">
               <label class="labelStyle">คะแนนแกท 2 อังกฤษ (GAT2)</label>
-              <p-inputNumber formControlName="gat2_current" 
+              <p-inputNumber formControlName="gat2_current"
               styleClass="w-full labelStyle p-inputtext-sm animate__animated animate__fadeIn"
               [minFractionDigits]="2"></p-inputNumber>
               <small
@@ -289,7 +289,7 @@
           <div class="input-col-2">
             <div class="inputTextStyle">
               <label class="labelStyle">โอเน็ตภาษาไทย (ONET01)</label>
-              <p-inputNumber formControlName="onet01" 
+              <p-inputNumber formControlName="onet01"
               styleClass="w-full labelStyle p-inputtext-sm animate__animated animate__fadeIn"
               [minFractionDigits]="2"></p-inputNumber>
               <small
@@ -305,7 +305,7 @@
             </div>
             <div class="inputTextStyle">
               <label class="labelStyle">โอเน็ตสังคมศึกษา (ONET02)</label>
-              <p-inputNumber formControlName="onet02" 
+              <p-inputNumber formControlName="onet02"
               styleClass="w-full labelStyle p-inputtext-sm animate__animated animate__fadeIn"
               [minFractionDigits]="2"></p-inputNumber>
               <small
@@ -324,7 +324,7 @@
           <div class="input-col-2">
             <div class="inputTextStyle">
               <label class="labelStyle">โอเน็ตภาษาอังกฤษ (ONET03)</label>
-              <p-inputNumber formControlName="onet03" 
+              <p-inputNumber formControlName="onet03"
               styleClass="w-full labelStyle p-inputtext-sm animate__animated animate__fadeIn"
               [minFractionDigits]="2"></p-inputNumber>
 
@@ -341,7 +341,7 @@
             </div>
             <div class="inputTextStyle">
               <label class="labelStyle">โอเน็ตคณิตศาสตร์ (ONET04)</label>
-              <p-inputNumber formControlName="onet04" 
+              <p-inputNumber formControlName="onet04"
               styleClass="w-full labelStyle p-inputtext-sm animate__animated animate__fadeIn"
               [minFractionDigits]="2"></p-inputNumber>
               <small
@@ -359,7 +359,7 @@
 
           <div class="inputTextStyle">
             <label class="labelStyle">โอเน็ตวิทยาศาสตร์ (ONET05)</label>
-            <p-inputNumber formControlName="onet05" 
+            <p-inputNumber formControlName="onet05"
             styleClass="w-full labelStyle p-inputtext-sm animate__animated animate__fadeIn"
             [minFractionDigits]="2"></p-inputNumber>
             <small
@@ -402,6 +402,7 @@
         type="button"
         label="Submit"
         class="p-button-raised p-button-danger button-style"
+        (click)="submitForm()"
       ></button>
 
       <button
