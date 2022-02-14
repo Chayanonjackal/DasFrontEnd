@@ -3,7 +3,10 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  azureApiKey:'nra2Hk623OWtzgHU+rPIEepJT9bovALC9qDcrFZkB7iATPGvFntmNkFZVEL5kkqagU58Xp3dv4XW5mqcicyriw==',
+  azureURL:'https://ussouthcentral.services.azureml.net/workspaces/546b05c5f7df46fc9eed1b8ef5831567/services/4ed81d4ba970427d9cc95d051dcc57e7/execute?api-version=2.0&details=true'
+
 };
 
 /*

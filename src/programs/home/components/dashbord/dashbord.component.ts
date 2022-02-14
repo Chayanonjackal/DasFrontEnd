@@ -154,13 +154,15 @@ export class DashbordComponent implements OnInit {
                   }
                    )
                 }
+                // console.log(this.dropDownObject);
+
                 //year for dropdown
                 this.selectedYear = {
                   "originalEvent": {
                       "isTrusted": true
                   },
                   "value": {
-                      "year": "2022"
+                      "year": this.dropDownObject[0].year
                   }
               }
                 // this.startYearChart();
