@@ -48,6 +48,7 @@
               id="citizen_id"
               formControlName="citizen_id"
               placeholder="x-xxxx-xxxxx-xx-x"
+              styleClass=" labelStyle p-inputtext-sm animate__animated animate__fadeIn"
               class="w-full sm:col-7 p-inputtext-sm animate__animated animate__fadeIn"
             ></p-inputMask>
             <small
@@ -109,7 +110,7 @@
               <input
                 formControlName="school_name"
                 type="text"
-                class="w-full sm:col-7 p-inputtext-sm animate__animated animate__fadeIn"
+                styleClass="w-full labelStyle p-inputtext-sm animate__animated animate__fadeIn"
                 pInputText
               />
               <small
@@ -153,7 +154,9 @@
               <label class="labelStyle">เกรดรวม (GPAX)</label>
               <p-inputNumber
                 formControlName="gpax"
+                styleClass="w-full labelStyle p-inputtext-sm animate__animated animate__fadeIn"
                 class="w-full sm:col-7 p-inputtext-sm animate__animated animate__fadeIn"
+                [minFractionDigits]="2"
               ></p-inputNumber>
               <small
                 class="smallStyle"
@@ -170,7 +173,8 @@
               <label class="labelStyle">ผลรวมหน่วยกิต</label>
               <p-inputNumber
                 formControlName="credit_sum"
-                class="w-full sm:col-7 p-inputtext-sm animate__animated animate__fadeIn"
+                styleClass="w-full labelStyle p-inputtext-sm animate__animated animate__fadeIn"
+                [minFractionDigits]="2"
               ></p-inputNumber>
               <small
                 class="smallStyle"
@@ -184,25 +188,28 @@
               >
             </div>
           </div>
-          <div class="inputTextStyle">
-            <label class="labelStyle"
-              >ลำดับที่เลือกสาขาวิทยาการเลือก TCAS3</label
-            >
-            <p-inputNumber
-              [min]="1"
-              [max]="10"
-              formControlName="priority"
-            ></p-inputNumber>
-            <small
-              class="smallStyle"
-              id="username2-help"
-              *ngIf="
-                predicForm.controls['priority'].invalid &&
-                predicForm.controls['priority'].touched
-              "
-              class="p-error"
-              >กรุณากรอกลำดับที่เลือกสาขาวิทยาการเลือก TCAS3</small
-            >
+          <div class="input-col-2">
+            <div class="inputTextStyle">
+              <label class="labelStyle"
+                >ลำดับที่เลือกสาขาวิทยาการเลือก TCAS3</label
+              >
+              <p-inputNumber
+                [min]="1"
+                [max]="10"
+                formControlName="priority"
+                styleClass="w-full labelStyle p-inputtext-sm animate__animated animate__fadeIn"
+              ></p-inputNumber>
+              <small
+                class="smallStyle"
+                id="username2-help"
+                *ngIf="
+                  predicForm.controls['priority'].invalid &&
+                  predicForm.controls['priority'].touched
+                "
+                class="p-error"
+                >กรุณากรอกลำดับที่เลือกสาขาวิทยาการเลือก TCAS3</small
+              >
+            </div>
           </div>
         </p-panel>
 
@@ -213,7 +220,9 @@
           <div class="input-col-2">
             <div class="inputTextStyle">
               <label class="labelStyle">ความถนัดทางคณิตศาสตร์ (PAT1)</label>
-              <p-inputNumber formControlName="pat1"></p-inputNumber>
+              <p-inputNumber formControlName="pat1" 
+              styleClass="w-full labelStyle p-inputtext-sm animate__animated animate__fadeIn"
+              [minFractionDigits]="2"></p-inputNumber>
               <small
                 class="smallStyle"
                 id="username2-help"
@@ -227,7 +236,9 @@
             </div>
             <div class="inputTextStyle">
               <label class="labelStyle">ความถนัดทางวิทยาศาสตร์ (PAT2)</label>
-              <p-inputNumber formControlName="pat2"></p-inputNumber>
+              <p-inputNumber formControlName="pat2" 
+              styleClass="w-full labelStyle p-inputtext-sm animate__animated animate__fadeIn"
+              [minFractionDigits]="2"></p-inputNumber>
               <small
                 class="smallStyle"
                 id="username2-help"
@@ -244,7 +255,9 @@
           <div class="input-col-2">
             <div class="inputTextStyle">
               <label class="labelStyle">คะแนนแกท 1 ไทย (GAT1)</label>
-              <p-inputNumber formControlName="gat1_current"></p-inputNumber>
+              <p-inputNumber formControlName="gat1_current" 
+              styleClass="w-full labelStyle p-inputtext-sm animate__animated animate__fadeIn"
+              [minFractionDigits]="2"></p-inputNumber>
               <small
                 class="smallStyle"
                 id="username2-help"
@@ -258,7 +271,9 @@
             </div>
             <div class="inputTextStyle">
               <label class="labelStyle">คะแนนแกท 2 อังกฤษ (GAT2)</label>
-              <p-inputNumber formControlName="gat2_current"></p-inputNumber>
+              <p-inputNumber formControlName="gat2_current" 
+              styleClass="w-full labelStyle p-inputtext-sm animate__animated animate__fadeIn"
+              [minFractionDigits]="2"></p-inputNumber>
               <small
                 class="smallStyle"
                 id="username2-help"
@@ -275,7 +290,9 @@
           <div class="input-col-2">
             <div class="inputTextStyle">
               <label class="labelStyle">โอเน็ตภาษาไทย (ONET01)</label>
-              <p-inputNumber formControlName="onet01"></p-inputNumber>
+              <p-inputNumber formControlName="onet01" 
+              styleClass="w-full labelStyle p-inputtext-sm animate__animated animate__fadeIn"
+              [minFractionDigits]="2"></p-inputNumber>
               <small
                 class="smallStyle"
                 id="username2-help"
@@ -289,7 +306,9 @@
             </div>
             <div class="inputTextStyle">
               <label class="labelStyle">โอเน็ตสังคมศึกษา (ONET02)</label>
-              <p-inputNumber formControlName="onet02"></p-inputNumber>
+              <p-inputNumber formControlName="onet02" 
+              styleClass="w-full labelStyle p-inputtext-sm animate__animated animate__fadeIn"
+              [minFractionDigits]="2"></p-inputNumber>
               <small
                 class="smallStyle"
                 id="username2-help"
@@ -306,7 +325,9 @@
           <div class="input-col-2">
             <div class="inputTextStyle">
               <label class="labelStyle">โอเน็ตภาษาอังกฤษ (ONET03)</label>
-              <p-inputNumber formControlName="onet03"></p-inputNumber>
+              <p-inputNumber formControlName="onet03" 
+              styleClass="w-full labelStyle p-inputtext-sm animate__animated animate__fadeIn"
+              [minFractionDigits]="2"></p-inputNumber>
 
               <small
                 class="smallStyle"
@@ -321,7 +342,9 @@
             </div>
             <div class="inputTextStyle">
               <label class="labelStyle">โอเน็ตคณิตศาสตร์ (ONET04)</label>
-              <p-inputNumber formControlName="onet04"></p-inputNumber>
+              <p-inputNumber formControlName="onet04" 
+              styleClass="w-full labelStyle p-inputtext-sm animate__animated animate__fadeIn"
+              [minFractionDigits]="2"></p-inputNumber>
               <small
                 class="smallStyle"
                 id="username2-help"
@@ -337,7 +360,9 @@
 
           <div class="inputTextStyle">
             <label class="labelStyle">โอเน็ตวิทยาศาสตร์ (ONET05)</label>
-            <p-inputNumber formControlName="onet05"></p-inputNumber>
+            <p-inputNumber formControlName="onet05" 
+            styleClass="w-full labelStyle p-inputtext-sm animate__animated animate__fadeIn"
+            [minFractionDigits]="2"></p-inputNumber>
             <small
               class="smallStyle"
               id="username2-help"
