@@ -4,6 +4,7 @@ import { FormControl, FormGroup } from '@angular/forms';
 import { MessageService } from 'primeng/api';
 import { dataObj } from 'src/app/shared/interfaces/dataObj';
 import * as xlsx from 'xlsx';
+import { environment } from 'src/environments/environment';
 
 @Component({
   selector: 'app-excel-import',
@@ -153,14 +154,14 @@ export class ExcelImportComponent implements OnInit {
       }
 
       //API service azure
-      const token = "MbYkztaXnl+DazJZVZDBQEwPPpSRTK3qv9WF2tdIAE0xhFtbneqBGV6+gx0XLhpqjngjh3cVG6tnfqkflEta9A==";
+      const token = environment.azureApiKey;
       const header = {
         headers: new HttpHeaders({
           'Content-Type': 'application/json',
           Authorization: `Bearer ${token}`
         })
       }
-      const url = '/workspaces/546b05c5f7df46fc9eed1b8ef5831567/services/3c2a6537dc12444fbcca7e26c62e8742/execute?api-version=2.0&details=true'
+      const url = environment.azureURLshort
       const playload = {
         "Inputs": {
           "input1": {
@@ -253,7 +254,14 @@ export class ExcelImportComponent implements OnInit {
             }
             this.dataArr.push(this.dataForm.value)
          }
-          const token = localStorage.getItem('Token');
+
+
+
+        } else {
+          //no res
+        }
+
+        const token = localStorage.getItem('Token');
           const headerToken = {
             headers: new HttpHeaders({
               'Content-Type': 'application/json',
@@ -267,11 +275,6 @@ export class ExcelImportComponent implements OnInit {
               this.messageService.add({severity:'error', summary: res.message, detail:res.message});
             }
           })
-
-
-        } else {
-          //no res
-        }
 
       })
 

@@ -3,6 +3,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { AuthService } from 'src/app/shared/services/auth.service';
 import { MessageService } from 'primeng/api';
+import { environment } from 'src/environments/environment';
 
 @Component({
   selector: 'app-form',
@@ -44,7 +45,7 @@ export class FormComponent implements OnInit {
     private messageService : MessageService) { }
 
   ngOnInit(): void {
-    const url = 'https://thaiaddressapi-thaikub.herokuapp.com/v1/thailand/provinces'
+    const url = environment.thaiProvince
     this.http.get(url).subscribe((res:any) => {
       if(res){
         // console.log(res.data);
@@ -66,7 +67,7 @@ export class FormComponent implements OnInit {
 
   submitForm() {
     console.log(`submit button has clicked`);
-    const token = "MbYkztaXnl+DazJZVZDBQEwPPpSRTK3qv9WF2tdIAE0xhFtbneqBGV6+gx0XLhpqjngjh3cVG6tnfqkflEta9A==";
+    const token = environment.azureApiKey;
     const header = {
       headers: new HttpHeaders({
         // 'Access-Control-Allow-Origin':'*',
@@ -74,7 +75,7 @@ export class FormComponent implements OnInit {
         Authorization: `Bearer ${token}`
       })
     }
-    const url = '/workspaces/546b05c5f7df46fc9eed1b8ef5831567/services/3c2a6537dc12444fbcca7e26c62e8742/execute?api-version=2.0&details=true'
+    const url = environment.azureURLshort
     const playload = {
       "Inputs": {
         "input1": {
@@ -152,8 +153,8 @@ export class FormComponent implements OnInit {
           console.log(resopnse);
           if(resopnse){
             this.messageService.add({
-              severity:'success', 
-              summary: resopnse.message, 
+              severity:'success',
+              summary: resopnse.message,
               detail:resopnse.message
             });
             this.predicForm.reset();
