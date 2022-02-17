@@ -17,7 +17,7 @@ export class DashbordComponent implements OnInit {
   allMenu!: MenuItem[];
 
   data: any;
-  dataProvince:any ;
+  dataProvince: any;
   chartOptions: any;
   zones: any[] = [];
   schools: any[] = [];
@@ -33,8 +33,8 @@ export class DashbordComponent implements OnInit {
   countSchoolProvinceName: any[] = [];
   addYearDropdown: any[] = [];
   filteraddYearDropdown: any[] = []
-  dropDownObject:any [] = [];
-  selectedYear:any;
+  dropDownObject: any[] = [];
+  selectedYear: any;
   studentDataYear: any;
   schoolProvinceNameYear: any[] = [];
   filterschoolProvinceNameYear: any[] = [];
@@ -43,10 +43,10 @@ export class DashbordComponent implements OnInit {
   dataProvinceYear: any;
   dataSchoolYear: any;
   schoolNameYear: any[] = [];
-  filterschoolNameYear: any[]=[];
+  filterschoolNameYear: any[] = [];
   purlSchoolNameYear: any[] = [];
-  countSchoolNameYear: any[]=[];
-  arrColor: any[]=[] ;
+  countSchoolNameYear: any[] = [];
+  arrColor: any[] = [];
 
   constructor(private router: Router,
     private http: HttpClient,
@@ -60,10 +60,90 @@ export class DashbordComponent implements OnInit {
 
   ngOnInit(): void {
     //random color
-    for (let index = 0; index < 100; index++) {
-      var randomColor = Math.floor(Math.random()*16777215).toString(16);
-       this.arrColor[index] = "#"+randomColor
-    }
+    // for (let index = 0; index < 100; index++) {
+    //   var randomColor = Math.floor(Math.random()*16777215).toString(16);
+    //    this.arrColor[index] = "#"+randomColor
+    // }
+    this.arrColor = [
+      "#850538",
+      "#bc66aa",
+      "#e488b1",
+      "#b58d67",
+      "#a8a178",
+      "#93a16e",
+      "#618227",
+      "#83732f",
+      "#a76551",
+      "#9a65c1",
+      "#a75197",
+      "#a9415f",
+      "#a93ebc",
+      "#ff7b86",
+      "#e8f2c8",
+      "#8cf6e1",
+      "#00f8ce",
+      "#6ae400",
+      "#af6046",
+      "#79645a",
+      "#899d8c",
+      "#9fcd5d",
+      "#afe137",
+      "#64e075",
+      "#3db67e",
+      "#00a1a6",
+      "#a49edb",
+      "#5bbcec",
+      "#64d4be",
+      "#9cedb8",
+      "#e29b51",
+      "#bd3494",
+      "#a220a5",
+      "#d247a0",
+      "#fb8f96",
+      "#b0985d",
+      "#8cba73",
+      "#6af4a1",
+      "#ff7343",
+      "#ff2c81",
+      "#ee5549",
+      "#e7008c",
+      "#7674f7",
+      "#83d3f3",
+      "#8484d9",
+      "#c11b92",
+      "#ea4ce9",
+      "#2577da",
+      "#296a90",
+      "#9685cb",
+      "#d7a7de",
+      "#e7b8e0",
+      "#975592",
+      "#932a7f",
+      "#b70a86",
+      "#b7038a",
+      "#aa0a78",
+      "#911a59",
+      "#b95051",
+      "#b4954b",
+      "#5dd7bc",
+      "#b9b473",
+      "#d29866",
+      "#b9a537",
+      "#d80058",
+      "#8000a4",
+      "#d50040",
+      "#b51518",
+      "#a52b1d",
+      "#de8375",
+      "#de9576",
+      "#ca905b",
+      "#df936e",
+      "#c56e78",
+      "#834d74",
+      "#dfb895",
+      "#a4af82",
+      "#233d10",
+    ]
 
 
     const token = localStorage.getItem('Token');
@@ -142,31 +222,31 @@ export class DashbordComponent implements OnInit {
 
           }
 
-                 ///filter add_year
-                 for (let index = 0; index < this.studentData.length; index++) {
-                  this.addYearDropdown[index] = this.studentData[index].add_year;
-                }
-                this.filteraddYearDropdown = this.addYearDropdown.filter((item, pos) => this.addYearDropdown.indexOf(item) === pos)
-                for (let index = 0; index < this.filteraddYearDropdown.length; index++) {
-                  this.dropDownObject.push(
-                  {
-                    year: this.filteraddYearDropdown[index]
-                  }
-                   )
-                }
-                // console.log(this.dropDownObject);
-
-                //year for dropdown
-                this.selectedYear = {
-                  "originalEvent": {
-                      "isTrusted": true
-                  },
-                  "value": {
-                      "year": this.dropDownObject[0].year
-                  }
+          ///filter add_year
+          for (let index = 0; index < this.studentData.length; index++) {
+            this.addYearDropdown[index] = this.studentData[index].add_year;
+          }
+          this.filteraddYearDropdown = this.addYearDropdown.filter((item, pos) => this.addYearDropdown.indexOf(item) === pos)
+          for (let index = 0; index < this.filteraddYearDropdown.length; index++) {
+            this.dropDownObject.push(
+              {
+                year: this.filteraddYearDropdown[index]
               }
-                // this.startYearChart();
-                this.onYearSelected(this.selectedYear);
+            )
+          }
+          // console.log(this.dropDownObject);
+
+          //year for dropdown
+          this.selectedYear = {
+            "originalEvent": {
+              "isTrusted": true
+            },
+            "value": {
+              "year": this.dropDownObject[0].year
+            }
+          }
+          // this.startYearChart();
+          this.onYearSelected(this.selectedYear);
 
 
 
@@ -185,20 +265,20 @@ export class DashbordComponent implements OnInit {
 
   }
 
-  onYearSelected(val:any){
+  onYearSelected(val: any) {
 
     //call api
     const token = localStorage.getItem('Token');
-      const headerToken = {
-        headers: new HttpHeaders({
-          'Content-Type': 'application/json',
-          Authorization: `Bearer ${token}`
-        })
-      }
-      var payload = {
-        year : val.value.year
-      }
-    this.http.post('/studentprediction/get-year-sp',payload,headerToken).subscribe((res:any) => {
+    const headerToken = {
+      headers: new HttpHeaders({
+        'Content-Type': 'application/json',
+        Authorization: `Bearer ${token}`
+      })
+    }
+    var payload = {
+      year: val.value.year
+    }
+    this.http.post('/studentprediction/get-year-sp', payload, headerToken).subscribe((res: any) => {
       this.dataProvinceYear = {}
       this.filterschoolProvinceNameYear = []
       this.countSchoolProvinceNameYear = []
@@ -209,57 +289,57 @@ export class DashbordComponent implements OnInit {
       this.studentDataYear = res
 
 
-        for (let index = 0; index < this.studentDataYear.length; index++) {
-          this.schoolProvinceNameYear[index] = this.studentDataYear[index].school_province_name;
-        }
+      for (let index = 0; index < this.studentDataYear.length; index++) {
+        this.schoolProvinceNameYear[index] = this.studentDataYear[index].school_province_name;
+      }
 
-        this.filterschoolProvinceNameYear = this.schoolProvinceNameYear.filter((item, pos) => this.schoolProvinceNameYear.indexOf(item) === pos) //ได้หัวคอลลัมแล้ว
-
-
-        for (let index = 0; index < this.filterschoolProvinceNameYear.length; index++) {
-          this.purlSchoolProvinceNameYear = this.schoolProvinceNameYear.filter(schoolprovincenameyear => schoolprovincenameyear == this.filterschoolProvinceNameYear[index])
-          this.countSchoolProvinceNameYear[index] = this.purlSchoolProvinceNameYear.length //ได้ data แล้ว
-        }
-
-        this.dataProvinceYear = {
-          labels: this.filterschoolProvinceNameYear,
-          datasets: [
-            {
-              data: this.countSchoolProvinceNameYear,
-              backgroundColor: this.arrColor
-            }
-          ]
-        };
-
-        this.dataSchoolYear = {}
-        this.filterschoolNameYear = []
-        this.countSchoolNameYear = []
-        this.schoolNameYear = []
-        this.purlSchoolNameYear = []
-        this.countSchoolNameYear = []
+      this.filterschoolProvinceNameYear = this.schoolProvinceNameYear.filter((item, pos) => this.schoolProvinceNameYear.indexOf(item) === pos) //ได้หัวคอลลัมแล้ว
 
 
-        for (let index = 0; index < this.studentDataYear.length; index++) {
-          this.schoolNameYear[index] = this.studentDataYear[index].school_name;
-        }
+      for (let index = 0; index < this.filterschoolProvinceNameYear.length; index++) {
+        this.purlSchoolProvinceNameYear = this.schoolProvinceNameYear.filter(schoolprovincenameyear => schoolprovincenameyear == this.filterschoolProvinceNameYear[index])
+        this.countSchoolProvinceNameYear[index] = this.purlSchoolProvinceNameYear.length //ได้ data แล้ว
+      }
 
-        this.filterschoolNameYear = this.schoolNameYear.filter((item, pos) => this.schoolNameYear.indexOf(item) === pos) //ได้หัวคอลลัมแล้ว
+      this.dataProvinceYear = {
+        labels: this.filterschoolProvinceNameYear,
+        datasets: [
+          {
+            data: this.countSchoolProvinceNameYear,
+            backgroundColor: this.arrColor
+          }
+        ]
+      };
+
+      this.dataSchoolYear = {}
+      this.filterschoolNameYear = []
+      this.countSchoolNameYear = []
+      this.schoolNameYear = []
+      this.purlSchoolNameYear = []
+      this.countSchoolNameYear = []
 
 
-        for (let index = 0; index < this.filterschoolNameYear.length; index++) {
-          this.purlSchoolNameYear = this.schoolNameYear.filter(schoolnameyear => schoolnameyear == this.filterschoolNameYear[index])
-          this.countSchoolNameYear[index] = this.purlSchoolNameYear.length //ได้ data แล้ว
-        }
+      for (let index = 0; index < this.studentDataYear.length; index++) {
+        this.schoolNameYear[index] = this.studentDataYear[index].school_name;
+      }
 
-        this.dataSchoolYear = {
-          labels: this.filterschoolNameYear,
-          datasets: [
-            {
-              data: this.countSchoolNameYear,
-              backgroundColor: this.arrColor
-            }
-          ]
-        };
+      this.filterschoolNameYear = this.schoolNameYear.filter((item, pos) => this.schoolNameYear.indexOf(item) === pos) //ได้หัวคอลลัมแล้ว
+
+
+      for (let index = 0; index < this.filterschoolNameYear.length; index++) {
+        this.purlSchoolNameYear = this.schoolNameYear.filter(schoolnameyear => schoolnameyear == this.filterschoolNameYear[index])
+        this.countSchoolNameYear[index] = this.purlSchoolNameYear.length //ได้ data แล้ว
+      }
+
+      this.dataSchoolYear = {
+        labels: this.filterschoolNameYear,
+        datasets: [
+          {
+            data: this.countSchoolNameYear,
+            backgroundColor: this.arrColor
+          }
+        ]
+      };
 
 
     })
