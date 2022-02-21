@@ -1,5 +1,5 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { ChangeDetectorRef, Component, OnInit } from '@angular/core';
+import { ChangeDetectorRef, Component, OnInit, ViewChild } from '@angular/core';
 import { Router } from '@angular/router';
 
 
@@ -12,6 +12,7 @@ import { AddFormComponent } from './components/add-form/add-form.component';
 import { MessageService } from 'primeng/api';
 import { ConfirmationService } from 'primeng/api';
 import { DialogService, DynamicDialogRef } from 'primeng/dynamicdialog';
+import { Table } from 'primeng/table';
 
 @Component({
   selector: 'app-admin',
@@ -22,6 +23,7 @@ export class AdminComponent implements OnInit {
   users: any;
   ref: DynamicDialogRef | undefined;
   recordCount: number = 0;
+  @ViewChild('dt') dt: Table | undefined;
 
   constructor(
     private http: HttpClient,
@@ -127,5 +129,9 @@ export class AdminComponent implements OnInit {
 
   GoHomePage() {
     this.router.navigate(['home/dashbord']);
+  }
+
+  applyFilterGlobal($event:any, stringVal:any) {
+    this.dt!.filterGlobal(($event.target as HTMLInputElement).value, 'contains');
   }
 }

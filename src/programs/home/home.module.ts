@@ -40,6 +40,10 @@ import { FileUploadModule } from 'primeng/fileupload';
 import { HttpClientModule } from '@angular/common/http';
 import { MenuModule } from "primeng/menu";
 import { PredictPipePipe } from 'src/app/shared/pipes/predict-pipe.pipe';
+import { EditUserComponent } from './components/edit-user/edit-user.component';
+import {RadioButtonModule} from 'primeng/radiobutton';
+import { EditUserPasswordComponent } from './components/edit-user-password/edit-user-password.component';
+import {PasswordModule} from 'primeng/password';
 
 @NgModule({
   declarations: [
@@ -52,7 +56,9 @@ import { PredictPipePipe } from 'src/app/shared/pipes/predict-pipe.pipe';
     PpinfoComponent,
     StudentpredictionComponent,
     ExcelImportComponent,
-    PredictPipePipe
+    PredictPipePipe,
+    EditUserComponent,
+    EditUserPasswordComponent
   ],
   imports: [
     CommonModule,
@@ -81,7 +87,9 @@ import { PredictPipePipe } from 'src/app/shared/pipes/predict-pipe.pipe';
     PanelModule,
     FileUploadModule,
     HttpClientModule,
-    MenuModule
+    MenuModule,
+    RadioButtonModule,
+    PasswordModule
   ],
 })
 export class HomeModule { }

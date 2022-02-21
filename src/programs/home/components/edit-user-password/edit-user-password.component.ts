@@ -5,27 +5,26 @@ import { MessageService } from 'primeng/api';
 import { DialogService, DynamicDialogConfig } from 'primeng/dynamicdialog';
 
 @Component({
-  selector: 'app-edit-password-form',
-  templateUrl: './edit-password-form.component.html',
-  styleUrls: ['./edit-password-form.component.css']
+  selector: 'app-edit-user-password',
+  templateUrl: './edit-user-password.component.html',
+  styleUrls: ['./edit-user-password.component.css']
 })
-export class EditPasswordFormComponent implements OnInit {
+export class EditUserPasswordComponent implements OnInit {
+
+  editForm = new FormGroup({
+    user_id: new FormControl(null),
+    password: new FormControl(null)
+  })
 
   constructor(
     private http: HttpClient,
     public config: DynamicDialogConfig,
      private messageService: MessageService ,
-    private  dialogService: DialogService) { }
-
-
-    editForm = new FormGroup({
-      user_id: new FormControl(null),
-      password: new FormControl(null)
-    })
-
-
+    private  dialogService: DialogService
+  ) { }
 
   ngOnInit(): void {
+
   }
 
   submit(){

@@ -1,3 +1,8 @@
+.buttonPosition{
+  /* display: flex; */
+  display: flex;
+  justify-content: center;
+}
 .navColor{
   background: #B00000;
   height: 3.5em;

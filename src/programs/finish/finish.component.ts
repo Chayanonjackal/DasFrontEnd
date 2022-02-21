@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { AuthService } from 'src/app/shared/services/auth.service';
 
 @Component({
   selector: 'app-finish',
@@ -8,31 +9,33 @@ import { Router } from '@angular/router';
 })
 export class FinishComponent implements OnInit {
 
-  pagecheck:boolean = false ;
+  pagecheck: boolean = false;
+  adminCheck: boolean = false;
 
-  constructor(private router:Router) { }
+  constructor(
+    private router: Router,
+    private authService: AuthService) { }
 
   ngOnInit(): void {
-    // window.location.reload();
-    // window.onload = function() {
-    //   if(!window.location.hash) {
-    //     !window.location  = window.location + '#loaded';
-    //     window.location.reload();
-    //   }
-    // }
-    // if(this.pagecheck == false){
-    //   this.refashPage()
-    // }
+    this.authService.getProfile().subscribe((res: any) => {
+      if(res.data.role === "A" || res.data.role === "T"){
+        this.adminCheck = true
+      }
+    })
     console.clear();
   }
 
-  refashPage(){
+  refashPage() {
     this.pagecheck = true
     window.location.reload();
   }
 
-  goToPublicPage(){
+  goToPublicPage() {
     this.router.navigate(['publicform'])
+  }
+
+  goToDashBordPage() {
+    this.router.navigate(['home/dashbord'])
   }
 
 }

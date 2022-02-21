@@ -1,3 +1,4 @@
+import { EditUserComponent } from './components/edit-user/edit-user.component';
 import { ExcelImportComponent } from './components/excel-import/excel-import.component';
 import { StudentpredictionComponent } from './components/studentprediction/studentprediction.component';
 
@@ -43,6 +44,10 @@ const routes: Routes = [
      {
       path:'excel-import',
       component: ExcelImportComponent
+     },
+     {
+      path:'edit-user',
+      component: EditUserComponent
      },
      {
        path:'**',

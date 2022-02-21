@@ -34,11 +34,11 @@ export class NavbarComponent implements OnInit {
       label: 'การจัดการบัญชี',
       icon: 'pi pi-users',
       items: [
-        // {
-        //   label: 'แก้ไขข้อมูลส่วนตัว',
-        //   icon: 'pi pi-user-edit',
-        //   // routerLink: ['/home/dashbord'],
-        // },
+        {
+          label: 'แก้ไขข้อมูลส่วนตัว',
+          icon: 'pi pi-user-edit',
+          routerLink: ['/home/edit-user'],
+        },
         {
           label: 'ออกจากระบบ',
           icon: 'pi pi-sign-out',
@@ -58,26 +58,26 @@ export class NavbarComponent implements OnInit {
           icon: 'pi pi-home',
           routerLink: ['/home/dashbord'],
         },
-        {
-          label: 'เกี่ยวกับ',
-          icon: 'pi pi-info-circle',
-          routerLink: ['/home/about'],
-        },
+        // {
+        //   label: 'เกี่ยวกับ',
+        //   icon: 'pi pi-info-circle',
+        //   routerLink: ['/home/about'],
+        // },
         // {
         //   label: 'ช่วยเหลือ',
         //   icon: 'pi pi-question-circle',
         //   routerLink: ['/home/help'],
         // },
-        {
-          label: 'ฟอร์มการประเมิน',
-          icon: 'pi pi-file',
-          routerLink: ['/home/form'],
-        },
-        {
-          label: 'ผู้ดูแลระบบ',
-          icon: 'pi pi-users',
-          routerLink: ['/admin'],
-        },
+        // {
+        //   label: 'ฟอร์มการประเมิน',
+        //   icon: 'pi pi-file',
+        //   routerLink: ['/home/form'],
+        // },
+        // {
+        //   label: 'ผู้ดูแลระบบ',
+        //   icon: 'pi pi-users',
+        //   routerLink: ['/admin'],
+        // },
       ],
     },
     // {
@@ -105,21 +105,21 @@ export class NavbarComponent implements OnInit {
     {
       label: 'ส่วนเก็บข้อมูลนักเรียน',
       items: [
-        // {
-        //   label: 'แบบประเมินสาธารณะ (Public Form)',
-        //   icon: 'pi pi-file',
-        //   routerLink: ['/publicform'],
-        // },
         {
-          label: 'ผลลัพธ์แบบประเมินสาธารณะ (Public Prediction Result)',
+          label: 'แบบประเมิน (Public Form)',
+          icon: 'pi pi-file',
+          routerLink: ['/publicform'],
+        },
+        {
+          label: 'ผลลัพธ์แบบประเมิน (Public Prediction Result)',
           icon: 'pi pi-chart-line',
           routerLink: ['/home/studentprediction'],
         },
-        // {
-        //   label: 'นำเข้าไฟล์ Excel (Excel Import)',
-        //   icon: 'pi pi-file-excel',
-        //   routerLink: ['/home/excel-import'],
-        // },
+        {
+          label: 'นำเข้าไฟล์ Excel (Excel Import)',
+          icon: 'pi pi-file-excel',
+          routerLink: ['/home/excel-import'],
+        },
       ],
     },
     { separator: true },
@@ -127,12 +127,12 @@ export class NavbarComponent implements OnInit {
       label: 'ส่วนเก็บข้อมูลสำหรับอาจารย์',
       items: [
         {
-          label: 'แบบประเมินภายใน (Private Form)',
+          label: 'แบบประเมินส่วนตัว (Private Form)',
           icon: 'pi pi-file',
           routerLink: ['/home/form'],
         },
         {
-          label: 'ผลลัพธ์แบบประเมินภายใน (Private Prediction Result)',
+          label: 'ผลลัพธ์แบบประเมินส่วนตัว (Private Prediction Result)',
           icon: 'pi pi-chart-line',
           routerLink: ['/home/privateprediction'],
         },
@@ -151,7 +151,7 @@ export class NavbarComponent implements OnInit {
         {
           label: 'แก้ไขข้อมูลส่วนตัว',
           icon: 'pi pi-user-edit',
-          // routerLink: ['/home/dashbord'],
+          routerLink: ['/home/edit-user'],
         },
         {
           label: 'ออกจากระบบ',
@@ -170,17 +170,31 @@ export class NavbarComponent implements OnInit {
     private primeNGConfig: PrimeNGConfig,
     private confirmationService: ConfirmationService,
     private messageService: MessageService
-  ) {}
+  ) { }
 
   ngOnInit(): void {
     this.primeNGConfig.ripple = true;
     this.auth.getProfile().subscribe((res: any) => {
       if (res) {
         this.role = res.data.role;
+        if (this.role === "A") {
+          this.menuItem2[0].items?.push(
+            {
+              label: 'ผู้ดูแลระบบ',
+              icon: 'pi pi-users',
+              routerLink: ['/admin'],
+            }
+
+          )
+        }
       } else {
         console.log('user no role');
       }
     });
+  }
+
+  userEdit(){
+    this.router.navigate(['home/edit-user']);
   }
 
   GoHomePage() {
