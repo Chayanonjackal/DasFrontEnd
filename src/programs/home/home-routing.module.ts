@@ -11,6 +11,7 @@ import { HomeComponent } from './home.component';
 import { NgModule, Component } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { HelpComponent } from './components/help/help.component';
+import { UserProfileComponent } from './components/user-profile/user-profile.component';
 
 const routes: Routes = [
  {
@@ -48,6 +49,10 @@ const routes: Routes = [
      {
       path:'edit-user',
       component: EditUserComponent
+     },
+     {
+       path:'user-profile',
+       component: UserProfileComponent
      },
      {
        path:'**',

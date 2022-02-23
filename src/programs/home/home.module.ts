@@ -44,6 +44,11 @@ import { EditUserComponent } from './components/edit-user/edit-user.component';
 import {RadioButtonModule} from 'primeng/radiobutton';
 import { EditUserPasswordComponent } from './components/edit-user-password/edit-user-password.component';
 import {PasswordModule} from 'primeng/password';
+import { UserProfileComponent } from './components/user-profile/user-profile.component';
+import {FieldsetModule} from 'primeng/fieldset';
+import { AdminModule } from '../admin/admin.module';
+import { UserConfirmPasswordComponent } from './components/user-confirm-password/user-confirm-password.component';
+
 
 @NgModule({
   declarations: [
@@ -58,7 +63,9 @@ import {PasswordModule} from 'primeng/password';
     ExcelImportComponent,
     PredictPipePipe,
     EditUserComponent,
-    EditUserPasswordComponent
+    EditUserPasswordComponent,
+    UserProfileComponent,
+    UserConfirmPasswordComponent,
   ],
   imports: [
     CommonModule,
@@ -89,7 +96,11 @@ import {PasswordModule} from 'primeng/password';
     HttpClientModule,
     MenuModule,
     RadioButtonModule,
-    PasswordModule
+    PasswordModule,
+    FieldsetModule
   ],
+  exports: [
+    // AdminModule
+  ]
 })
 export class HomeModule { }

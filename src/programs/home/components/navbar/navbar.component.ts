@@ -38,6 +38,7 @@ export class NavbarComponent implements OnInit {
           label: 'แก้ไขข้อมูลส่วนตัว',
           icon: 'pi pi-user-edit',
           routerLink: ['/home/edit-user'],
+          // state: this.confirmPassword()
         },
         {
           label: 'ออกจากระบบ',
@@ -114,6 +115,7 @@ export class NavbarComponent implements OnInit {
           label: 'ผลลัพธ์แบบประเมิน (Public Prediction Result)',
           icon: 'pi pi-chart-line',
           routerLink: ['/home/studentprediction'],
+
         },
         {
           label: 'นำเข้าไฟล์ Excel (Excel Import)',
@@ -194,7 +196,9 @@ export class NavbarComponent implements OnInit {
   }
 
   userEdit(){
+    // this.router.navigate(['home/user-profile']);
     this.router.navigate(['home/edit-user']);
+
   }
 
   GoHomePage() {
@@ -249,4 +253,8 @@ export class NavbarComponent implements OnInit {
       },
     });
   }
+  confirmPassword(){
+
+  }
+
 }

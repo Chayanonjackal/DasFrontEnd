@@ -1,3 +1,4 @@
+import { UserConfirmPasswordComponent } from './../user-confirm-password/user-confirm-password.component';
 import { EditUserPasswordComponent } from './../edit-user-password/edit-user-password.component';
 import { DialogService, DynamicDialogConfig, DynamicDialogRef } from 'primeng/dynamicdialog';
 import { MessageService } from 'primeng/api';
@@ -55,40 +56,66 @@ export class EditUserComponent implements OnInit {
   }
 
   submit(){
-    const playload = this.editForm.value
-    const token = localStorage.getItem('Token');
-    const headerToken = {
-      headers:new HttpHeaders({
-        'Content-Type':'application/json',
-        Authorization: `Bearer ${token}`
-      })
-    }
-    this.http.put('/user/edit-user', playload,headerToken).subscribe((res:any) =>{
-      if(res.status == 200){
-
-        this.messageService.add({severity:'success', summary: res.message , detail: res.status});
-        window.location.reload();
-        // this.ngOnInit()
-      } else{
-        this.messageService.add({severity:'error', summary: res.message, detail: res.status});
-      }
-
-    },err=>{
-      this.messageService.add({severity:'error', summary: err.error.message, detail: err.error.status});
-    })
-  }
-
-  changePassword(){
-    var userId = this.userId
-    this.ref = this.dialogService.open(EditUserPasswordComponent, {
-      header: 'แก้ไขรหัสผ่าน',
+    // var userId = this.userId
+    this.ref = this.dialogService.open(UserConfirmPasswordComponent, {
+      header: 'ยืนยันรหัสผ่าน',
       width: '70%',
       contentStyle: {"max-height": "500px", "overflow": "auto"},
       baseZIndex: 10000,
       data:{
-        user_id: userId
+        statusClick: 1 ,
+        editForm: this.editForm.value
       }
    });
+    //Control here with userAuthen by passWord
+    // const playload = this.editForm.value
+    // const token = localStorage.getItem('Token');
+    // const headerToken = {
+    //   headers:new HttpHeaders({
+    //     'Content-Type':'application/json',
+    //     Authorization: `Bearer ${token}`
+    //   })
+    // }
+    // this.http.put('/user/edit-user', playload,headerToken).subscribe((res:any) =>{
+    //   if(res.status == 200){
+
+    //     this.messageService.add({severity:'success', summary: res.message , detail: res.status});
+    //     window.location.reload();
+    //
+    //   } else{
+    //     this.messageService.add({severity:'error', summary: res.message, detail: res.status});
+    //   }
+
+    // },err=>{
+    //   this.messageService.add({severity:'error', summary: err.error.message, detail: err.error.status});
+    // })
+
+  }
+
+  changePassword(){
+    //Call dialog Confirm password
+    this.ref = this.dialogService.open(UserConfirmPasswordComponent, {
+      header: 'ยืนยันรหัสผ่าน',
+      width: '70%',
+      contentStyle: {"max-height": "500px", "overflow": "auto"},
+      baseZIndex: 10000,
+      data:{
+        statusClick: 2 ,
+        editForm: this.editForm.value
+      }
+   });
+
+    //Call delete
+  //   var userId = this.userId
+  //   this.ref = this.dialogService.open(EditUserPasswordComponent, {
+  //     header: 'แก้ไขรหัสผ่าน',
+  //     width: '70%',
+  //     contentStyle: {"max-height": "500px", "overflow": "auto"},
+  //     baseZIndex: 10000,
+  //     data:{
+  //       user_id: userId
+  //     }
+  //  });
 
   }
 

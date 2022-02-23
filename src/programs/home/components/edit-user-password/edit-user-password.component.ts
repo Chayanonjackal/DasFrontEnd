@@ -38,10 +38,10 @@ export class EditUserPasswordComponent implements OnInit {
       })
     }
     this.http.put('/user/edit-password', payload,headerToken).subscribe((res:any) =>{
-      if(res.status == 200){
+      if(res.status === 200){
 
         this.messageService.add({severity:'success', summary: res.message , detail: res.status});
-        // window.location.reload();
+        window.location.reload();
       } else{
         this.messageService.add({severity:'error', summary: res.message, detail: res.status});
       }
