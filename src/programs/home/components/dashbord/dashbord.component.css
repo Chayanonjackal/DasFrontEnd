@@ -3,6 +3,11 @@
   margin: 2rem;
 }
 
+.cardStyle{
+  display: flex;
+}
+
+
 .container-group {
   display: grid;
   grid-template-columns: auto 1fr;
@@ -40,6 +45,11 @@
   display: flex;
   justify-content: center;
 }
+.barStyle {
+  /* width: 50%; */
+  display: flex;
+  justify-content: center;
+}
 .donutWidth {
   width: 50%;
 }
@@ -60,6 +70,10 @@
 .chart-size {
   width: 150%;
   aspect-ratio: auto;
+}
+
+.pieStyleDisplay{
+
 }
 
 /*
@@ -123,6 +137,10 @@
   /* .outlineDiv{
     padding:0em
   } */
+  .styleChart{
+    display: none;
+  }
+
 }
 
 @media screen and (max-width: 576px) {

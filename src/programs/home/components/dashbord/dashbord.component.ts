@@ -48,6 +48,17 @@ export class DashbordComponent implements OnInit {
   countSchoolNameYear: any[] = [];
   arrColor: any[] = [];
 
+  //bar chart
+  basicData: any;
+  basicOptions: any;
+  barDataSets: any[] = [];
+  arrSchoolname: any[] = [];
+  arrSelectedYear: any[] = [];
+  schoolNameYearData: any
+  schoolNameYearOptions: any
+  ProvinceYearData:any
+  ProvinceYearOptions:any
+
   constructor(private router: Router,
     private http: HttpClient,
     private auth: AuthService,
@@ -200,6 +211,7 @@ export class DashbordComponent implements OnInit {
 
 
 
+
           for (let index = 0; index < this.filterschoolProvinceName.length; index++) {
             this.purlSchoolProvinceName = this.schoolProvinceName.filter(schoolprovincename => schoolprovincename == this.filterschoolProvinceName[index])
             this.countSchoolProvinceName[index] = this.purlSchoolProvinceName.length //ได้ data แล้ว
@@ -263,6 +275,8 @@ export class DashbordComponent implements OnInit {
 
 
 
+
+
   }
 
   onYearSelected(val: any) {
@@ -300,6 +314,8 @@ export class DashbordComponent implements OnInit {
         this.purlSchoolProvinceNameYear = this.schoolProvinceNameYear.filter(schoolprovincenameyear => schoolprovincenameyear == this.filterschoolProvinceNameYear[index])
         this.countSchoolProvinceNameYear[index] = this.purlSchoolProvinceNameYear.length //ได้ data แล้ว
       }
+      console.log(this.countSchoolProvinceNameYear);
+
 
       this.dataProvinceYear = {
         labels: this.filterschoolProvinceNameYear,
@@ -331,6 +347,8 @@ export class DashbordComponent implements OnInit {
         this.countSchoolNameYear[index] = this.purlSchoolNameYear.length //ได้ data แล้ว
       }
 
+
+
       this.dataSchoolYear = {
         labels: this.filterschoolNameYear,
         datasets: [
@@ -341,8 +359,65 @@ export class DashbordComponent implements OnInit {
         ]
       };
 
+      //barchart 2
+      this.schoolNameYearData = {
+        labels: this.filterschoolNameYear,
+        datasets: [{
+          type: 'bar',
+          label: 'ชุดข้อมูลชื่อโรงเรียน',
+          backgroundColor: '#42A5F5',
+          data: this.countSchoolNameYear
+        }]
+      };
+
+      this.schoolNameYearOptions = {
+        tooltips: {
+          mode: 'index',
+          intersect: false
+        },
+        responsive: true,
+        scales: {
+          xAxes: [{
+            stacked: true,
+          }],
+          yAxes: [{
+            stacked: true
+          }]
+        }
+      };
+
+       //barchart 1
+       this.ProvinceYearData = {
+        labels: this.filterschoolProvinceNameYear,
+        datasets: [{
+          type: 'bar',
+          label: 'ชุดข้อมูลจังหวัด',
+          backgroundColor: '#42A5F5',
+          data:  this.countSchoolProvinceNameYear
+        }]
+      };
+
+      this.ProvinceYearOptions = {
+        tooltips: {
+          mode: 'index',
+          intersect: false
+        },
+        responsive: true,
+        scales: {
+          xAxes: [{
+            stacked: true,
+          }],
+          yAxes: [{
+            stacked: true
+          }]
+        }
+      };
+
+
 
     })
+
+
 
     // side menu
     this.allMenu = [
@@ -350,12 +425,15 @@ export class DashbordComponent implements OnInit {
         label: 'ส่วนเก็บข้อมูลนักเรียน',
         items: [
           {
-            label: 'แบบประเมินสาธารณะ (Public Form)',
+            label: 'แบบประเมิน (Public Form)',
             icon: 'pi pi-file',
             routerLink: ['/publicform'],
+            // label: 'แบบประเมินสาธารณะ (Public Form)',
+            // icon: 'pi pi-file',
+            // routerLink: ['/publicform'],
           },
           {
-            label: 'ผลลัพธ์แบบประเมินสาธารณะ (Public Prediction Result)',
+            label: 'ผลลัพธ์แบบประเมิน (Public Prediction Result)',
             icon: 'pi pi-chart-line',
             routerLink: ['/home/studentprediction'],
           },
@@ -371,12 +449,12 @@ export class DashbordComponent implements OnInit {
         label: 'ส่วนเก็บข้อมูลสำหรับอาจารย์',
         items: [
           {
-            label: 'แบบประเมินภายใน (Private Form)',
+            label: 'แบบประเมินส่วนตัว (Private Form)',
             icon: 'pi pi-file',
             routerLink: ['/home/form'],
           },
           {
-            label: 'ผลลัพธ์แบบประเมินภายใน (Private Prediction Result)',
+            label: 'ผลลัพธ์แบบประเมินส่วนตัว (Private Prediction Result)',
             icon: 'pi pi-chart-line',
             routerLink: ['/home/privateprediction'],
           },

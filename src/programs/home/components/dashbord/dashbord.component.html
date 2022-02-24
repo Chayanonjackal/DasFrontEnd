@@ -7,128 +7,140 @@
   </div>
 
   <div class="visualize-group">
+
+
     <div class="card-container">
+      <div class="col-12 cardStyle">
+        <div class="col-12">
           <p-card>
-      <ng-template pTemplate="header">
-        <div class="text-xl p-2">
-          จำนวนนักเรียนทั้งหมดในแต่ละโรงเรียนที่ยื่นเข้ามาในสาขาวิทยาการคอมพิวเตอร์
+            <ng-template pTemplate="header">
+              <div class="text-xl p-2">
+                จำนวนนักเรียนทั้งหมดในแต่ละโรงเรียนที่ยื่นเข้ามาในสาขาวิทยาการคอมพิวเตอร์
+              </div>
+            </ng-template>
+            <div style="display: flex; justify-content: center">
+              <p-chart type="pie" styleClass="w-full" [data]="data" [options]="chartOptions" [style]="{ width: '50%' }">
+              </p-chart>
+            </div>
+            <div class="md:col-12 lg:col-12 sm:col-12">
+              <p-table [value]="schools" [scrollable]="true" scrollHeight="400px" responsiveLayout="scroll">
+                <ng-template pTemplate="header">
+                  <tr>
+                    <th>โรงเรียน</th>
+                    <th>จำนวน</th>
+                  </tr>
+                </ng-template>
+                <ng-template pTemplate="body" let-school>
+                  <tr>
+                    <td>{{ school.name }}</td>
+                    <td>{{ school.count }}</td>
+                  </tr>
+                </ng-template>
+              </p-table>
+            </div>
+          </p-card>
         </div>
-      </ng-template>
-      <div style="display: flex; justify-content: center">
-        <p-chart
-          type="pie"
-          styleClass="w-full"
-          [data]="data"
-          [options]="chartOptions"
-          [style]="{ width: '50%' }"
-        ></p-chart>
       </div>
-      <div class="md:col-12 lg:col-12 sm:col-12">
-        <p-table
-          [value]="schools"
-          [scrollable]="true"
-          scrollHeight="400px"
-          responsiveLayout="scroll"
-        >
-          <ng-template pTemplate="header">
-            <tr>
-              <th>โรงเรียน</th>
-              <th>จำนวน</th>
-            </tr>
-          </ng-template>
-          <ng-template pTemplate="body" let-school>
-            <tr>
-              <td>{{ school.name }}</td>
-              <td>{{ school.count }}</td>
-            </tr>
-          </ng-template>
-        </p-table>
-      </div>
-    </p-card>
     </div>
 
     <div class="card-container">
-      <p-card>
-        <div class="text-xl p-2">
-          จำนวนนักเรียนทั้งหมดในแต่ละจังหวัดของโรงเรียนที่ยื่นเข้ามาในสาขาวิทยาการคอมพิวเตอร์
+      <div class="col-12 cardStyle">
+        <div class="col-12">
+          <p-card>
+            <div class="text-xl p-2">
+              จำนวนนักเรียนทั้งหมดในแต่ละจังหวัดของโรงเรียนที่ยื่นเข้ามาในสาขาวิทยาการคอมพิวเตอร์
+            </div>
+            <div style="display: flex; justify-content: center">
+              <!-- <p-chart type="pie" class="chartStyle" [data]="data" [options]="chartOptions"  [style]="{'width': '50%'}" ></p-chart> -->
+              <p-chart type="doughnut" [data]="dataProvince" [options]="chartOptions" [style]="{ width: '50%' }">
+              </p-chart>
+            </div>
+            <div class="md:col-12 lg:col-12 sm:col-12">
+              <p-table [value]="schoolProvinces" [scrollable]="true" scrollHeight="400px" responsiveLayout="scroll">
+                <ng-template pTemplate="header">
+                  <tr>
+                    <th>จังหวัด</th>
+                    <th>จำนวน</th>
+                  </tr>
+                </ng-template>
+                <ng-template pTemplate="body" let-schoolProvince>
+                  <tr>
+                    <td>{{ schoolProvince.name }}</td>
+                    <td>{{ schoolProvince.count }}</td>
+                  </tr>
+                </ng-template>
+              </p-table>
+            </div>
+          </p-card>
         </div>
-        <div style="display: flex; justify-content: center">
-          <!-- <p-chart type="pie" class="chartStyle" [data]="data" [options]="chartOptions"  [style]="{'width': '50%'}" ></p-chart> -->
-          <p-chart
-            type="doughnut"
-            [data]="dataProvince"
-            [options]="chartOptions"
-            [style]="{ width: '50%' }"
-          ></p-chart>
-        </div>
-        <div class="md:col-12 lg:col-12 sm:col-12">
-          <p-table
-            [value]="schoolProvinces"
-            [scrollable]="true"
-            scrollHeight="400px"
-            responsiveLayout="scroll"
-          >
-            <ng-template pTemplate="header">
-              <tr>
-                <th>จังหวัด</th>
-                <th>จำนวน</th>
-              </tr>
-            </ng-template>
-            <ng-template pTemplate="body" let-schoolProvince>
-              <tr>
-                <td>{{ schoolProvince.name }}</td>
-                <td>{{ schoolProvince.count }}</td>
-              </tr>
-            </ng-template>
-          </p-table>
-        </div>
-      </p-card>
+      </div>
     </div>
 
     <!-- ตามปี -->
     <div class="card-container">
-      <p-card>
-        <div class="text-xl p-2">
-          <!-- มาใส่ปีด้วยนะ -->
-          จำนวนนักเรียนทั้งหมดในแต่ละโรงเรียนที่ยื่นเข้ามาในสาขาวิทยาการคอมพิวเตอร์ในแต่ละปี
-        </div>
 
-        <div class="dropdown-year">
-          <p-dropdown
-            class=""
-            [options]="dropDownObject"
-            [(ngModel)]="selectedYear"
-            (onChange)="onYearSelected($event)"
-            optionLabel="year"
-          ></p-dropdown>
-        </div>
-        <!-- <p>{{selectedYear|json}}</p> -->
-        <div class="chartyear">
-          <div class="donutStyle">
-            <div class="donutWidth">
-              <p-chart
-                type="doughnut"
-                class="chartStyle"
-                [data]="dataProvinceYear"
-                [options]="chartOptions"
-                [style]="{ width: '100%' }"
-              ></p-chart>
+      <div class="col-12 cardStyle">
+        <div class="col-12">
+          <p-card>
+            <div class="text-xl p-2">
+              <!-- มาใส่ปีด้วยนะ -->
+              จำนวนนักเรียนทั้งหมดในแต่ละโรงเรียนที่ยื่นเข้ามาในสาขาวิทยาการคอมพิวเตอร์ในแต่ละปี
             </div>
-          </div>
-          <br>
-          <div class="pieStyle">
-            <div class="pieWidth">
-              <p-chart
-                type="pie"
-                class="chartStyle"
-                [data]="dataSchoolYear"
-                [options]="chartOptions"
-                [style]="{ width: '100%' }"
-              ></p-chart>
+            <div class="dropdown-year">
+              <p-dropdown class="" [options]="dropDownObject" [(ngModel)]="selectedYear"
+                (onChange)="onYearSelected($event)" optionLabel="year"></p-dropdown>
             </div>
-          </div>
+          </p-card>
         </div>
-      </p-card>
+      </div>
+
+      <div class="col-12 cardStyle">
+        <div class="col-6">
+          <p-card>
+            <h2>จังหวัดโรงเรียน</h2>
+            <div class="pieStyleDisplay">
+              <div class="chartyear">
+                <div class="donutStyle styleChart">
+                  <div class="donutWidth">
+                    <p-chart type="doughnut" class="chartStyle" [data]="dataProvinceYear" [options]="chartOptions"
+                      [style]="{ width: '100%' }"></p-chart>
+                  </div>
+                </div>
+                <!-- bar -->
+                <div class="barStyle">
+                  <div class="card">
+                    <!-- <h5>Stacked</h5> -->
+                    <p-chart type="bar" [data]="ProvinceYearData" [options]="ProvinceYearOptions"></p-chart>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </p-card>
+        </div>
+        <div class="col-6">
+          <p-card>
+            <h2>โรงเรียน</h2>
+            <div class="pieStyleDisplay">
+              <div class="pieStyle styleChart">
+                <div class="pieWidth">
+                  <p-chart type="pie" class="chartStyle" [data]="dataSchoolYear" [options]="chartOptions"
+                    [style]="{ width: '100%' }"></p-chart>
+                </div>
+              </div>
+              <!-- bar -->
+              <div class="barStyle">
+                <div class="card">
+                  <!-- <h5>Stacked</h5> -->
+                  <p-chart type="bar" [data]="schoolNameYearData" [options]="schoolNameYearOptions"></p-chart>
+                </div>
+              </div>
+            </div>
+          </p-card>
+        </div>
+      </div>
+
+
     </div>
   </div>
 
