@@ -56,8 +56,13 @@ export class DashbordComponent implements OnInit {
   arrSelectedYear: any[] = [];
   schoolNameYearData: any
   schoolNameYearOptions: any
-  ProvinceYearData:any
-  ProvinceYearOptions:any
+  ProvinceYearData: any
+  ProvinceYearOptions: any
+
+  //testChart
+
+
+
 
   constructor(private router: Router,
     private http: HttpClient,
@@ -188,6 +193,8 @@ export class DashbordComponent implements OnInit {
               }
             ]
           };
+
+
           for (let index = 0; index < this.filterSchoolName.length; index++) {
             this.schools[index] = {
               name: this.filterSchoolName[index],
@@ -270,13 +277,32 @@ export class DashbordComponent implements OnInit {
       }
     })
 
+    this.updateChartOption()
 
 
 
 
 
 
+  }
 
+  updateChartOption() {
+    this.chartOptions = this.chartTheme()
+    console.log(this.chartTheme());
+
+  }
+
+  chartTheme() {
+    return {
+      // plugins: {
+      //   legend: {
+      //     display: false,
+      //   }
+      // }
+      legend:{
+        display: false
+      }
+    }
   }
 
   onYearSelected(val: any) {
@@ -371,6 +397,9 @@ export class DashbordComponent implements OnInit {
       };
 
       this.schoolNameYearOptions = {
+        legend:{
+          display: false
+        },
         tooltips: {
           mode: 'index',
           intersect: false
@@ -386,18 +415,21 @@ export class DashbordComponent implements OnInit {
         }
       };
 
-       //barchart 1
-       this.ProvinceYearData = {
+      //barchart 1
+      this.ProvinceYearData = {
         labels: this.filterschoolProvinceNameYear,
         datasets: [{
           type: 'bar',
           label: 'ชุดข้อมูลจังหวัด',
           backgroundColor: '#42A5F5',
-          data:  this.countSchoolProvinceNameYear
+          data: this.countSchoolProvinceNameYear
         }]
       };
 
       this.ProvinceYearOptions = {
+        legend:{
+          display: false
+        },
         tooltips: {
           mode: 'index',
           intersect: false
