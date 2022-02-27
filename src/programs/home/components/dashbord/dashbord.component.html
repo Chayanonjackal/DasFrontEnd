@@ -22,7 +22,16 @@
               </p-chart>
             </div>
             <div class="md:col-12 lg:col-12 sm:col-12">
-              <p-table [value]="schoolProvinces" [scrollable]="true" scrollHeight="400px" responsiveLayout="scroll">
+              <p-table [value]="schoolProvinces" [scrollable]="true" #dp [filterDelay]="0" [globalFilterFields]="['name']" scrollHeight="400px" responsiveLayout="scroll">
+                <ng-template pTemplate="caption">
+                  <div class="table-header">
+                      <span class="p-input-icon-left">
+                          <i class="pi pi-search"></i>
+                          <input pInputText type="text" class="search-size" (input)="applyFilterGlobalDp($event, 'contains')" placeholder="Search" />
+
+                      </span>
+                  </div>
+                </ng-template>
                 <ng-template pTemplate="header">
                   <tr>
                     <th>จังหวัด</th>
@@ -58,7 +67,16 @@
               </div>
             </div>
             <div class="md:col-12 lg:col-12 sm:col-12">
-              <p-table [value]="schools" [scrollable]="true" scrollHeight="400px" responsiveLayout="scroll">
+              <p-table [value]="schools" [scrollable]="true" #dt [filterDelay]="0" [globalFilterFields]="['name']" scrollHeight="400px" responsiveLayout="scroll">
+                <ng-template pTemplate="caption">
+                  <div class="table-header">
+                      <span class="p-input-icon-left">
+                          <i class="pi pi-search"></i>
+                          <input pInputText type="text" class="search-size" (input)="applyFilterGlobal($event, 'contains')" placeholder="Search" />
+
+                      </span>
+                  </div>
+                </ng-template>
                 <ng-template pTemplate="header">
                   <tr>
                     <th>โรงเรียน</th>

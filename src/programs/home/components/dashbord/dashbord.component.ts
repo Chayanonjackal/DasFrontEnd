@@ -1,8 +1,9 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { Router } from '@angular/router';
 import { ConfirmationService, MenuItem, MessageService } from 'primeng/api';
 import { DialogService } from 'primeng/dynamicdialog';
+import { Table } from 'primeng/table';
 import { count } from 'rxjs/operators';
 import { AuthService } from 'src/app/shared/services/auth.service';
 
@@ -13,6 +14,8 @@ import { AuthService } from 'src/app/shared/services/auth.service';
 })
 export class DashbordComponent implements OnInit {
 
+  @ViewChild('dt') dt: Table | undefined;
+  @ViewChild('dp') dp: Table | undefined;
   // side menu
   allMenu!: MenuItem[];
 
@@ -529,6 +532,13 @@ export class DashbordComponent implements OnInit {
   }
   GoToExcelImport() {
     this.router.navigate(['home/excel-import'])
+  }
+
+  applyFilterGlobal($event:any, stringVal:any) {
+    this.dt!.filterGlobal(($event.target as HTMLInputElement).value, 'contains');
+  }
+  applyFilterGlobalDp($event:any, stringVal:any) {
+    this.dp!.filterGlobal(($event.target as HTMLInputElement).value, 'contains');
   }
 
 }

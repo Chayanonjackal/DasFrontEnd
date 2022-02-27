@@ -25,6 +25,7 @@ export class AdminComponent implements OnInit {
   recordCount: number = 0;
   @ViewChild('dt') dt: Table | undefined;
 
+
   constructor(
     private http: HttpClient,
     private auth: AuthService,
@@ -141,4 +142,5 @@ export class AdminComponent implements OnInit {
   applyFilterGlobal($event:any, stringVal:any) {
     this.dt!.filterGlobal(($event.target as HTMLInputElement).value, 'contains');
   }
+
 }
