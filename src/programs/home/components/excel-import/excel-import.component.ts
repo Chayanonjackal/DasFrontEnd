@@ -276,6 +276,8 @@ export class ExcelImportComponent implements OnInit {
             }
           })
 
+      },error => {
+        this.messageService.add({severity:'error', summary: "เกิอข้อผิดพลาด", detail:"ไม่สามารถบันทึกข้อมูลได้"});
       })
 
 
