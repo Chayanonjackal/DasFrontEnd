@@ -109,20 +109,27 @@ export class AdminComponent implements OnInit {
   }
 
   confirmAdd() {
-    this.confirmationService.confirm({
-      message: 'Do you want to add user?',
-      header: 'Add user confirmation',
-      icon: 'pi pi-info-circle',
-      accept: () => {
-        //method add    AddFormComponent
-        this.ref = this.dialogService.open(AddFormComponent, {
-          header: 'Add user profile',
-          width: '70%',
-          contentStyle: { 'max-height': '500px', overflow: 'auto' },
-          baseZIndex: 10000,
-        });
-        // this.ngOnInit()
-      },
+    // this.confirmationService.confirm({
+    //   message: 'Do you want to add user?',
+    //   header: 'Add user confirmation',
+    //   icon: 'pi pi-info-circle',
+    //   accept: () => {
+    //     //method add    AddFormComponent
+    //     this.ref = this.dialogService.open(AddFormComponent, {
+    //       header: 'Add user profile',
+    //       width: '70%',
+    //       contentStyle: { 'max-height': '500px', overflow: 'auto' },
+    //       baseZIndex: 10000,
+    //     });
+    //     // this.ngOnInit()
+    //   },
+    // });
+
+    this.ref = this.dialogService.open(AddFormComponent, {
+      header: 'Add user profile',
+      width: '70%',
+      contentStyle: { 'max-height': '500px', overflow: 'auto' },
+      baseZIndex: 10000,
     });
 
   }

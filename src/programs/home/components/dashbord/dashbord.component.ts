@@ -408,6 +408,7 @@ export class DashbordComponent implements OnInit {
           xAxes: [{
             stacked: true,
             display: false
+            // maxTicksLimit:  this.filterschoolNameYear.length
           }],
           yAxes: [{
             stacked: true
