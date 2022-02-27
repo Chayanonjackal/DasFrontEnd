@@ -106,13 +106,13 @@
                       [style]="{ width: '100%' }"></p-chart>
                   </div>
                 </div>
+                <br>
                 <!-- bar -->
-                <div class="barStyle">
-                  <div class="card">
-                    <!-- <h5>Stacked</h5> -->
+                <!-- <div class="barStyle"> -->
+                  <!-- <div class="card"> -->
                     <p-chart type="bar" [data]="ProvinceYearData" [options]="ProvinceYearOptions"></p-chart>
-                  </div>
-                </div>
+                  <!-- </div> -->
+                <!-- </div> -->
               </div>
 
             </div>
@@ -128,17 +128,30 @@
                     [style]="{ width: '100%' }"></p-chart>
                 </div>
               </div>
+              <br>
               <!-- bar -->
-              <div class="barStyle">
-                <div class="card">
-                  <!-- <h5>Stacked</h5> -->
+              <!-- <div class="barStyle"> -->
+                <!-- <div class="card"> -->
                   <p-chart type="bar" [data]="schoolNameYearData" [options]="schoolNameYearOptions"></p-chart>
-                </div>
-              </div>
+                <!-- </div> -->
+              <!-- </div> -->
             </div>
           </p-card>
         </div>
       </div>
+
+      <!-- <div class="card-container">
+        <div class="col-12 cardStyle">
+          <div class="col-12">
+            <p-card>
+              <div class="text-xl p-2">
+               ------------------
+              </div>
+                <p-chart type="bar" [data]="schoolNameYearData" [options]="schoolNameYearOptions"></p-chart>
+            </p-card>
+          </div>
+        </div>
+      </div> -->
 
 
     </div>

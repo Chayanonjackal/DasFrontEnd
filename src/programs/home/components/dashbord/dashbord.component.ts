@@ -389,12 +389,13 @@ export class DashbordComponent implements OnInit {
         datasets: [{
           type: 'bar',
           label: 'ชุดข้อมูลชื่อโรงเรียน',
-          backgroundColor: '#42A5F5',
+          backgroundColor: this.arrColor,
           data: this.countSchoolNameYear
         }]
       };
 
       this.schoolNameYearOptions = {
+
         legend:{
           display: false
         },
@@ -406,6 +407,7 @@ export class DashbordComponent implements OnInit {
         scales: {
           xAxes: [{
             stacked: true,
+            display: false
           }],
           yAxes: [{
             stacked: true
@@ -419,7 +421,7 @@ export class DashbordComponent implements OnInit {
         datasets: [{
           type: 'bar',
           label: 'ชุดข้อมูลจังหวัด',
-          backgroundColor: '#42A5F5',
+          backgroundColor: this.arrColor,
           data: this.countSchoolProvinceNameYear
         }]
       };
@@ -436,6 +438,7 @@ export class DashbordComponent implements OnInit {
         scales: {
           xAxes: [{
             stacked: true,
+            display: false
           }],
           yAxes: [{
             stacked: true
