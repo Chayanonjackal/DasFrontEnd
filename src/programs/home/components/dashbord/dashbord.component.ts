@@ -261,7 +261,7 @@ export class DashbordComponent implements OnInit {
               "isTrusted": true
             },
             "value": {
-              "year": this.dropDownObject[0].year
+              "year": (!!this.dropDownObject[0]) ? this.dropDownObject[0].year : 2021
             }
           }
           // this.startYearChart();
@@ -288,7 +288,6 @@ export class DashbordComponent implements OnInit {
 
   updateChartOption() {
     this.chartOptions = this.chartTheme()
-    console.log(this.chartTheme());
 
   }
 
@@ -340,7 +339,6 @@ export class DashbordComponent implements OnInit {
         this.purlSchoolProvinceNameYear = this.schoolProvinceNameYear.filter(schoolprovincenameyear => schoolprovincenameyear == this.filterschoolProvinceNameYear[index])
         this.countSchoolProvinceNameYear[index] = this.purlSchoolProvinceNameYear.length //ได้ data แล้ว
       }
-      console.log(this.countSchoolProvinceNameYear);
 
 
       this.dataProvinceYear = {
