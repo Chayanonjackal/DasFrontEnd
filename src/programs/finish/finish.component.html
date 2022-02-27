@@ -1,23 +1,22 @@
-<div class="grid navColor">
-  <div class="col-12 md:col-12 lg:col-12 sm:col-12 midlogo"><img class="paddingPic" src="../../assets/img/logo.png"
-    alt="logo" width="100px" height="100px"></div>
+ <div class="">
+  <div class="container-img">
+    <img
+      id="logo-img"
+      src="../../../../../assets/img/logo-black.png"
+      alt="logo"
+      (click)="goToPublicPage()"
+    />
+  </div>
 </div>
-<br>
-<br>
-<div class=" md:col-12 lg:col-12 sm:col-12 outlineDiv animate__animated  animate__fadeIn">
+
+<div class="grid  align-items-center justify-content-center animate__animated  animate__fadeIn">
   <div>
-    <p-card>
-      <ng-template pTemplate="header">
-        <div class="headerCard animate__animated animate__slideInDown">
-          <!-- <h1 style="padding-left: 1em;">ขอบคุณสำหรับการกรอกข้อมูล          </h1> -->
-        </div>
-      </ng-template>
+
       <div class="animate__animated animate__slideInDown">
-        <h1 style="padding-left: 2em;">ขอบคุณสำหรับการกรอกข้อมูล
-        </h1>
+        <h1 id="title">ขอบคุณสำหรับการกรอกข้อมูล</h1>
       </div>
       <br><br>
-      <div class="lg:col-12 md:col-12  sm:col-12 buttonPosition">
+      <div class=" buttonPosition">
         <div class=" buttonLocation animate__animated animate__slideInDown" style="padding-right: 0.5em;">
           <button pButton pRipple type="button" label="กลับสู่หน้ากรอกข้อมูล" (click)="goToPublicPage()"
             class="p-button-rounded p-button-danger buttonStyle"></button>
@@ -28,7 +27,6 @@
         </div>
 
       </div>
-    </p-card>
   </div>
 
 </div>

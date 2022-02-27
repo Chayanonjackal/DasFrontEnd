@@ -1,3 +1,14 @@
+#logo-img {
+  /* align-self: start; */
+  width: 12rem;
+}
+
+.title{
+  display: flex !important;
+  align-items: center;
+  justify-content: center !important;
+}
+
 .buttonPosition{
   /* display: flex; */
   display: flex;
@@ -19,15 +30,15 @@
     justify-content: center;
     margin-top: 2em;
 }
-.headerCard{
+/* .headerCard{
   display: flex;
   justify-content: flex-start;
-}
+} */
 .outlineDiv{
   padding:6em
 }
 .buttonStyle{
-  width: 5.5em;
+  width: 9.5em;
   height: 2em;
   font-size: 2em;
 }
