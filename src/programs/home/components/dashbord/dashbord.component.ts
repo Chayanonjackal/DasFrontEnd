@@ -403,7 +403,7 @@ export class DashbordComponent implements OnInit {
           mode: 'index',
           intersect: false
         },
-        responsive: true,
+        // responsive: true,
         scales: {
           xAxes: [{
             stacked: true,

@@ -5,6 +5,11 @@
 
 .cardStyle{
   display: flex;
+
+}
+
+.barResponsive{
+  width: 100%;
 }
 
 
@@ -72,66 +77,7 @@
   aspect-ratio: auto;
 }
 
-.pieStyleDisplay{
 
-}
-
-/*
-
-.card-container {
-  margin-bottom: 0.5rem;
-}
-/*
-.photo {
-  width: 30%;
-}
-
-.text-search {
-  font-size: 2rem;
-  padding-right: 1rem;
-} */
-
-/*
-.box-card {
-  margin: auto 10rem !important;
-} */
-/*
-.chart {
-  display: flex;
-
-}
-
-.wordSize{
-  font-size: 1rem;
-}
-*/
-
-/*
-.text-visua {
-  align-items: center;
-  text-align: center;
-}
-
-.dropdown-year {
-  display: flex;
-  justify-content: flex-end;
-}
-
-
-.buttonRow{
-    display: flex;
-    justify-content: space-around;
-}
-.buttonWord{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-.buttonSize{
-  min-width: 5rem;
-  min-height: 5rem;
-}
- */
 
 @media screen and (max-width: 900px) {
   /* .outlineDiv{
@@ -140,8 +86,13 @@
   .styleChart{
     display: none;
   }
+  .barResponsive{
+    width: 90%;
+  }
 
 }
+
+
 
 @media screen and (max-width: 576px) {
   #menu {
@@ -154,5 +105,9 @@
 
   .chart-size {
     width: 50%;
+  }
+  .cardStyle{
+    display: flex;
+    flex-direction: column;
   }
 }
