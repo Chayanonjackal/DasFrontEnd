@@ -80,7 +80,8 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "front-endThesis:build:production"
+              "browserTarget": "front-endThesis:build:production",
+              "proxyConfig": "proxy.conf.json"
             },
             "development": {
               "browserTarget": "front-endThesis:build:development"
