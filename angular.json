@@ -49,12 +49,12 @@
                 {
                   "type": "initial",
                   "maximumWarning": "500kb",
-                  "maximumError": "1mb"
+                  "maximumError": "10mb"
                 },
                 {
                   "type": "anyComponentStyle",
                   "maximumWarning": "2kb",
-                  "maximumError": "4kb"
+                  "maximumError": "40mb"
                 }
               ],
               "fileReplacements": [
@@ -84,7 +84,8 @@
               "proxyConfig": "proxy.conf.json"
             },
             "development": {
-              "browserTarget": "front-endThesis:build:development"
+              "browserTarget": "front-endThesis:build:development",
+              "proxyConfig": "proxy.conf.json"
             }
           },
           "defaultConfiguration": "development"
